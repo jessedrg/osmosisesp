@@ -13,7 +13,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/40">
       <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-14 lg:h-16">
         <Link href="/" className="flex items-center gap-1">
-          <span className="text-xl lg:text-2xl font-serif italic text-foreground tracking-tight">osmosis esp.</span>
+          <span className="text-xl lg:text-2xl font-serif italic text-foreground tracking-tight">osmosis<span className="text-primary">esp</span></span>
         </Link>
 
         <div className="hidden lg:flex items-center gap-10 text-[13px] tracking-wide font-sans">
@@ -28,7 +28,7 @@ export function Navbar() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-foreground text-background text-[13px] px-5 py-2 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 bg-primary text-primary-foreground text-[13px] px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
           >
             <MessageCircle className="w-3.5 h-3.5" />
             Pedir presupuesto
@@ -50,7 +50,7 @@ export function Navbar() {
           <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm">
             <MessageCircle className="w-4 h-4" /> WhatsApp
           </a>
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-foreground text-background text-sm px-6 py-3">
+          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-primary text-primary-foreground text-sm px-6 py-3 rounded-lg">
             Pedir presupuesto
           </a>
         </div>
