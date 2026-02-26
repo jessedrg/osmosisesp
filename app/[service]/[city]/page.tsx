@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${fullTitle} | Instaladores Certificados | osmosis esp`,
     description: `${serviceName.title}${modifierText.toLowerCase()} en ${cityName}. Instaladores certificados. Presupuesto GRATIS. Contacta por WhatsApp.`,
-    alternates: { canonical: `https://osmosisespana.com/${rawService}/${citySlug}/` },
+    alternates: { canonical: `https://osmosisespaña.com/${rawService}/${citySlug}/` },
     openGraph: { title: fullTitle, description: `Instalación de ${serviceName.singular} en ${cityName}. Presupuestos gratis.`, type: "website", siteName: "osmosis esp" },
   }
 }

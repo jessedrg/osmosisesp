@@ -131,7 +131,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${serviceInfo.title} en España | Instaladores Certificados | osmosis esp`,
     description: `${serviceInfo.description} Servicio en toda España. Presupuestos gratis.`,
-    alternates: { canonical: `https://osmosisespana.com/${serviceId}/` },
+    alternates: { canonical: `https://osmosisespaña.com/${serviceId}/` },
     openGraph: { title: `${serviceInfo.title} en España`, description: serviceInfo.description, type: "website", siteName: "osmosis esp" },
   }
 }

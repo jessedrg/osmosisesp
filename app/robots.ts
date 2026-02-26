@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: [
-      "https://osmosisespana.com/sitemap-v2.xml",
+      "https://osmosisespaña.com/sitemap-v2.xml",
     ],
   }
 }

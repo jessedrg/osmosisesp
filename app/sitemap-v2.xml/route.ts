@@ -1,6 +1,6 @@
 import { VALID_SERVICES, MODIFIERS, PROBLEMS } from "@/lib/sitemap-data"
 
-const BASE = "https://osmosisespana.com"
+const BASE = "https://osmosisespaña.com"
 
 export async function GET() {
   const sitemaps: string[] = []

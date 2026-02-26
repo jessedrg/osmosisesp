@@ -383,7 +383,7 @@ export function ServiceCityContent({
         "@context": "https://schema.org", "@type": "LocalBusiness",
         name: `osmosis esp - ${pageTitle}`,
         description: `Instalacion de ${serviceName.singular} en ${cityName}. Presupuestos gratis.`,
-        url: `https://osmosisespana.com/${serviceId}/${citySlug}/`,
+        url: `https://osmosisespaña.com/${serviceId}/${citySlug}/`,
         address: { "@type": "PostalAddress", addressLocality: cityName, addressRegion: "España", addressCountry: "ES" },
         aggregateRating: { "@type": "AggregateRating", ratingValue: avgRating, reviewCount: reviews.length, bestRating: "5", worstRating: "1" },
       })}} />

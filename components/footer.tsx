@@ -42,8 +42,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:hola@osmosisespana.com" className="flex items-center gap-2 text-xs text-primary-foreground/70 hover:text-background transition-colors">
-                  <Mail className="w-3.5 h-3.5" /> hola@osmosisespana.com
+                <a href="mailto:hola@osmosisespaña.com" className="flex items-center gap-2 text-xs text-primary-foreground/70 hover:text-background transition-colors">
+                  <Mail className="w-3.5 h-3.5" /> hola@osmosisespaña.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-xs text-primary-foreground/70">
