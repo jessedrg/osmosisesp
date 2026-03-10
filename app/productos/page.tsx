@@ -44,28 +44,28 @@ export default function ProductosPage() {
                 </a>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <div className="col-span-2">
+                <div className="col-span-2 bg-neutral-800">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src="/He23d99f93a3040acb8720554edb60e11k.jpg" 
                     alt="Sistema de ósmosis inversa completo con filtros, grifo y accesorios" 
-                    className="w-full h-64 sm:h-80 object-cover"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
-                <div>
+                <div className="bg-neutral-800">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src="/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg" 
                     alt="Equipo de ósmosis inversa con panel LED táctil" 
-                    className="w-full h-40 sm:h-48 object-cover"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
-                <div>
+                <div className="bg-neutral-800">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src="/He931e67f2b5b4d5999ed74d013fdd560w.jpg" 
                     alt="Interior del equipo con filtros de cambio rápido" 
-                    className="w-full h-40 sm:h-48 object-cover"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
               </div>
