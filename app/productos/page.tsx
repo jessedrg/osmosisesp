@@ -35,10 +35,10 @@ export default function ProductosPage() {
                   Equipo de última generación con panel táctil LED, filtros de cambio rápido y diseño minimalista que cabe bajo cualquier fregadero.
                 </p>
                 <div className="mt-8 flex items-end gap-4">
-                  <span className="font-serif text-5xl sm:text-6xl text-background">499€</span>
-                  <span className="text-sm text-background/50 font-sans mb-2">todo incluido</span>
+                  <span className="font-serif text-5xl sm:text-6xl text-background">508€</span>
+                  <span className="text-sm text-background/50 font-sans mb-2">IVA incluido</span>
                 </div>
-                <p className="text-xs text-background/40 font-sans mt-2">Equipo 420€ + Instalación 79€</p>
+                <p className="text-xs text-background/40 font-sans mt-2">420€ + 21% IVA · Instalación 79€ aparte</p>
                 <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
                   <MessageCircle className="w-4 h-4" /> Pedir presupuesto gratis
                 </a>
@@ -106,7 +106,7 @@ export default function ProductosPage() {
               <div>
                 <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Qué incluye</p>
                 <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground">
-                  Todo lo que necesitas por 499€
+                  Todo lo que incluye el equipo
                 </h2>
                 <ul className="mt-8 space-y-4">
                   {[
@@ -115,10 +115,9 @@ export default function ProductosPage() {
                     "Grifo de diseño cromado incluido",
                     "3 filtros de repuesto (sedimentos, carbón, post-filtro)",
                     "Kit completo de instalación (tubos, conexiones, válvulas)",
-                    "Instalación profesional por técnico certificado (2-3 horas)",
-                    "Garantía de 2 años en equipo e instalación",
-                    "Soporte técnico por WhatsApp",
                     "Manual de uso y mantenimiento",
+                    "Garantía de 2 años",
+                    "Soporte técnico por WhatsApp",
                   ].map(item => (
                     <li key={item} className="flex items-start gap-3 text-sm font-sans text-foreground">
                       <CheckCircle className="w-4 h-4 text-foreground flex-shrink-0 mt-0.5" />
@@ -198,7 +197,7 @@ export default function ProductosPage() {
           description: "Sistema de ósmosis inversa 5 etapas con panel LED, filtros click & twist, grifo incluido. Instalación profesional incluida. Garantía 2 años.",
           brand: { "@type": "Brand", name: "osmosis esp" },
           image: ["https://osmosisesp.com/He23d99f93a3040acb8720554edb60e11k.jpg", "https://osmosisesp.com/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg", "https://osmosisesp.com/He931e67f2b5b4d5999ed74d013fdd560w.jpg"],
-          offers: { "@type": "Offer", price: "499", priceCurrency: "EUR", availability: "https://schema.org/InStock", priceValidUntil: "2026-12-31", itemCondition: "https://schema.org/NewCondition" },
+          offers: { "@type": "Offer", price: "508", priceCurrency: "EUR", availability: "https://schema.org/InStock", priceValidUntil: "2026-12-31", itemCondition: "https://schema.org/NewCondition" },
         })}} />
       </main>
       <Footer />

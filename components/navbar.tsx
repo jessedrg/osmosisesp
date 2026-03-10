@@ -18,9 +18,9 @@ export function Navbar() {
 
         <div className="hidden lg:flex items-center gap-10 text-[13px] tracking-wide font-sans">
           <Link href="/productos" className="text-muted-foreground hover:text-foreground transition-colors">Producto</Link>
-          <Link href="#servicios" className="text-muted-foreground hover:text-foreground transition-colors">Servicios</Link>
-          <Link href="#proceso" className="text-muted-foreground hover:text-foreground transition-colors">Proceso</Link>
-          <Link href="#opiniones" className="text-muted-foreground hover:text-foreground transition-colors">Opiniones</Link>
+          <Link href="/#proceso" className="text-muted-foreground hover:text-foreground transition-colors">Cómo funciona</Link>
+          <Link href="/#opiniones" className="text-muted-foreground hover:text-foreground transition-colors">Opiniones</Link>
+          <Link href="/#faq" className="text-muted-foreground hover:text-foreground transition-colors">FAQ</Link>
         </div>
 
         <div className="hidden lg:flex items-center gap-4">
@@ -43,9 +43,9 @@ export function Navbar() {
       {open && (
         <div className="lg:hidden border-t border-border bg-background px-6 py-6 space-y-4">
           <Link href="/productos" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">Producto</Link>
-          <Link href="#servicios" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">Servicios</Link>
-          <Link href="#proceso" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">Proceso</Link>
-          <Link href="#opiniones" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">Opiniones</Link>
+          <Link href="/#proceso" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">Cómo funciona</Link>
+          <Link href="/#opiniones" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">Opiniones</Link>
+          <Link href="/#faq" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">FAQ</Link>
           <hr className="border-border" />
           <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm">
             <MessageCircle className="w-4 h-4" /> WhatsApp

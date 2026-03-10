@@ -322,10 +322,10 @@ export function ServiceCityContent({
             {/* Price Card */}
             <div className="mt-8 border-2 border-foreground p-6 sm:p-8">
               <div className="flex items-end gap-3">
-                <span className="font-serif text-4xl sm:text-5xl text-foreground">499€</span>
-                <span className="text-sm text-muted-foreground font-sans mb-1">todo incluido</span>
+                <span className="font-serif text-4xl sm:text-5xl text-foreground">508€</span>
+                <span className="text-sm text-muted-foreground font-sans mb-1">IVA incluido</span>
               </div>
-              <p className="text-xs text-muted-foreground font-sans mt-2">Equipo 420€ + Instalación 79€</p>
+              <p className="text-xs text-muted-foreground font-sans mt-2">420€ + 21% IVA</p>
               
               <ul className="mt-6 space-y-3">
                 {[
@@ -333,7 +333,6 @@ export function ServiceCityContent({
                   "Panel LED indicador de filtros",
                   "Grifo de diseño incluido",
                   "Filtros de cambio rápido click & twist",
-                  "Instalación profesional (2-3h)",
                   "Garantía 2 años",
                   "Soporte WhatsApp",
                 ].map(item => (
@@ -349,11 +348,22 @@ export function ServiceCityContent({
               </a>
             </div>
 
-            {/* Maintenance */}
-            <div className="mt-6 border border-border p-6">
+            {/* Installation */}
+            <div className="mt-4 border border-border p-6">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-sans font-medium text-foreground">Plan mantenimiento anual</p>
+                  <p className="text-xs font-sans font-medium text-foreground">Instalación profesional</p>
+                  <p className="text-[10px] text-muted-foreground font-sans mt-1">Técnico certificado · 2-3 horas · Sin obras</p>
+                </div>
+                <p className="font-serif text-2xl text-foreground">79€</p>
+              </div>
+            </div>
+
+            {/* Maintenance */}
+            <div className="mt-4 border border-border p-6">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-sans font-medium text-foreground">Mantenimiento anual</p>
                   <p className="text-[10px] text-muted-foreground font-sans mt-1">Cambio de filtros + revisión + visita técnico</p>
                 </div>
                 <p className="font-serif text-2xl text-foreground">79€<span className="text-sm text-muted-foreground">/año</span></p>
@@ -487,7 +497,7 @@ export function ServiceCityContent({
         description: `Sistema de ósmosis inversa 5 etapas con panel LED, filtros click & twist, grifo incluido. Instalación profesional en ${cityName}. Garantía 2 años.`,
         brand: { "@type": "Brand", name: "osmosis esp" },
         image: ["https://osmosisesp.com/He23d99f93a3040acb8720554edb60e11k.jpg", "https://osmosisesp.com/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg", "https://osmosisesp.com/He931e67f2b5b4d5999ed74d013fdd560w.jpg"],
-        offers: { "@type": "Offer", price: "499", priceCurrency: "EUR", availability: "https://schema.org/InStock", priceValidUntil: "2026-12-31", itemCondition: "https://schema.org/NewCondition" },
+        offers: { "@type": "Offer", price: "508", priceCurrency: "EUR", availability: "https://schema.org/InStock", priceValidUntil: "2026-12-31", itemCondition: "https://schema.org/NewCondition" },
         aggregateRating: { "@type": "AggregateRating", ratingValue: avgRating, reviewCount: reviews.length },
       })}} />
       <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({

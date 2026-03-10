@@ -87,20 +87,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   ].join(", ")
 
   return {
-    title: `${serviceName.title} ${cityName} | Desde 499€ Instalado | Presupuesto GRATIS`,
-    description: `【${serviceName.title} en ${cityName}】✅ Desde 499€ instalado ✅ Presupuesto GRATIS en 24h ✅ Instalación urgente ✅ Garantía 2 años ✅ Mantenimiento 79€/año ✅ Profesionales certificados. ¡WhatsApp directo!`,
+    title: `${serviceName.title} ${cityName} | 508€ + Instalación 79€ | Presupuesto GRATIS`,
+    description: `【${serviceName.title} en ${cityName}】✅ Equipo 508€ IVA incl. ✅ Instalación 79€ ✅ Presupuesto GRATIS ✅ Garantía 2 años ✅ Mantenimiento 79€/año ✅ Profesionales certificados. ¡WhatsApp directo!`,
     keywords,
     alternates: { canonical: `https://osmosisesp.com/${serviceId}/${citySlug}/` },
     openGraph: {
-      title: `${serviceName.title} ${cityName} | Desde 499€ | Presupuesto GRATIS`,
-      description: `Instalación de ${serviceName.singular} en ${cityName}. Desde 499€ instalado. Garantía 2 años. Servicio urgente 24h. Profesionales certificados.`,
+      title: `${serviceName.title} ${cityName} | 508€ + Instalación | Presupuesto GRATIS`,
+      description: `${serviceName.title} en ${cityName}. Equipo 508€ IVA incl. Instalación 79€. Garantía 2 años. Profesionales certificados.`,
       type: "website",
       siteName: "Ósmosis ESP",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${serviceName.title} ${cityName} | Desde 499€`,
-      description: `${serviceName.title} en ${cityName}. Presupuesto GRATIS. Instalación profesional desde 499€. Garantía 2 años.`,
+      title: `${serviceName.title} ${cityName} | 508€ + Instalación`,
+      description: `${serviceName.title} en ${cityName}. Equipo 508€ IVA incl. Instalación 79€. Garantía 2 años.`,
     },
   }
 }
