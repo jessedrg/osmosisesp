@@ -5,18 +5,18 @@ const WA_URL = "https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20instala
 const steps = [
   {
     num: "01",
-    title: "Cuéntanos tu situación",
-    desc: "Escríbenos por WhatsApp. Tipo de vivienda, calidad del agua, número de personas. 5 minutos bastan.",
+    title: "Escríbenos por WhatsApp",
+    desc: "Cuéntanos tu situación: tipo de vivienda, número de personas, calidad del agua. Te asesoramos sin compromiso.",
   },
   {
     num: "02",
-    title: "Visita y presupuesto",
-    desc: "Un técnico visita tu hogar, analiza el agua y te recomienda el sistema ideal. Presupuesto cerrado.",
+    title: "Recibe tu equipo",
+    desc: "Te enviamos el equipo de ósmosis a casa. Precio cerrado: 508€ IVA incluido.",
   },
   {
     num: "03",
-    title: "Instalación rápida",
-    desc: "Instalamos en 2-3 horas. Sin obras, sin molestias. Agua pura desde el primer día.",
+    title: "Instalación profesional",
+    desc: "Un técnico certificado instala el equipo en 2-3 horas. Sin obras. Instalación: 79€.",
   },
 ]
 

@@ -204,83 +204,11 @@ export function ServiceCityContent({
         </div>
       </section>
 
-      {/* How it works */}
-      <section id="como-funciona" className="bg-secondary">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-          <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-4">
-              <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Proceso</p>
-              <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground leading-[1.1]">
-                {`Tu ${serviceName.singular} en ${cityName}, paso a paso`}
-              </h2>
-            </div>
-            <div className="lg:col-span-7 lg:col-start-6 space-y-0">
-              {[
-                { n: "01", t: "Cuentanos tu situacion", d: `Escribenos por WhatsApp. Tipo de vivienda, numero de personas, calidad del agua en ${cityName}. 5 minutos bastan.` },
-                { n: "02", t: "Visita y presupuesto", d: `Un tecnico visita tu hogar en ${cityName}, analiza el espacio y te recomienda el sistema ideal. Presupuesto cerrado.` },
-                { n: "03", t: "Instalacion rapida", d: `Instalamos en 2-3 horas, sin obras ni molestias. Agua pura desde el primer dia.` },
-              ].map((step, i) => (
-                <div key={step.n} className={`flex gap-8 py-8 ${i < 2 ? "border-b border-border" : ""}`}>
-                  <span className="font-serif text-4xl lg:text-5xl text-foreground/10 flex-shrink-0">{step.n}</span>
-                  <div>
-                    <h3 className="text-sm font-sans font-medium text-foreground">{step.t}</h3>
-                    <p className="text-xs text-muted-foreground mt-2 font-sans leading-relaxed max-w-md">{step.d}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Reviews */}
-      <section className="bg-secondary">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-16">
-            <div>
-              <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Opiniones</p>
-              <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground">
-                {`Clientes de ${cityName} opinan`}
-              </h2>
-            </div>
-            <div className="flex items-center gap-2">
-              {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-current text-foreground" />)}
-              <span className="text-sm font-sans font-medium">{avgRating}/5</span>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-3">
-            {reviews.slice(0, visibleReviews).map((r, i) => (
-              <article key={i} className="bg-card p-8 flex flex-col justify-between">
-                <p className="text-xs text-foreground/80 font-sans leading-relaxed">{r.text}</p>
-                <div className="mt-6 pt-4 border-t border-border flex items-center justify-between">
-                  <div>
-                    <p className="text-xs font-medium font-sans">{r.name}</p>
-                    <p className="text-[10px] text-muted-foreground font-sans">{r.city} · {r.date}</p>
-                  </div>
-                  {r.verified && (
-                    <span className="flex items-center gap-1 text-[10px] text-muted-foreground font-sans">
-                      <CheckCircle className="w-3 h-3" /> Verificada
-                    </span>
-                  )}
-                </div>
-              </article>
-            ))}
-          </div>
-
-          {visibleReviews < reviews.length && (
-            <button onClick={() => setVisibleReviews(reviews.length)} className="mt-8 flex items-center gap-2 text-xs font-sans font-medium text-foreground hover:opacity-70 transition-opacity mx-auto">
-              Ver mas opiniones <ChevronDown className="w-3.5 h-3.5" />
-            </button>
-          )}
-        </div>
-      </section>
-
-      {/* Product + Pricing Section */}
+      {/* Product + Pricing Section - FIRST */}
       <section className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Product Images */}
-          <div className="order-2 lg:order-1">
+          <div>
             <div className="grid grid-cols-2 gap-3">
               <div className="col-span-2">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -310,7 +238,7 @@ export function ServiceCityContent({
           </div>
 
           {/* Product Info + Price */}
-          <div className="order-1 lg:order-2">
+          <div>
             <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Nuestro equipo</p>
             <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground leading-[1.1]">
               Sistema de Ósmosis Inversa Compacto
@@ -370,6 +298,78 @@ export function ServiceCityContent({
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section id="como-funciona" className="bg-secondary">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+          <div className="grid lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4">
+              <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Proceso</p>
+              <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground leading-[1.1]">
+                {`Tu ${serviceName.singular} en ${cityName}, paso a paso`}
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:col-start-6 space-y-0">
+              {[
+                { n: "01", t: "Escribenos por WhatsApp", d: `Cuentanos tu situacion: tipo de vivienda, numero de personas, calidad del agua en ${cityName}. Te asesoramos sin compromiso.` },
+                { n: "02", t: "Recibe tu equipo", d: `Te enviamos el equipo de osmosis a casa en ${cityName}. Precio cerrado: 508€ IVA incluido.` },
+                { n: "03", t: "Instalacion profesional", d: `Un tecnico certificado instala el equipo en 2-3 horas. Sin obras. Instalacion: 79€.` },
+              ].map((step, i) => (
+                <div key={step.n} className={`flex gap-8 py-8 ${i < 2 ? "border-b border-border" : ""}`}>
+                  <span className="font-serif text-4xl lg:text-5xl text-foreground/10 flex-shrink-0">{step.n}</span>
+                  <div>
+                    <h3 className="text-sm font-sans font-medium text-foreground">{step.t}</h3>
+                    <p className="text-xs text-muted-foreground mt-2 font-sans leading-relaxed max-w-md">{step.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="bg-secondary">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-16">
+            <div>
+              <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Opiniones</p>
+              <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground">
+                {`Clientes de ${cityName} opinan`}
+              </h2>
+            </div>
+            <div className="flex items-center gap-2">
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-current text-foreground" />)}
+              <span className="text-sm font-sans font-medium">{avgRating}/5</span>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-3">
+            {reviews.slice(0, visibleReviews).map((r, i) => (
+              <article key={i} className="bg-card p-8 flex flex-col justify-between">
+                <p className="text-xs text-foreground/80 font-sans leading-relaxed">{r.text}</p>
+                <div className="mt-6 pt-4 border-t border-border flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-medium font-sans">{r.name}</p>
+                    <p className="text-[10px] text-muted-foreground font-sans">{r.city} · {r.date}</p>
+                  </div>
+                  {r.verified && (
+                    <span className="flex items-center gap-1 text-[10px] text-muted-foreground font-sans">
+                      <CheckCircle className="w-3 h-3" /> Verificada
+                    </span>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {visibleReviews < reviews.length && (
+            <button onClick={() => setVisibleReviews(reviews.length)} className="mt-8 flex items-center gap-2 text-xs font-sans font-medium text-foreground hover:opacity-70 transition-opacity mx-auto">
+              Ver mas opiniones <ChevronDown className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
       </section>
 
