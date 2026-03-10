@@ -19,32 +19,22 @@ export const VALID_PROFESSIONS = VALID_SERVICES;
 export type Profession = Service;
 
 // =============================================================================
-// HIGH-INTENT KEYWORD MODIFIERS - Sector Ósmosis Inversa
+// HIGH-INTENT KEYWORD MODIFIERS - ELIMINADOS PARA EVITAR CANIBALIZACIÓN
 // =============================================================================
-export const MODIFIERS = [
-  "",
-  // ============ PRECIO / PRESUPUESTO ============
-  "-precios", "-barata", "-economica", "-cuanto-cuesta",
-  "-presupuesto", "-presupuesto-online",
-
-  // ============ URGENCIA / VELOCIDAD ============
-  "-urgente", "-rapida", "-hoy", "-24-horas",
-
-  // ============ CALIDAD / REPUTACION ============
-  "-mejor", "-calidad-precio", "-profesional", "-de-confianza",
-  "-mejor-valorada", "-recomendada",
-
-  // ============ TIPO DE SERVICIO ============
-  "-instalacion", "-mantenimiento", "-reparacion", "-cambio-filtros",
-
-  // ============ MARCA ============
-  "-atl", "-hidrosalud", "-culligan", "-aquasana",
-
-  // ============ UBICACIÓN ============
-  "-cerca-de-mi", "-a-domicilio",
-] as const;
+// Ahora optimizamos la página principal de cada ciudad para rankear por todas
+// las keywords de alta intención en lugar de crear páginas separadas.
+export const MODIFIERS = [""] as const;
 
 export type Modifier = typeof MODIFIERS[number];
+
+// Keywords de alta intención para incluir en el SEO de cada página
+export const HIGH_INTENT_KEYWORDS = [
+  "precios", "barata", "económica", "cuánto cuesta", "presupuesto",
+  "urgente", "rápida", "hoy", "24 horas",
+  "mejor", "calidad-precio", "profesional", "de confianza", "recomendada",
+  "instalación", "mantenimiento", "reparación", "cambio filtros",
+  "cerca de mí", "a domicilio",
+] as const;
 
 // =============================================================================
 // NECESIDADES / PROBLEMAS POR SERVICIO
