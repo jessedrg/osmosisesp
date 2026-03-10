@@ -29,17 +29,78 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const serviceName = SERVICE_NAMES[serviceId as Service]
   const cityName = getCityDisplayName(citySlug)
+  const cityLower = cityName.toLowerCase()
+
+  // Keywords exhaustivas de alta intención
+  const keywords = [
+    // Base + ciudad
+    `${serviceName.singular} ${cityLower}`,
+    `${serviceName.singular} en ${cityLower}`,
+    // Precio / Presupuesto
+    `${serviceName.singular} precio ${cityLower}`,
+    `${serviceName.singular} precios ${cityLower}`,
+    `cuanto cuesta ${serviceName.singular} ${cityLower}`,
+    `precio instalar ${serviceName.singular} ${cityLower}`,
+    `${serviceName.singular} barata ${cityLower}`,
+    `${serviceName.singular} economica ${cityLower}`,
+    `${serviceName.singular} barato ${cityLower}`,
+    `presupuesto ${serviceName.singular} ${cityLower}`,
+    `presupuesto gratis ${serviceName.singular} ${cityLower}`,
+    // Instalación
+    `instalar ${serviceName.singular} ${cityLower}`,
+    `instalacion ${serviceName.singular} ${cityLower}`,
+    `instaladores ${serviceName.singular} ${cityLower}`,
+    `empresa instalacion ${serviceName.singular} ${cityLower}`,
+    `poner ${serviceName.singular} ${cityLower}`,
+    // Urgencia
+    `${serviceName.singular} urgente ${cityLower}`,
+    `${serviceName.singular} rapido ${cityLower}`,
+    `${serviceName.singular} hoy ${cityLower}`,
+    `${serviceName.singular} 24 horas ${cityLower}`,
+    // Calidad / Confianza
+    `mejor ${serviceName.singular} ${cityLower}`,
+    `${serviceName.singular} calidad ${cityLower}`,
+    `${serviceName.singular} profesional ${cityLower}`,
+    `${serviceName.singular} de confianza ${cityLower}`,
+    `${serviceName.singular} recomendado ${cityLower}`,
+    `${serviceName.singular} garantia ${cityLower}`,
+    // Ubicación
+    `${serviceName.singular} cerca de mi`,
+    `${serviceName.singular} a domicilio ${cityLower}`,
+    // Marcas
+    `${serviceName.singular} atl ${cityLower}`,
+    `${serviceName.singular} hidrosalud ${cityLower}`,
+    `${serviceName.singular} culligan ${cityLower}`,
+    // Servicios relacionados
+    `mantenimiento ${serviceName.singular} ${cityLower}`,
+    `reparacion ${serviceName.singular} ${cityLower}`,
+    `cambio filtros ${serviceName.singular} ${cityLower}`,
+    // Problemas / Necesidades
+    `agua con cal ${cityLower}`,
+    `agua dura ${cityLower}`,
+    `mejorar agua grifo ${cityLower}`,
+    `purificar agua casa ${cityLower}`,
+    `filtrar agua ${cityLower}`,
+    // Comparativas
+    `comparar ${serviceName.singular} ${cityLower}`,
+    `opiniones ${serviceName.singular} ${cityLower}`,
+  ].join(", ")
 
   return {
-    title: `${serviceName.title} ${cityName} | Precios GRATIS | Instalación Profesional 2024`,
-    description: `✓ ${serviceName.title} en ${cityName} ✓ Presupuesto GRATIS ✓ Instalación urgente 24h ✓ Mejor precio garantizado ✓ Profesionales de confianza ✓ Mantenimiento y reparación. WhatsApp directo.`,
-    keywords: `${serviceName.singular} ${cityName}, ${serviceName.singular} precios ${cityName}, ${serviceName.singular} barata ${cityName}, instalar ${serviceName.singular} ${cityName}, ${serviceName.singular} urgente ${cityName}, mejor ${serviceName.singular} ${cityName}, ${serviceName.singular} profesional ${cityName}, ${serviceName.singular} cerca de mi ${cityName}, presupuesto ${serviceName.singular} ${cityName}, ${serviceName.singular} a domicilio ${cityName}`,
+    title: `${serviceName.title} ${cityName} | Desde 499€ Instalado | Presupuesto GRATIS`,
+    description: `【${serviceName.title} en ${cityName}】✅ Desde 499€ instalado ✅ Presupuesto GRATIS en 24h ✅ Instalación urgente ✅ Garantía 2 años ✅ Mantenimiento 79€/año ✅ Profesionales certificados. ¡WhatsApp directo!`,
+    keywords,
     alternates: { canonical: `https://osmosisesp.com/${serviceId}/${citySlug}/` },
     openGraph: {
-      title: `${serviceName.title} ${cityName} | Presupuesto GRATIS`,
-      description: `Instalación de ${serviceName.singular} en ${cityName}. Precios económicos, servicio urgente 24h, profesionales certificados.`,
+      title: `${serviceName.title} ${cityName} | Desde 499€ | Presupuesto GRATIS`,
+      description: `Instalación de ${serviceName.singular} en ${cityName}. Desde 499€ instalado. Garantía 2 años. Servicio urgente 24h. Profesionales certificados.`,
       type: "website",
       siteName: "Ósmosis ESP",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${serviceName.title} ${cityName} | Desde 499€`,
+      description: `${serviceName.title} en ${cityName}. Presupuesto GRATIS. Instalación profesional desde 499€. Garantía 2 años.`,
     },
   }
 }

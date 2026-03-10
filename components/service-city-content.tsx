@@ -204,29 +204,90 @@ export function ServiceCityContent({
         </div>
       </section>
 
-      {/* How it works */}
-      <section id="como-funciona" className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-4">
-            <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Proceso</p>
+      {/* Product Gallery */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-5">
+            <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Nuestro equipo</p>
             <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground leading-[1.1]">
-              {`Tu ${serviceName.singular} en ${cityName}, paso a paso`}
+              Diseño compacto, tecnología avanzada
             </h2>
+            <p className="text-sm text-muted-foreground mt-6 font-sans leading-relaxed">
+              Sistema de ósmosis inversa de última generación con panel táctil LED, filtros de cambio rápido y diseño minimalista que cabe bajo cualquier fregadero.
+            </p>
+            <ul className="mt-8 space-y-4">
+              {[
+                { label: "Filtros click & twist", desc: "Cambio en segundos sin herramientas" },
+                { label: "Panel LED inteligente", desc: "Indica estado de cada filtro" },
+                { label: "Diseño compacto", desc: "Solo 40x35x15cm bajo el fregadero" },
+                { label: "Silencioso", desc: "Bomba de baja vibración" },
+              ].map(item => (
+                <li key={item.label} className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-foreground flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-xs font-sans font-medium text-foreground">{item.label}</p>
+                    <p className="text-[10px] text-muted-foreground font-sans">{item.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="lg:col-span-7 lg:col-start-6 space-y-0">
-            {[
-              { n: "01", t: "Cuentanos tu situacion", d: `Escribenos por WhatsApp. Tipo de vivienda, numero de personas, calidad del agua en ${cityName}. 5 minutos bastan.` },
-              { n: "02", t: "Visita y presupuesto", d: `Un tecnico visita tu hogar en ${cityName}, analiza el espacio y te recomienda el sistema ideal. Presupuesto cerrado.` },
-              { n: "03", t: "Instalacion rapida", d: `Instalamos en 2-3 horas, sin obras ni molestias. Agua pura desde el primer dia.` },
-            ].map((step, i) => (
-              <div key={step.n} className={`flex gap-8 py-8 ${i < 2 ? "border-b border-border" : ""}`}>
-                <span className="font-serif text-4xl lg:text-5xl text-foreground/10 flex-shrink-0">{step.n}</span>
-                <div>
-                  <h3 className="text-sm font-sans font-medium text-foreground">{step.t}</h3>
-                  <p className="text-xs text-muted-foreground mt-2 font-sans leading-relaxed max-w-md">{step.d}</p>
-                </div>
+          <div className="lg:col-span-7">
+            <div className="grid grid-cols-2 gap-3">
+              <div className="col-span-2">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/He23d99f93a3040acb8720554edb60e11k.jpg" 
+                  alt="Sistema de ósmosis inversa completo con filtros, grifo y accesorios" 
+                  className="w-full h-64 sm:h-80 object-cover rounded-sm"
+                />
               </div>
-            ))}
+              <div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg" 
+                  alt="Equipo de ósmosis inversa con panel LED táctil" 
+                  className="w-full h-48 sm:h-56 object-cover rounded-sm"
+                />
+              </div>
+              <div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/He931e67f2b5b4d5999ed74d013fdd560w.jpg" 
+                  alt="Interior del equipo con filtros de cambio rápido" 
+                  className="w-full h-48 sm:h-56 object-cover rounded-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section id="como-funciona" className="bg-secondary">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+          <div className="grid lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-4">
+              <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Proceso</p>
+              <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground leading-[1.1]">
+                {`Tu ${serviceName.singular} en ${cityName}, paso a paso`}
+              </h2>
+            </div>
+            <div className="lg:col-span-7 lg:col-start-6 space-y-0">
+              {[
+                { n: "01", t: "Cuentanos tu situacion", d: `Escribenos por WhatsApp. Tipo de vivienda, numero de personas, calidad del agua en ${cityName}. 5 minutos bastan.` },
+                { n: "02", t: "Visita y presupuesto", d: `Un tecnico visita tu hogar en ${cityName}, analiza el espacio y te recomienda el sistema ideal. Presupuesto cerrado.` },
+                { n: "03", t: "Instalacion rapida", d: `Instalamos en 2-3 horas, sin obras ni molestias. Agua pura desde el primer dia.` },
+              ].map((step, i) => (
+                <div key={step.n} className={`flex gap-8 py-8 ${i < 2 ? "border-b border-border" : ""}`}>
+                  <span className="font-serif text-4xl lg:text-5xl text-foreground/10 flex-shrink-0">{step.n}</span>
+                  <div>
+                    <h3 className="text-sm font-sans font-medium text-foreground">{step.t}</h3>
+                    <p className="text-xs text-muted-foreground mt-2 font-sans leading-relaxed max-w-md">{step.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -271,6 +332,97 @@ export function ServiceCityContent({
               Ver mas opiniones <ChevronDown className="w-3.5 h-3.5" />
             </button>
           )}
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+        <div className="text-center mb-16">
+          <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Precios transparentes</p>
+          <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground">
+            {`Precios de ${serviceName.singular} en ${cityName}`}
+          </h2>
+          <p className="text-sm text-muted-foreground mt-4 max-w-xl mx-auto font-sans">Sin sorpresas. Precio cerrado que incluye equipo, instalación y garantía.</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Plan Básico */}
+          <div className="border border-border p-8 flex flex-col">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans">Básico</p>
+            <h3 className="font-serif text-3xl text-foreground mt-2">499€</h3>
+            <p className="text-xs text-muted-foreground font-sans mt-1">Equipo 420€ + instalación 79€</p>
+            <ul className="mt-8 space-y-3 flex-1">
+              {["Equipo 5 etapas", "Grifo estándar incluido", "Depósito 8L", "Instalación profesional", "Garantía 2 años", "Soporte WhatsApp"].map(item => (
+                <li key={item} className="flex items-start gap-2 text-xs font-sans text-foreground">
+                  <CheckCircle className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center justify-center gap-2 border border-foreground text-foreground px-6 py-3 text-xs font-sans font-medium hover:bg-foreground hover:text-background transition-colors">
+              Solicitar presupuesto
+            </a>
+          </div>
+
+          {/* Plan Recomendado */}
+          <div className="border-2 border-foreground p-8 flex flex-col relative">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-foreground text-background text-[10px] tracking-wider uppercase px-4 py-1 font-sans">Más popular</span>
+            <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans">Premium</p>
+            <h3 className="font-serif text-3xl text-foreground mt-2">639€</h3>
+            <p className="text-xs text-muted-foreground font-sans mt-1">Equipo 540€ + instalación 99€</p>
+            <ul className="mt-8 space-y-3 flex-1">
+              {["Equipo 6 etapas con bomba", "Grifo de diseño", "Depósito 12L", "Remineralización", "Instalación profesional", "Garantía 2 años", "1ª revisión gratis"].map(item => (
+                <li key={item} className="flex items-start gap-2 text-xs font-sans text-foreground">
+                  <CheckCircle className="w-3.5 h-3.5 text-foreground flex-shrink-0 mt-0.5" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center justify-center gap-2 bg-foreground text-background px-6 py-3 text-xs font-sans font-medium hover:opacity-90 transition-opacity">
+              <MessageCircle className="w-3.5 h-3.5" /> Solicitar presupuesto
+            </a>
+          </div>
+
+          {/* Plan Pro */}
+          <div className="border border-border p-8 flex flex-col">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans">Pro</p>
+            <h3 className="font-serif text-3xl text-foreground mt-2">849€</h3>
+            <p className="text-xs text-muted-foreground font-sans mt-1">Equipo 720€ + instalación 129€</p>
+            <ul className="mt-8 space-y-3 flex-1">
+              {["Equipo 7 etapas profesional", "Grifo premium", "Depósito 18L", "Bomba silenciosa", "UV esterilización", "Remineralización alcalina", "Garantía 2 años", "Mantenimiento 1 año incluido"].map(item => (
+                <li key={item} className="flex items-start gap-2 text-xs font-sans text-foreground">
+                  <CheckCircle className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0 mt-0.5" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center justify-center gap-2 border border-foreground text-foreground px-6 py-3 text-xs font-sans font-medium hover:bg-foreground hover:text-background transition-colors">
+              Solicitar presupuesto
+            </a>
+          </div>
+        </div>
+
+        {/* Mantenimiento / Suscripción */}
+        <div className="mt-16 border border-border p-8">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans mb-2">Mantenimiento anual</p>
+              <h3 className="font-serif text-2xl text-foreground">Plan de filtros</h3>
+              <p className="text-xs text-muted-foreground font-sans mt-3 leading-relaxed">
+                Suscripción anual que incluye cambio de todos los filtros (sedimentos, carbón activo, post-filtro), 
+                revisión completa del equipo, desinfección del depósito y verificación de la membrana. Visita de técnico incluida.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <div>
+                <p className="font-serif text-4xl text-foreground">79€<span className="text-lg text-muted-foreground">/año</span></p>
+                <p className="text-[10px] text-muted-foreground font-sans mt-1">Filtros + visita técnico incluidos</p>
+              </div>
+              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 text-xs font-sans font-medium hover:opacity-90 transition-opacity whitespace-nowrap">
+                Contratar plan
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -382,14 +534,34 @@ export function ServiceCityContent({
       <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "LocalBusiness",
         name: `osmosis esp - ${pageTitle}`,
-        description: `Instalacion de ${serviceName.singular} en ${cityName}. Presupuestos gratis.`,
-        url: `https://osmosisespaña.com/${serviceId}/${citySlug}/`,
+        description: `Instalacion de ${serviceName.singular} en ${cityName}. Desde 299€ instalado. Presupuestos gratis.`,
+        url: `https://osmosisesp.com/${serviceId}/${citySlug}/`,
         address: { "@type": "PostalAddress", addressLocality: cityName, addressRegion: "España", addressCountry: "ES" },
         aggregateRating: { "@type": "AggregateRating", ratingValue: avgRating, reviewCount: reviews.length, bestRating: "5", worstRating: "1" },
+        priceRange: "€€",
       })}} />
       <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "FAQPage",
         mainEntity: faqs.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+      })}} />
+      <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "Product",
+        name: `${serviceName.title} en ${cityName}`,
+        description: `Instalación profesional de ${serviceName.singular} en ${cityName}. Incluye equipo, instalación y garantía.`,
+        brand: { "@type": "Brand", name: "osmosis esp" },
+        offers: [
+          { "@type": "Offer", name: "Básico", price: "499", priceCurrency: "EUR", availability: "https://schema.org/InStock", priceValidUntil: "2026-12-31" },
+          { "@type": "Offer", name: "Premium", price: "639", priceCurrency: "EUR", availability: "https://schema.org/InStock", priceValidUntil: "2026-12-31" },
+          { "@type": "Offer", name: "Pro", price: "849", priceCurrency: "EUR", availability: "https://schema.org/InStock", priceValidUntil: "2026-12-31" },
+        ],
+        aggregateRating: { "@type": "AggregateRating", ratingValue: avgRating, reviewCount: reviews.length },
+      })}} />
+      <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "Service",
+        name: `Mantenimiento ${serviceName.singular} en ${cityName}`,
+        provider: { "@type": "Organization", name: "osmosis esp" },
+        areaServed: cityName,
+        offers: { "@type": "Offer", price: "79", priceCurrency: "EUR", description: "Mantenimiento anual con cambio de filtros y visita técnico incluido" },
       })}} />
     </>
   )
