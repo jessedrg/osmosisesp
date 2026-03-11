@@ -4,8 +4,8 @@ const WA_URL = "https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20instala
 
 export function HomeHero() {
   return (
-    <section className="bg-foreground text-background">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+    <section className="bg-foreground text-background min-h-screen flex items-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Product Images */}
           <div className="order-2 lg:order-1">
