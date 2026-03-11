@@ -27,6 +27,10 @@ export default function ProductosPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
+                {/* Discount badge */}
+                <div className="inline-flex items-center gap-2 bg-red-500 text-white px-4 py-2 text-xs font-sans font-bold mb-6">
+                  🔥 OFERTA LIMITADA -30%
+                </div>
                 <p className="text-[10px] tracking-[0.4em] uppercase text-background/40 mb-4 font-sans">Nuestro equipo</p>
                 <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl tracking-tight text-background leading-[0.95]">
                   Sistema de Ósmosis Inversa Compacto
@@ -36,9 +40,10 @@ export default function ProductosPage() {
                 </p>
                 <div className="mt-8 flex items-end gap-4">
                   <span className="font-serif text-5xl sm:text-6xl text-background">508€</span>
-                  <span className="text-sm text-background/50 font-sans mb-2">IVA incluido</span>
+                  <span className="text-xl text-background/40 line-through font-sans mb-2">725€</span>
+                  <span className="text-sm text-background/50 font-sans mb-2">IVA incl.</span>
                 </div>
-                <p className="text-xs text-background/40 font-sans mt-2">420€ + 21% IVA · Instalación 79€ aparte</p>
+                <p className="text-xs text-background/40 font-sans mt-2">Instalación 79€ aparte · Garantía 2 años</p>
                 <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
                   <MessageCircle className="w-4 h-4" /> Pedir presupuesto gratis
                 </a>

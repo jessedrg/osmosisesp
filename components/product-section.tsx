@@ -41,6 +41,10 @@ export function ProductSection() {
 
         {/* Product Info + Price */}
         <div>
+          {/* Discount badge */}
+          <div className="inline-flex items-center gap-2 bg-red-500 text-white px-4 py-2 text-xs font-sans font-bold mb-4">
+            🔥 OFERTA LIMITADA -30%
+          </div>
           <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Nuestro equipo</p>
           <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground leading-[1.1]">
             Sistema de Ósmosis Inversa Compacto
@@ -53,9 +57,9 @@ export function ProductSection() {
           <div className="mt-8 border-2 border-foreground p-6 sm:p-8">
             <div className="flex items-end gap-3">
               <span className="font-serif text-4xl sm:text-5xl text-foreground">508€</span>
-              <span className="text-sm text-muted-foreground font-sans mb-1">IVA incluido</span>
+              <span className="text-xl text-muted-foreground/50 line-through font-sans mb-1">725€</span>
+              <span className="text-sm text-muted-foreground font-sans mb-1">IVA incl.</span>
             </div>
-            <p className="text-xs text-muted-foreground font-sans mt-2">420€ + 21% IVA</p>
             
             <ul className="mt-6 space-y-3">
               {[
