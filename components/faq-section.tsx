@@ -5,28 +5,28 @@ import { ChevronDown } from "lucide-react"
 
 const faqs = [
   {
-    q: "Cuanto cuesta instalar un sistema de osmosis?",
-    a: "El precio depende del modelo y las caracteristicas de tu vivienda. Un equipo de osmosis domestica basico cuesta entre 300-600€ instalado. Equipos premium con bomba y remineralizacion entre 600-1.200€. osmosis esp te presenta presupuestos detallados sin compromiso.",
+    q: "¿Cuánto cuesta el sistema de ósmosis inversa?",
+    a: "Nuestro equipo de ósmosis inversa compacto cuesta 508€ (IVA incluido). Precio original 725€, ahora con 30% de descuento. La instalación profesional es de 79€ aparte. Incluye equipo de 5 etapas con bomba, panel LED, grifo de diseño y garantía de 2 años.",
   },
   {
-    q: "Cuanto tiempo tarda la instalacion?",
-    a: "La instalacion de un equipo de osmosis domestica tarda entre 2-3 horas. No requiere obras ni permisos. El tecnico conecta el equipo bajo el fregadero y te explica el funcionamiento. Agua pura desde el primer momento.",
+    q: "¿Cuánto tiempo tarda la instalación?",
+    a: "La instalación tarda entre 2-3 horas. Un técnico certificado instala el equipo bajo tu fregadero, conecta el grifo independiente y te explica el funcionamiento. Sin obras, sin ruido, sin complicaciones.",
   },
   {
-    q: "El servicio de osmosis esp tiene algun coste?",
-    a: "No. El presupuesto y asesoramiento es 100% gratuito. Solo pagas si decides instalar. Sin comisiones, sin costes ocultos.",
+    q: "¿El presupuesto tiene algún coste?",
+    a: "No. El asesoramiento por WhatsApp es 100% gratuito. Te explicamos todo sin compromiso. Solo pagas si decides comprar el equipo.",
   },
   {
-    q: "Cada cuanto hay que cambiar los filtros?",
-    a: "Los filtros de sedimentos y carbon se cambian cada 6-12 meses. La membrana de osmosis dura 2-4 años con buen mantenimiento. osmosis esp ofrece servicio de mantenimiento anual que incluye todos los filtros.",
+    q: "¿Cada cuánto hay que cambiar los filtros?",
+    a: "Los filtros se cambian una vez al año. Ofrecemos servicio de mantenimiento anual por 79€ que incluye cambio de todos los filtros, revisión del equipo y visita del técnico.",
   },
   {
-    q: "El agua de osmosis es segura para beber?",
-    a: "Si, el agua de osmosis es perfectamente segura. Elimina contaminantes pero mantiene los minerales esenciales. Muchos equipos incluyen remineralizacion para un sabor optimo.",
+    q: "¿El agua de ósmosis es segura para beber?",
+    a: "Sí, el agua de ósmosis es perfectamente segura y de la mejor calidad. Elimina el 99% de contaminantes: cal, cloro, metales pesados, nitratos y microplásticos. Ideal para beber, cocinar y preparar café o té.",
   },
   {
-    q: "Trabajais en toda España?",
-    a: "Si. Tenemos tecnicos certificados en mas de 300 municipios de España. Barcelona, Tarragona, Lleida y Girona.",
+    q: "¿Qué garantía tiene el equipo?",
+    a: "El equipo tiene 2 años de garantía completa. Además, tienes soporte por WhatsApp para cualquier duda. Si hay algún problema, un técnico te visita sin coste adicional durante el periodo de garantía.",
   },
 ]
 

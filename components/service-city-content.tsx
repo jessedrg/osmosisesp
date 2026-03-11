@@ -61,33 +61,13 @@ function generateReviews(cityName: string, serviceId: string) {
 
 function generateFAQs(cityName: string, serviceName: { title: string; singular: string }, serviceId: string) {
   const faqs = [
-    { q: `Cuanto cuesta instalar ${serviceName.singular} en ${cityName}?`, a: `El precio de ${serviceName.singular} en ${cityName} depende del modelo y las caracteristicas de tu vivienda. Un equipo de osmosis domestica basico cuesta entre 300-600€ instalado. Equipos premium con bomba y remineralizacion entre 600-1.200€. osmosis esp te presenta presupuestos detallados sin compromiso.` },
-    { q: `El servicio de osmosis esp en ${cityName} tiene algun coste?`, a: `El presupuesto y asesoramiento de osmosis esp es completamente gratuito. Solo pagas si decides instalar. Sin comisiones ni costes ocultos. Escribenos por WhatsApp sin compromiso.` },
-    { q: `Cuanto tiempo tarda la instalacion en ${cityName}?`, a: `La instalacion de un equipo de osmosis domestica tarda entre 2-3 horas. No requiere obras ni permisos. El tecnico conecta el equipo bajo el fregadero y te explica el funcionamiento. Agua pura desde el primer momento.` },
+    { q: `¿Cuánto cuesta instalar ósmosis inversa en ${cityName}?`, a: `Nuestro equipo de ósmosis inversa compacto cuesta 508€ (IVA incluido). Precio original 725€, ahora con 30% de descuento. La instalación profesional en ${cityName} es de 79€ aparte. Incluye equipo de 5 etapas con bomba, panel LED, grifo de diseño y garantía de 2 años.` },
+    { q: `¿El asesoramiento en ${cityName} tiene algún coste?`, a: `No. El asesoramiento por WhatsApp es 100% gratuito. Te explicamos todo sin compromiso. Solo pagas si decides comprar el equipo.` },
+    { q: `¿Cuánto tiempo tarda la instalación en ${cityName}?`, a: `La instalación tarda entre 2-3 horas. Un técnico certificado instala el equipo bajo tu fregadero, conecta el grifo independiente y te explica el funcionamiento. Sin obras, sin ruido, sin complicaciones.` },
+    { q: "¿Necesito espacio especial para la ósmosis?", a: `Nuestro equipo es compacto y cabe bajo cualquier fregadero estándar. Necesita aproximadamente 35x35cm de espacio. El técnico verifica todo antes de la instalación.` },
+    { q: "¿Cada cuánto hay que cambiar los filtros?", a: "Los filtros se cambian una vez al año. Ofrecemos servicio de mantenimiento anual por 79€ que incluye cambio de todos los filtros, revisión del equipo y visita del técnico." },
+    { q: "¿El agua de ósmosis es segura para beber?", a: "Sí, el agua de ósmosis es perfectamente segura y de la mejor calidad. Elimina el 99% de contaminantes: cal, cloro, metales pesados, nitratos y microplásticos. Ideal para beber, cocinar y preparar café o té." },
   ]
-
-  if (serviceId.includes("osmosis")) {
-    faqs.push(
-      { q: "Necesito espacio especial para la osmosis?", a: `Un equipo de osmosis domestica necesita aproximadamente 40x40cm bajo el fregadero. El tecnico verifica el espacio en la visita previa. Si tienes poco espacio, hay modelos compactos disponibles.` },
-      { q: "Cada cuanto hay que cambiar los filtros?", a: "Los filtros de sedimentos y carbon se cambian cada 6-12 meses. La membrana de osmosis dura 2-4 años con buen mantenimiento. osmosis esp ofrece servicio de mantenimiento anual que incluye todos los filtros." },
-      { q: "El agua de osmosis es segura para beber?", a: "Si, el agua de osmosis es perfectamente segura. Elimina contaminantes pero mantiene los minerales esenciales. Muchos equipos incluyen remineralizacion para un sabor optimo." },
-    )
-  } else if (serviceId.includes("descalcificador")) {
-    faqs.push(
-      { q: "Donde se instala el descalcificador?", a: `El descalcificador se instala en la entrada general de agua de la vivienda. Necesita toma de corriente y desague cerca. El tecnico de ${cityName} evalua la mejor ubicacion en tu caso.` },
-      { q: "Cada cuanto hay que echar sal?", a: "Depende del consumo y la dureza del agua. Normalmente cada 1-2 meses. El equipo avisa cuando necesita sal. Es sal especial para descalcificadores, disponible en cualquier ferreteria." },
-    )
-  } else if (serviceId.includes("mantenimiento")) {
-    faqs.push(
-      { q: "Que incluye el mantenimiento anual?", a: `El mantenimiento incluye cambio de filtros de sedimentos, carbon activo y post-filtro. Tambien limpieza y desinfeccion del deposito, verificacion de la membrana y comprobacion de fugas. Todo en una visita de 45-60 minutos.` },
-      { q: "Puedo hacer el mantenimiento yo mismo?", a: "Si tienes conocimientos basicos, puedes cambiar los filtros tu mismo. Pero recomendamos al menos una revision profesional anual para verificar el estado de la membrana y detectar posibles fugas." },
-    )
-  } else {
-    faqs.push(
-      { q: `Reparais todas las marcas en ${cityName}?`, a: `Si, nuestros tecnicos en ${cityName} reparan equipos de todas las marcas: ATL, Hidrosalud, Culligan, Aquasana, y muchas mas. Diagnostico rapido y piezas originales o compatibles de calidad.` },
-      { q: "Cuanto tarda una reparacion?", a: "La mayoria de reparaciones se resuelven en la primera visita, en 1-2 horas. Si necesitamos pedir alguna pieza especifica, volvemos en 24-48 horas." },
-    )
-  }
   return faqs
 }
 
@@ -501,7 +481,28 @@ export function ServiceCityContent({
         description: `Sistema de ósmosis inversa 5 etapas con panel LED, filtros click & twist, grifo incluido. Instalación profesional en ${cityName}. Garantía 2 años.`,
         brand: { "@type": "Brand", name: "osmosis esp" },
         image: ["https://osmosisesp.com/He23d99f93a3040acb8720554edb60e11k.jpg", "https://osmosisesp.com/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg", "https://osmosisesp.com/He931e67f2b5b4d5999ed74d013fdd560w.jpg"],
-        offers: { "@type": "Offer", price: "508", priceCurrency: "EUR", availability: "https://schema.org/InStock", priceValidUntil: "2026-12-31", itemCondition: "https://schema.org/NewCondition" },
+        offers: {
+          "@type": "Offer",
+          price: "508",
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          priceValidUntil: "2026-12-31",
+          itemCondition: "https://schema.org/NewCondition",
+          shippingDetails: {
+            "@type": "OfferShippingDetails",
+            shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "EUR" },
+            shippingDestination: { "@type": "DefinedRegion", addressCountry: "ES" },
+            deliveryTime: { "@type": "ShippingDeliveryTime", handlingTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 3, unitCode: "DAY" }, transitTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 5, unitCode: "DAY" } }
+          },
+          hasMerchantReturnPolicy: {
+            "@type": "MerchantReturnPolicy",
+            applicableCountry: "ES",
+            returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+            merchantReturnDays: 14,
+            returnMethod: "https://schema.org/ReturnByMail",
+            returnFees: "https://schema.org/FreeReturn"
+          }
+        },
         aggregateRating: { "@type": "AggregateRating", ratingValue: avgRating, reviewCount: reviews.length },
       })}} />
       <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
