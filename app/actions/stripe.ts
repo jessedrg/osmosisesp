@@ -30,8 +30,11 @@ export async function startCheckoutSession(productId: string) {
       },
     ],
     mode: 'payment',
-    // Enable all available payment methods including Apple Pay and Google Pay
-    payment_method_types: ['card', 'link'],
+    // Let Stripe automatically show the best payment methods for the customer
+    // This enables Apple Pay, Google Pay, Link, and cards automatically
+    automatic_payment_methods: {
+      enabled: true,
+    },
     // Billing address collection for better fraud prevention
     billing_address_collection: 'auto',
     // Shipping address collection - only Spain
