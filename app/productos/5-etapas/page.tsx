@@ -37,7 +37,7 @@ export default function CincoEtapasPage() {
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               {/* Product Images */}
-              <div className="order-2 lg:order-1 space-y-4">
+              <div className="order-1 lg:order-1 space-y-4">
                 <div className="aspect-square bg-secondary overflow-hidden relative">
                   <span className="absolute top-4 left-4 z-10 text-[10px] tracking-[0.2em] uppercase bg-foreground text-background px-3 py-1.5">
                     Premium
@@ -52,7 +52,7 @@ export default function CincoEtapasPage() {
               </div>
 
               {/* Product Info */}
-              <div className="order-1 lg:order-2 lg:sticky lg:top-32">
+              <div className="order-2 lg:order-2 lg:sticky lg:top-32">
                 <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
                   Maxima Purificacion
                 </span>

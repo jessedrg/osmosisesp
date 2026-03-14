@@ -56,7 +56,7 @@ export default function CompactoPage() {
         <section className="relative pt-8 pb-20 lg:pt-12 lg:pb-32">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-              <div className="order-2 lg:order-1 space-y-4">
+              <div className="order-1 lg:order-1 space-y-4">
                 <div className="aspect-square bg-secondary overflow-hidden relative">
                   <span className="absolute top-4 left-4 z-10 text-[10px] tracking-[0.2em] uppercase bg-foreground text-background px-3 py-1.5">Popular</span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -74,7 +74,7 @@ export default function CompactoPage() {
                 </div>
               </div>
 
-              <div className="order-1 lg:order-2 lg:sticky lg:top-32">
+              <div className="order-2 lg:order-2 lg:sticky lg:top-32">
                 <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">El Mas Vendido · 500GPD</span>
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight text-foreground leading-[0.95]">
                   Sistema<br /><span className="italic font-light text-muted-foreground">Compacto</span>

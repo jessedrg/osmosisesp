@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Inter, Cormorant_Garamond } from "next/font/google"
 import "./globals.css"
+import WhatsAppButton from "@/components/whatsapp-button"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" })
 const cormorant = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-serif", weight: ["300", "400", "500", "600", "700"], display: "swap" })
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className={`${inter.variable} ${cormorant.variable}`}>
       <body className="overflow-x-hidden">
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   )
