@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import ProductPurchaseCard from "@/components/product-purchase-card"
-import { Check, Droplets, Shield, Wrench, Sparkles, ArrowRight, ArrowLeft } from "lucide-react"
+import { Check, Droplets, Shield, Wrench, Sparkles, ArrowRight, ArrowLeft, ShoppingBag } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Sistema 5 Etapas Premium | OSMOSIS ESP",
