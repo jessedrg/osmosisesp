@@ -7,11 +7,11 @@ import { Check, Droplets, Shield, Wrench, Sparkles, ArrowRight, ArrowLeft, Shopp
 
 export const metadata: Metadata = {
   title: "Sistema 5 Etapas Premium | OSMOSIS ESP",
-  description: "Sistema profesional de osmosis inversa de 5 etapas con grifo premium. Maxima purificacion para hogares exigentes. Desde 429€. Envio gratuito.",
+  description: "Sistema profesional de osmosis inversa de 5 etapas con grifo premium. Maxima purificacion para hogares exigentes. Solo 270€ con envio GRATIS.",
   keywords: "osmosis inversa 5 etapas, sistema osmosis profesional, purificador agua premium, osmosis maxima filtracion, agua ultrapura",
   openGraph: {
     title: "Sistema 5 Etapas Premium | OSMOSIS ESP",
-    description: "Sistema profesional de 5 etapas. Desde 429€. Maxima purificacion.",
+    description: "Sistema profesional de 5 etapas. Solo 270€ con envio gratis. Maxima purificacion.",
     type: "website",
   },
 }
@@ -69,16 +69,16 @@ export default function CincoEtapasPage() {
                 <div className="mt-10">
                   <ProductPurchaseCard
                     category="5etapas"
-                    soloPrice={429}
-                    instalacionPrice={508}
-                    originalPrice={599}
+                    soloPrice={270}
+                    instalacionPrice={349}
+                    originalPrice={429}
                     productName="Sistema 5 Etapas Premium"
-                    tag="Maxima Purificacion"
+                    tag="Oferta Especial"
                     features={[
                       "5 etapas de filtracion profesional",
                       "Grifo premium cromado incluido",
                       "Deposito presurizado de 12L",
-                      "Maxima pureza 99.9%",
+                      "Envio GRATIS incluido",
                       "2 años de garantia completa",
                     ]}
                   />

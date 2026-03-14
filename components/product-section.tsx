@@ -10,16 +10,18 @@ const products = [
     name: "Sistema Compacto",
     subtitle: "El mas vendido",
     description: "Sistema con pantalla LED tactil. Perfecto para espacios reducidos.",
-    price: "508",
+    price: "300",
+    originalPrice: "508",
     image: "/He23d99f93a3040acb8720554edb60e11k.jpg",
     href: "/productos/compacto",
   },
   {
     id: "5-etapas",
     name: "Sistema 5 Etapas",
-    subtitle: "Maxima purificacion",
+    subtitle: "Oferta especial",
     description: "Sistema profesional con grifo premium. Filtracion avanzada.",
-    price: "429",
+    price: "270",
+    originalPrice: "429",
     image: "/osmosis-casa.jpg",
     href: "/productos/5-etapas",
   },
@@ -29,6 +31,7 @@ const products = [
     subtitle: "Agua perfecta para peces",
     description: "Sistema compacto de 3 etapas. Elimina cloro y metales.",
     price: "189",
+    originalPrice: "269",
     image: "/osmosis-acuario.jpg",
     href: "/productos/acuarios",
   },
@@ -80,7 +83,10 @@ export function ProductSection() {
                   {product.description}
                 </p>
                 <div className="flex items-center justify-center gap-3 mt-6">
-                  <span className="font-serif text-xl text-accent">Desde {product.price}€</span>
+                  <span className="font-serif text-xl text-accent">{product.price}€</span>
+                  {product.originalPrice && (
+                    <span className="text-sm text-muted-foreground line-through">{product.originalPrice}€</span>
+                  )}
                   <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-2 transition-transform duration-300" />
                 </div>
               </div>

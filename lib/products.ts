@@ -13,27 +13,27 @@ export const PRODUCTS: Product[] = [
   {
     id: 'compacto-solo',
     name: 'Sistema Compacto 500GPD - Solo Equipo',
-    description: 'Sistema de ósmosis inversa compacto con pantalla LED táctil, 3 etapas de filtración y tecnología sin tanque.',
-    priceInCents: 50800, // 508€
+    description: 'Sistema de ósmosis inversa compacto con pantalla LED táctil, 3 etapas de filtración y tecnología sin tanque. Envio gratis.',
+    priceInCents: 30000, // 300€
   },
   {
     id: 'compacto-instalacion',
     name: 'Sistema Compacto 500GPD - Con Instalación',
     description: 'Sistema de ósmosis inversa compacto con pantalla LED táctil, 3 etapas de filtración, tecnología sin tanque e instalación profesional incluida.',
-    priceInCents: 58700, // 587€
+    priceInCents: 37900, // 379€
   },
   // Sistema 5 Etapas
   {
     id: '5etapas-solo',
     name: 'Sistema 5 Etapas Premium - Solo Equipo',
-    description: 'Sistema de ósmosis inversa de 5 etapas con grifo cromado premium incluido. Máxima purificación.',
-    priceInCents: 42900, // 429€
+    description: 'Sistema de ósmosis inversa de 5 etapas con grifo cromado premium incluido. Máxima purificación. Envio gratis.',
+    priceInCents: 27000, // 270€
   },
   {
     id: '5etapas-instalacion',
     name: 'Sistema 5 Etapas Premium - Con Instalación',
     description: 'Sistema de ósmosis inversa de 5 etapas con grifo cromado premium e instalación profesional incluida.',
-    priceInCents: 50800, // 508€
+    priceInCents: 34900, // 349€
   },
   // Sistema Acuarios
   {
