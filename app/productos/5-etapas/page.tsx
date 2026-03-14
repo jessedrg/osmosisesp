@@ -72,6 +72,8 @@ export default function CincoEtapasPage() {
                     soloPrice={429}
                     instalacionPrice={508}
                     originalPrice={599}
+                    productName="Sistema 5 Etapas Premium"
+                    tag="Maxima Purificacion"
                     features={[
                       "5 etapas de filtracion profesional",
                       "Grifo premium cromado incluido",
