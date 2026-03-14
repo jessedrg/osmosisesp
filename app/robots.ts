@@ -6,6 +6,20 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: [
+          // Old/deprecated pages
+          "/old/",
+          "/legacy/",
+          "/temp/",
+          "/test/",
+          "/draft/",
+          // Admin/internal
+          "/admin/",
+          "/api/",
+          "/_next/",
+          // Search/filter pages that may create duplicate content
+          "/*?*",
+        ],
       },
     ],
     sitemap: [
