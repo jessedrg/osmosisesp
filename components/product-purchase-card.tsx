@@ -43,8 +43,17 @@ export default function ProductPurchaseCard({
   )
 
   const handleCheckoutComplete = useCallback(() => {
+    // Google Ads Conversion Tracking
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-16741652529/YiAVCI7M1NkbELGwha8-',
+        'value': currentPrice,
+        'currency': 'EUR',
+        'transaction_id': Date.now().toString(),
+      })
+    }
     setCheckoutComplete(true)
-  }, [])
+  }, [currentPrice])
 
   // Success state after payment
   if (checkoutComplete) {
