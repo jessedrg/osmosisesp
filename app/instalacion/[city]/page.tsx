@@ -10,11 +10,8 @@ type Props = {
   params: Promise<{ city: string }>
 }
 
-export async function generateStaticParams() {
-  return CITIES.map((city) => ({
-    city: city,
-  }))
-}
+export const dynamicParams = true
+export const revalidate = 86400 // revalidate every 24h
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city } = await params
