@@ -35,6 +35,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${inter.variable} ${cormorant.variable}`}>
+      <head>
+        {/* Google Ads Conversion Tracking */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16741652529"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16741652529');
+            `,
+          }}
+        />
+      </head>
       <body className="overflow-x-hidden">
         {children}
         <WhatsAppButton />
