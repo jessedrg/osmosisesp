@@ -8125,7 +8125,7 @@ export const CITIES: readonly string[] = [
   "zurgena",
 ] as const;
 
-export type City = (typeof CITIES)[number]
+export type CitySlug = (typeof CITIES)[number]
 
 // URLs estaticas principales
 export const STATIC_URLS = [
@@ -8136,12 +8136,20 @@ export const STATIC_URLS = [
   "/productos/acuarios",
 ] as const
 
+// Helper para convertir slug a nombre legible
+function slugToName(slug: string): string {
+  return slug
+    .split("-")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ")
+}
+
 // Generar todas las URLs dinamicas (instalacion + ciudad)
 export function generateAllUrls(): string[] {
   const urls: string[] = [...STATIC_URLS]
 
   for (const city of CITIES) {
-    urls.push(`/instalacion/${city.slug}`)
+    urls.push(`/instalacion/${city}`)
   }
 
   return urls
@@ -8149,26 +8157,44 @@ export function generateAllUrls(): string[] {
 
 // Helper para obtener metadata SEO de una pagina de instalacion
 export function getInstallationCityMeta(citySlug: string) {
-  const city = CITIES.find(c => c.slug === citySlug)
+  const cityExists = CITIES.includes(citySlug as CitySlug)
 
-  if (!city) return null
+  if (!cityExists) return null
+
+  const cityName = slugToName(citySlug)
 
   return {
-    city,
-    title: `Instalacion de Osmosis Inversa en ${city.name} | OSMOSIS ESP`,
-    description: `Servicio profesional de instalacion de sistemas de osmosis inversa en ${city.name}, ${city.province}. Instaladores certificados, 2 anos de garantia. Solicita tu cita.`,
-    h1: `Instalacion de Osmosis en ${city.name}`,
+    slug: citySlug,
+    name: cityName,
+    title: `Instalacion de Osmosis Inversa en ${cityName} | OSMOSIS ESP`,
+    description: `Servicio profesional de instalacion de sistemas de osmosis inversa en ${cityName}. Instaladores certificados, 2 anos de garantia. Solicita tu cita.`,
+    h1: `Instalacion de Osmosis en ${cityName}`,
     keywords: [
-      `instalacion osmosis ${city.name}`,
-      `osmosis inversa ${city.name}`,
-      `purificador agua ${city.name}`,
-      `instalador osmosis ${city.province}`,
-      `osmosis domestica ${city.name}`,
+      `instalacion osmosis ${cityName}`,
+      `osmosis inversa ${cityName}`,
+      `purificador agua ${cityName}`,
+      `instalador osmosis ${cityName}`,
+      `osmosis domestica ${cityName}`,
     ],
   }
 }
 
-// Obtener ciudad por slug
-export function getCityBySlug(slug: string) {
-  return CITIES.find(c => c.slug === slug) || null
+// Verificar si una ciudad existe
+export function isCityValid(slug: string): boolean {
+  return CITIES.includes(slug as CitySlug)
+}
+
+// Obtener nombre de ciudad por slug
+export function getCityName(slug: string): string | null {
+  if (!isCityValid(slug)) return null
+  return slugToName(slug)
+}
+
+// Obtener ciudad por slug (devuelve objeto con name para compatibilidad)
+export function getCityBySlug(slug: string): { slug: string; name: string } | null {
+  if (!isCityValid(slug)) return null
+  return {
+    slug,
+    name: slugToName(slug),
+  }
 }

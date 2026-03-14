@@ -3,7 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { CITIES, getInstallationCityMeta, getCityBySlug } from "@/lib/sitemap-data"
+import { CITIES, getInstallationCityMeta, isCityValid, getCityName } from "@/lib/sitemap-data"
 import { Check, MapPin, Clock, Shield, Phone, ArrowRight, Droplets, Star } from "lucide-react"
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 
 export async function generateStaticParams() {
   return CITIES.map((city) => ({
-    city: city.slug,
+    city: city,
   }))
 }
 
@@ -38,17 +38,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function InstallationCityPage({ params }: Props) {
   const { city: citySlug } = await params
-  const city = getCityBySlug(citySlug)
   const meta = getInstallationCityMeta(citySlug)
+  const cityName = getCityName(citySlug)
   
-  if (!city || !meta) {
+  if (!meta || !cityName) {
     notFound()
   }
 
   const benefits = [
     { icon: Clock, title: "Instalacion en 2h", desc: "Nuestros tecnicos completan la instalacion en menos de 2 horas" },
     { icon: Shield, title: "2 Anos Garantia", desc: "Garantia completa en equipo e instalacion" },
-    { icon: MapPin, title: `Servicio en ${city.name}`, desc: `Cobertura total en ${city.name} y alrededores` },
+    { icon: MapPin, title: `Servicio en ${cityName}`, desc: `Cobertura total en ${cityName} y alrededores` },
   ]
 
   const steps = [
@@ -60,16 +60,16 @@ export default async function InstallationCityPage({ params }: Props) {
 
   const faqs = [
     {
-      q: `Cuanto cuesta la instalacion de osmosis en ${city.name}?`,
-      a: `El precio de instalacion profesional en ${city.name} es de 79€, incluido en nuestros packs con instalacion. Si compras solo el equipo, puedes anadir la instalacion posteriormente.`,
+      q: `Cuanto cuesta la instalacion de osmosis en ${cityName}?`,
+      a: `El precio de instalacion profesional en ${cityName} es de 79€, incluido en nuestros packs con instalacion. Si compras solo el equipo, puedes anadir la instalacion posteriormente.`,
     },
     {
       q: "Cuanto tiempo tarda la instalacion?",
       a: "La instalacion completa tarda entre 1.5 y 2 horas. Nuestros tecnicos se encargan de todo: conexion al agua, montaje del grifo y configuracion del equipo.",
     },
     {
-      q: `Que zonas cubris en ${city.province}?`,
-      a: `Cubrimos toda la provincia de ${city.province}, incluyendo ${city.name} y localidades cercanas. Contactanos para confirmar disponibilidad en tu zona.`,
+      q: `Que zonas cubris cerca de ${cityName}?`,
+      a: `Cubrimos ${cityName} y todas las localidades cercanas. Contactanos para confirmar disponibilidad en tu zona.`,
     },
     {
       q: "Que incluye el servicio de instalacion?",
@@ -93,12 +93,12 @@ export default async function InstallationCityPage({ params }: Props) {
                 {meta.h1}
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed mb-8 max-w-lg">
-                Instaladores certificados en {city.name}, {city.province}. Servicio rapido, limpio y con garantia de 2 anos.
+                Instaladores certificados en {cityName}. Servicio rapido, limpio y con garantia de 2 anos.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href={`https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20la%20instalacion%20de%20osmosis%20en%20${encodeURIComponent(city.name)}`}
+                  href={`https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20la%20instalacion%20de%20osmosis%20en%20${encodeURIComponent(cityName)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 bg-foreground text-background px-8 py-4 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-foreground/90 transition-all duration-300"
@@ -121,7 +121,7 @@ export default async function InstallationCityPage({ params }: Props) {
                 <div className="text-center p-8">
                   <Droplets className="w-16 h-16 mx-auto mb-6 text-foreground/20" />
                   <p className="font-serif text-2xl mb-2">Instalacion Profesional</p>
-                  <p className="text-muted-foreground text-sm">{city.name}, {city.province}</p>
+                  <p className="text-muted-foreground text-sm">{cityName}</p>
                 </div>
               </div>
               <div className="absolute -bottom-4 -right-4 bg-foreground text-background p-6">
@@ -257,13 +257,13 @@ export default async function InstallationCityPage({ params }: Props) {
       <section className="py-20 lg:py-28 bg-secondary">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl md:text-4xl font-light mb-6">
-            Instalacion de Osmosis en {city.name}
+            Instalacion de Osmosis en {cityName}
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Contactanos hoy y disfruta de agua pura en tu hogar. Servicio profesional con garantia de 2 anos.
           </p>
           <a
-            href={`https://wa.me/34711267223?text=Hola%2C%20quiero%20instalar%20un%20sistema%20de%20osmosis%20en%20${encodeURIComponent(city.name)}`}
+            href={`https://wa.me/34711267223?text=Hola%2C%20quiero%20instalar%20un%20sistema%20de%20osmosis%20en%20${encodeURIComponent(cityName)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 bg-foreground text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-foreground/90 transition-all duration-300"

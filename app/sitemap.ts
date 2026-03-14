@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   // URLs dinamicas de instalacion por ciudad
   const cityUrls = CITIES.map((city) => ({
-    url: `${baseUrl}/instalacion/${city.slug}`,
+    url: `${baseUrl}/instalacion/${city}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
