@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Check, Droplets, Shield, Fish, Leaf, ShoppingBag, ArrowRight, ArrowLeft } from "lucide-react"
+import ProductSelector from "@/components/product-selector"
+import { Check, Droplets, Shield, Fish, Leaf, ArrowRight, ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Osmosis Inversa para Acuarios | OSMOSIS ESP",
@@ -75,59 +76,36 @@ export default function AcuariosPage() {
                   Sistema de 3 etapas disenado especificamente para acuariofilia. Elimina cloro, cloraminas, metales pesados y contaminantes que afectan la salud de tus peces y plantas.
                 </p>
 
-                {/* Price */}
-                <div className="mt-10 pb-8 border-b border-border">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-serif text-5xl sm:text-6xl text-foreground">189€</span>
-                    <div className="flex flex-col">
-                      <span className="text-lg text-muted-foreground/50 line-through font-sans">269€</span>
-                      <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground">IVA incluido</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Options */}
-                <div className="py-8 border-b border-border">
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans block mb-4">
-                    Opciones de compra
-                  </span>
-                  <div className="space-y-3">
-                    <label className="flex items-center justify-between p-4 border border-foreground cursor-pointer">
-                      <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 border-2 border-foreground flex items-center justify-center">
-                          <div className="w-2 h-2 bg-foreground" />
-                        </div>
-                        <div>
-                          <span className="text-sm font-sans text-foreground">Solo equipo</span>
-                          <span className="text-[10px] text-muted-foreground block">Instalacion sencilla, tu lo conectas</span>
-                        </div>
-                      </div>
-                      <span className="font-serif text-lg text-foreground">189€</span>
-                    </label>
-                    <label className="flex items-center justify-between p-4 border border-border hover:border-foreground transition-colors cursor-pointer">
-                      <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 border border-muted-foreground" />
-                        <div>
-                          <span className="text-sm font-sans text-foreground">Con instalacion profesional</span>
-                          <span className="text-[10px] text-muted-foreground block">Tecnico especializado en acuarios</span>
-                        </div>
-                      </div>
-                      <span className="font-serif text-lg text-foreground">268€</span>
-                    </label>
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <div className="pt-8">
-                  <a
-                    href="https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20el%20Sistema%20de%20Osmosis%20para%20Acuarios"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group w-full inline-flex items-center justify-center gap-3 bg-foreground text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-foreground/90 transition-all duration-300"
-                  >
-                    <ShoppingBag className="w-4 h-4" />
-                    Comprar Ahora
-                  </a>
+                {/* Product Selector with Switch */}
+                <div className="mt-10">
+                  <ProductSelector
+                    soloEquipo={{
+                      id: "acuarios-solo",
+                      label: "Sistema Acuarios - Solo Equipo",
+                      price: 189,
+                      originalPrice: 269,
+                    }}
+                    conInstalacion={{
+                      id: "acuarios-instalacion",
+                      label: "Sistema Acuarios - Con Instalacion",
+                      price: 268,
+                      originalPrice: 349,
+                    }}
+                    features={[
+                      "3 etapas de filtracion",
+                      "Elimina cloro y cloraminas al 100%",
+                      "TDS resultante 0-10 ppm",
+                      "Para agua dulce y salada",
+                      "2 anos de garantia completa",
+                    ]}
+                    included={[
+                      "Equipo osmosis 3 etapas",
+                      "Filtro sedimentos PP",
+                      "Filtro carbon CTO",
+                      "Membrana RO 75GPD",
+                      "Kit conexiones universal",
+                    ]}
+                  />
                   <p className="text-[10px] text-muted-foreground font-sans text-center mt-4">
                     Envio gratuito · Garantia 2 anos · 14 dias devolucion
                   </p>

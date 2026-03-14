@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Check, Droplets, Shield, Clock, Zap, ShoppingBag, ArrowRight, ArrowLeft, Gauge, Ruler, Weight, Timer, Leaf, Sparkles } from "lucide-react"
+import ProductSelector from "@/components/product-selector"
+import { Droplets, Shield, Clock, Zap, ArrowLeft, Gauge, Ruler, Weight, Timer, Leaf, Sparkles } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Sistema Compacto 500GPD con Pantalla LED | OSMOSIS ESP",
@@ -120,59 +121,36 @@ export default function CompactoPage() {
                   ))}
                 </div>
 
-                {/* Price */}
-                <div className="mt-10 pb-8 border-b border-border">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-serif text-5xl sm:text-6xl text-foreground">508€</span>
-                    <div className="flex flex-col">
-                      <span className="text-lg text-muted-foreground/50 line-through font-sans">725€</span>
-                      <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground">IVA incluido</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Options */}
-                <div className="py-8 border-b border-border">
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans block mb-4">
-                    Opciones de compra
-                  </span>
-                  <div className="space-y-3">
-                    <label className="flex items-center justify-between p-4 border border-foreground cursor-pointer">
-                      <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 border-2 border-foreground flex items-center justify-center">
-                          <div className="w-2 h-2 bg-foreground" />
-                        </div>
-                        <div>
-                          <span className="text-sm font-sans text-foreground">Solo equipo</span>
-                          <span className="text-[10px] text-muted-foreground block">Tu lo instalas o contratas instalador</span>
-                        </div>
-                      </div>
-                      <span className="font-serif text-lg text-foreground">508€</span>
-                    </label>
-                    <label className="flex items-center justify-between p-4 border border-border hover:border-foreground transition-colors cursor-pointer">
-                      <div className="flex items-center gap-3">
-                        <div className="w-4 h-4 border border-muted-foreground" />
-                        <div>
-                          <span className="text-sm font-sans text-foreground">Con instalacion profesional</span>
-                          <span className="text-[10px] text-muted-foreground block">Tecnico certificado en toda Espana</span>
-                        </div>
-                      </div>
-                      <span className="font-serif text-lg text-foreground">587€</span>
-                    </label>
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <div className="pt-8">
-                  <a
-                    href="https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20el%20Sistema%20Compacto%20500GPD%20con%20pantalla%20LED"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group w-full inline-flex items-center justify-center gap-3 bg-foreground text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-foreground/90 transition-all duration-300"
-                  >
-                    <ShoppingBag className="w-4 h-4" />
-                    Comprar Ahora
-                  </a>
+                {/* Product Selector with Switch */}
+                <div className="mt-10">
+                  <ProductSelector
+                    soloEquipo={{
+                      id: "compacto-solo",
+                      label: "Sistema Compacto - Solo Equipo",
+                      price: 508,
+                      originalPrice: 725,
+                    }}
+                    conInstalacion={{
+                      id: "compacto-instalacion",
+                      label: "Sistema Compacto - Con Instalacion",
+                      price: 587,
+                      originalPrice: 804,
+                    }}
+                    features={[
+                      "Pantalla LED tactil con control inteligente",
+                      "Autolimpieza automatica programable",
+                      "Sin tanque - produccion directa 500GPD",
+                      "Filtros click & twist de cambio rapido",
+                      "2 anos de garantia completa",
+                    ]}
+                    included={[
+                      "Equipo de osmosis compacto",
+                      "Grifo premium cromado",
+                      "Kit de conexiones completo",
+                      "Filtros de primera carga",
+                      "Manual en espanol",
+                    ]}
+                  />
                   <p className="text-[10px] text-muted-foreground font-sans text-center mt-4">
                     Envio gratuito · Garantia 2 anos · 14 dias devolucion
                   </p>
