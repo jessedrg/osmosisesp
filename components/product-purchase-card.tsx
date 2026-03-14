@@ -159,7 +159,7 @@ export default function ProductPurchaseCard({
             </div>
             <div className="flex items-center gap-1.5">
               <Award className="w-3.5 h-3.5" />
-              <span>2 anos garantia</span>
+              <span>2 años garantía</span>
             </div>
           </div>
         </div>
@@ -251,7 +251,7 @@ export default function ProductPurchaseCard({
           <span>•</span>
           <span>Entrega ~1 semana</span>
           <span>•</span>
-          <span>2 anos garantia</span>
+          <span>2 años garantía</span>
         </div>
       </div>
     </div>
