@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useCallback } from 'react'
-import { ShoppingBag, Check, X, ArrowLeft, Shield, Truck, Award, CreditCard, Smartphone } from 'lucide-react'
+import { useState, useCallback, useEffect } from 'react'
+import { ShoppingBag, Check, X, ArrowLeft, Shield, Truck, Award, CreditCard, Smartphone, Clock, Eye, Flame, Gift, RotateCcw } from 'lucide-react'
 import {
   EmbeddedCheckout,
   EmbeddedCheckoutProvider,
@@ -10,6 +10,10 @@ import { loadStripe } from '@stripe/stripe-js'
 import { startCheckoutSession } from '@/app/actions/stripe'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
+
+// Simulated stock and viewers (consistent per session)
+const getRandomStock = () => Math.floor(Math.random() * 5) + 3 // 3-7 units
+const getRandomViewers = () => Math.floor(Math.random() * 8) + 4 // 4-11 viewers
 
 interface ProductPurchaseCardProps {
   category: 'compacto' | '5etapas' | 'acuarios'
@@ -33,9 +37,31 @@ export default function ProductPurchaseCard({
   const [withInstallation, setWithInstallation] = useState(false)
   const [showCheckout, setShowCheckout] = useState(false)
   const [checkoutComplete, setCheckoutComplete] = useState(false)
+  const [stock] = useState(() => getRandomStock())
+  const [viewers] = useState(() => getRandomViewers())
+  const [timeLeft, setTimeLeft] = useState({ hours: 2, minutes: 47, seconds: 33 })
+  
+  // Countdown timer for urgency
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        if (prev.seconds > 0) {
+          return { ...prev, seconds: prev.seconds - 1 }
+        } else if (prev.minutes > 0) {
+          return { ...prev, minutes: prev.minutes - 1, seconds: 59 }
+        } else if (prev.hours > 0) {
+          return { hours: prev.hours - 1, minutes: 59, seconds: 59 }
+        }
+        return prev
+      })
+    }, 1000)
+    return () => clearInterval(timer)
+  }, [])
   
   const currentPrice = withInstallation ? instalacionPrice : soloPrice
   const productId = withInstallation ? `${category}-instalacion` : `${category}-solo`
+  const savings = originalPrice ? originalPrice - currentPrice : 0
+  const savingsPercent = originalPrice ? Math.round((savings / originalPrice) * 100) : 0
   
   const fetchClientSecret = useCallback(
     () => startCheckoutSession(productId),
@@ -177,25 +203,66 @@ export default function ProductPurchaseCard({
   }
 
   return (
-    <div className="bg-card p-8 border border-border">
+    <div className="bg-card p-8 border border-border relative overflow-hidden">
+      {/* Discount Badge */}
+      {savingsPercent > 0 && (
+        <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1.5">
+          -{savingsPercent}%
+        </div>
+      )}
+
       {/* Tag */}
       {tag && (
-        <span className="inline-block text-[10px] tracking-[0.2em] uppercase text-muted-foreground mb-4">
+        <span className="inline-block text-[10px] tracking-[0.2em] uppercase text-accent font-medium mb-4">
           {tag}
         </span>
       )}
+
+      {/* Urgency: Limited Time Offer */}
+      <div className="bg-red-50 border border-red-200 p-3 mb-6">
+        <div className="flex items-center gap-2 text-red-600 mb-1">
+          <Clock className="w-4 h-4" />
+          <span className="text-xs font-bold uppercase tracking-wide">Oferta por tiempo limitado</span>
+        </div>
+        <div className="flex items-center gap-1 text-red-700 font-mono text-lg font-bold">
+          <span>{String(timeLeft.hours).padStart(2, '0')}</span>
+          <span>:</span>
+          <span>{String(timeLeft.minutes).padStart(2, '0')}</span>
+          <span>:</span>
+          <span>{String(timeLeft.seconds).padStart(2, '0')}</span>
+        </div>
+      </div>
       
       {/* Price */}
-      <div className="mb-6">
+      <div className="mb-4">
         <div className="flex items-baseline gap-3">
-          <span className="font-serif text-5xl">{currentPrice}€</span>
+          <span className="font-serif text-5xl text-gradient-water">{currentPrice}€</span>
           {originalPrice && (
-            <span className="text-lg text-muted-foreground line-through">
+            <span className="text-xl text-muted-foreground line-through">
               {originalPrice}€
             </span>
           )}
         </div>
-        <p className="text-sm text-muted-foreground mt-1">IVA incluido</p>
+        {savings > 0 && (
+          <div className="flex items-center gap-2 mt-2">
+            <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-1">
+              AHORRAS {savings}€
+            </span>
+          </div>
+        )}
+        <p className="text-sm text-muted-foreground mt-2">IVA incluido - Envio GRATIS</p>
+      </div>
+
+      {/* Social Proof: Viewers & Stock */}
+      <div className="flex items-center gap-4 mb-6 text-sm">
+        <div className="flex items-center gap-1.5 text-orange-600">
+          <Eye className="w-4 h-4" />
+          <span className="font-medium">{viewers} personas mirando ahora</span>
+        </div>
+        <div className="flex items-center gap-1.5 text-red-600">
+          <Flame className="w-4 h-4" />
+          <span className="font-medium">Solo {stock} unidades</span>
+        </div>
       </div>
 
       {/* Installation Toggle */}
@@ -247,20 +314,45 @@ export default function ProductPurchaseCard({
       {/* CTA */}
       <button
         onClick={() => setShowCheckout(true)}
-        className="group w-full inline-flex items-center justify-center gap-3 bg-foreground text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-foreground/90 transition-all duration-300"
+        className="group w-full relative inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-accent/90 transition-all duration-300 overflow-hidden"
       >
-        <ShoppingBag className="w-4 h-4" />
-        Comprar Ahora
+        <span className="relative z-10 flex items-center gap-3">
+          <ShoppingBag className="w-4 h-4" />
+          Comprar Ahora - {currentPrice}€
+        </span>
+        <span className="absolute inset-0 water-shimmer" />
       </button>
 
+      {/* Money Back Guarantee */}
+      <div className="mt-4 flex items-center justify-center gap-2 text-sm text-green-600">
+        <RotateCcw className="w-4 h-4" />
+        <span className="font-medium">14 dias de devolucion garantizada</span>
+      </div>
+
       {/* Trust badges */}
-      <div className="mt-6 pt-6 border-t border-border">
-        <div className="flex items-center justify-center gap-6 text-xs text-muted-foreground">
-          <span>Pago seguro</span>
-          <span>•</span>
-          <span>Entrega ~1 semana</span>
-          <span>•</span>
-          <span>2 años garantía</span>
+      <div className="mt-4 pt-4 border-t border-border">
+        <div className="grid grid-cols-3 gap-2 text-center">
+          <div className="flex flex-col items-center gap-1">
+            <Shield className="w-5 h-5 text-accent" />
+            <span className="text-[10px] text-muted-foreground">Pago seguro</span>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <Truck className="w-5 h-5 text-accent" />
+            <span className="text-[10px] text-muted-foreground">Envio gratis</span>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <Award className="w-5 h-5 text-accent" />
+            <span className="text-[10px] text-muted-foreground">2 años garantia</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Purchase Notification */}
+      <div className="mt-4 bg-secondary p-3 flex items-start gap-3">
+        <Gift className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+        <div className="text-xs">
+          <p className="font-medium">Maria de Madrid compro hace 2 horas</p>
+          <p className="text-muted-foreground">Sistema Compacto con instalacion</p>
         </div>
       </div>
     </div>

@@ -83,6 +83,8 @@ export default function AcuariosPage() {
                     soloPrice={189}
                     instalacionPrice={268}
                     originalPrice={269}
+                    productName="Osmosis Inversa Acuarios"
+                    tag="Para Acuariofilia"
                     features={[
                       "3 etapas de filtracion",
                       "Elimina cloro y cloraminas al 100%",
