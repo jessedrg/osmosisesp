@@ -1,6 +1,6 @@
 'use server'
 
-import { headers } from 'next/headers'
+// Stripe Checkout - Production Ready
 
 import { stripe } from '../../lib/stripe'
 import { PRODUCTS } from '../../lib/products'
