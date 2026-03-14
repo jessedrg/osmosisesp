@@ -1,98 +1,107 @@
-import { MessageCircle, CheckCircle } from "lucide-react"
+"use client"
 
-const WA_URL = "https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20instalar%20un%20sistema%20de%20%C3%B3smosis%20inversa."
+import { useEffect, useRef } from "react"
+import { ArrowDown } from "lucide-react"
+import Link from "next/link"
 
 export function HomeHero() {
+  const heroRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const scrollY = window.scrollY
+        const opacity = Math.max(0, 1 - scrollY / 600)
+        const translateY = scrollY * 0.3
+        heroRef.current.style.opacity = String(opacity)
+        heroRef.current.style.transform = `translateY(${translateY}px)`
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <section className="bg-foreground text-background min-h-screen flex items-center">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Product Images */}
-          <div className="order-2 lg:order-1">
-            <div className="grid grid-cols-2 gap-3">
-              <div className="col-span-2 bg-neutral-800 p-4">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/He23d99f93a3040acb8720554edb60e11k.jpg" 
-                  alt="Sistema de ósmosis inversa completo con filtros, grifo y accesorios" 
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-              <div className="bg-neutral-800 p-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg" 
-                  alt="Equipo de ósmosis inversa con panel LED táctil" 
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-              <div className="bg-neutral-800 p-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/He931e67f2b5b4d5999ed74d013fdd560w.jpg" 
-                  alt="Interior del equipo con filtros de cambio rápido" 
-                  className="w-full h-auto object-contain"
-                />
-              </div>
-            </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-background" />
+      
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-border" />
+      <div className="absolute top-24 left-12 hidden lg:block">
+        <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans writing-mode-vertical rotate-180" style={{ writingMode: "vertical-rl" }}>
+          Pureza absoluta
+        </span>
+      </div>
+      <div className="absolute top-24 right-12 hidden lg:block">
+        <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans" style={{ writingMode: "vertical-rl" }}>
+          Desde 2018
+        </span>
+      </div>
+
+      {/* Main Content */}
+      <div ref={heroRef} className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 pt-32 pb-20 lg:pt-40 lg:pb-32 w-full">
+        <div className="text-center">
+          {/* Eyebrow */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-12 bg-border" />
+            <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans">
+              Sistemas de Purificacion
+            </span>
+            <div className="h-px w-12 bg-border" />
           </div>
 
-          {/* Product Info + Price */}
-          <div className="order-1 lg:order-2">
-            {/* Discount badge */}
-            <div className="inline-flex items-center gap-2 bg-red-500 text-white px-4 py-2 text-xs font-sans font-bold mb-6">
-              🔥 OFERTA LIMITADA -30%
+          {/* Main Headline */}
+          <h1 className="font-serif text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-tight text-foreground text-balance">
+            Agua pura,
+            <br />
+            <span className="italic font-light text-muted-foreground">diseno impecable</span>
+          </h1>
+
+          {/* Subtitle */}
+          <p className="max-w-xl mx-auto mt-8 text-sm sm:text-base text-muted-foreground font-sans leading-relaxed">
+            Sistemas de osmosis inversa de ultima generacion que transforman tu agua del grifo en pureza absoluta. Sin compromisos.
+          </p>
+
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
+            <Link 
+              href="#productos"
+              className="group inline-flex items-center gap-3 bg-foreground text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-foreground/90 transition-all duration-300"
+            >
+              Descubrir Productos
+              <ArrowDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
+            </Link>
+            <Link 
+              href="#proceso"
+              className="inline-flex items-center gap-3 border border-foreground/20 text-foreground px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:border-foreground transition-all duration-300"
+            >
+              Como Funciona
+            </Link>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-8 mt-20 lg:mt-32 max-w-2xl mx-auto">
+            <div className="text-center">
+              <p className="font-serif text-3xl sm:text-4xl text-foreground">99.9%</p>
+              <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-2">Pureza</p>
             </div>
-
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl tracking-tight text-background leading-[0.95]">
-              Sistema de Ósmosis Inversa
-              <br />
-              <span className="italic font-light text-background/60">Compacto</span>
-            </h1>
-            <p className="text-sm sm:text-base text-background/50 mt-6 font-sans leading-relaxed max-w-lg">
-              Equipo de última generación con panel táctil LED, filtros de cambio rápido y diseño minimalista. Cabe bajo cualquier fregadero.
-            </p>
-
-            {/* Price */}
-            <div className="mt-8 flex items-end gap-4">
-              <span className="font-serif text-5xl sm:text-6xl text-background">508€</span>
-              <div className="mb-1">
-                <span className="text-xl text-background/40 line-through font-sans">725€</span>
-                <span className="text-sm text-background/50 font-sans ml-2">IVA incl.</span>
-              </div>
+            <div className="text-center border-x border-border">
+              <p className="font-serif text-3xl sm:text-4xl text-foreground">1,200+</p>
+              <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-2">Instalaciones</p>
             </div>
-            <p className="text-xs text-background/40 font-sans mt-2">Instalación 79€ aparte · Garantía 2 años</p>
-
-            {/* Features */}
-            <ul className="mt-8 grid grid-cols-2 gap-3">
-              {[
-                "Ósmosis 5 etapas con bomba",
-                "Panel LED táctil",
-                "Grifo de diseño incluido",
-                "Filtros click & twist",
-                "Garantía 2 años",
-                "Soporte WhatsApp",
-              ].map(item => (
-                <li key={item} className="flex items-start gap-2 text-xs font-sans text-background/70">
-                  <CheckCircle className="w-3.5 h-3.5 text-background/50 flex-shrink-0 mt-0.5" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            {/* CTA */}
-            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="mt-10 w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-background text-foreground px-10 py-5 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
-              <MessageCircle className="w-4 h-4" /> Pedir presupuesto gratis
-            </a>
-
-            {/* Trust */}
-            <div className="mt-8 flex items-center gap-6 text-xs text-background/40 font-sans">
-              <span>✓ Envío gratis</span>
-              <span>✓ Instalación 2-3h</span>
-              <span>✓ +1.200 instalaciones</span>
+            <div className="text-center">
+              <p className="font-serif text-3xl sm:text-4xl text-foreground">2</p>
+              <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-2">Anos Garantia</p>
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-pulse">
+        <span className="text-[9px] tracking-[0.3em] uppercase text-muted-foreground">Scroll</span>
+        <div className="w-px h-8 bg-border" />
       </div>
     </section>
   )

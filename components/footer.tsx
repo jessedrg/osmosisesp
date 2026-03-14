@@ -1,64 +1,122 @@
 import Link from "next/link"
-import { MessageCircle, Mail, MapPin } from "lucide-react"
-
-const WA_URL = "https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20instalar%20un%20sistema%20de%20%C3%B3smosis%20inversa."
+import { Mail, MapPin, Phone } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          <div className="lg:col-span-1">
-            <Link href="/" className="text-2xl font-serif italic text-primary-foreground tracking-tight">osmosis<span className="opacity-70">esp</span></Link>
-            <p className="text-primary-foreground/60 text-xs mt-4 leading-relaxed max-w-xs">
-              Instalación de sistemas de ósmosis inversa en España. Agua pura del grifo para tu hogar.
+    <footer className="relative bg-foreground text-background">
+      <div className="absolute top-0 left-0 right-0 h-px bg-background/10" />
+      
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-20 lg:py-32">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+          {/* Brand Column */}
+          <div className="lg:col-span-4">
+            <Link href="/" className="inline-block">
+              <span className="text-xs tracking-[0.3em] uppercase font-sans font-medium text-background">
+                OSMOSIS<span className="text-background/50">ESP</span>
+              </span>
+            </Link>
+            <p className="text-sm text-background/50 font-sans leading-relaxed mt-6 max-w-xs">
+              Sistemas de osmosis inversa premium para hogares que valoran la pureza. Diseno minimalista, tecnologia avanzada.
+            </p>
+            {/* Large decorative text */}
+            <p className="font-serif text-[clamp(3rem,8vw,6rem)] leading-[0.85] text-background/5 mt-12 tracking-tight">
+              Agua
+              <br />
+              Pura
             </p>
           </div>
 
-          <div>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-primary-foreground/40 mb-4">Servicios</p>
-            <ul className="space-y-2.5">
-              {["Ósmosis inversa", "Ósmosis doméstica", "Filtros agua", "Descalcificadores", "Mantenimiento"].map(s => (
-                <li key={s}><Link href="/" className="text-xs text-primary-foreground/70 hover:text-background transition-colors">{s}</Link></li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-primary-foreground/40 mb-4">Ciudades</p>
-            <ul className="space-y-2.5">
-              {["Barcelona", "Terrassa", "Sabadell", "Badalona", "Mataró", "Granollers"].map(c => (
-                <li key={c}><Link href={`/osmosis-inversa/${c.toLowerCase()}/`} className="text-xs text-primary-foreground/70 hover:text-background transition-colors">{c}</Link></li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-primary-foreground/40 mb-4">Contacto</p>
+          {/* Navigation */}
+          <div className="lg:col-span-2 lg:col-start-6">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-background/30 font-sans block mb-6">
+              Navegacion
+            </span>
             <ul className="space-y-3">
+              {[
+                { label: "Producto", href: "#productos" },
+                { label: "Proceso", href: "#proceso" },
+                { label: "Opiniones", href: "#opiniones" },
+                { label: "FAQ", href: "#faq" },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link 
+                    href={item.href} 
+                    className="text-sm text-background/60 font-sans hover:text-background transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Ciudades */}
+          <div className="lg:col-span-2">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-background/30 font-sans block mb-6">
+              Ciudades
+            </span>
+            <ul className="space-y-3">
+              {["Barcelona", "Terrassa", "Sabadell", "Badalona", "Mataro", "Granollers"].map((city) => (
+                <li key={city}>
+                  <Link 
+                    href={`/osmosis-inversa/${city.toLowerCase()}`} 
+                    className="text-sm text-background/60 font-sans hover:text-background transition-colors"
+                  >
+                    {city}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div className="lg:col-span-3 lg:col-start-10">
+            <span className="text-[10px] tracking-[0.3em] uppercase text-background/30 font-sans block mb-6">
+              Contacto
+            </span>
+            <ul className="space-y-4">
               <li>
-                <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-xs text-primary-foreground/70 hover:text-background transition-colors">
-                  <MessageCircle className="w-3.5 h-3.5" /> WhatsApp
+                <a 
+                  href="mailto:hola@osmosisesp.com" 
+                  className="flex items-center gap-3 text-sm text-background/60 font-sans hover:text-background transition-colors"
+                >
+                  <Mail className="w-4 h-4" strokeWidth={1.5} />
+                  hola@osmosisesp.com
                 </a>
               </li>
               <li>
-                <a href="mailto:hola@osmosisespaña.com" className="flex items-center gap-2 text-xs text-primary-foreground/70 hover:text-background transition-colors">
-                  <Mail className="w-3.5 h-3.5" /> hola@osmosisespaña.com
+                <a 
+                  href="tel:+34711267223" 
+                  className="flex items-center gap-3 text-sm text-background/60 font-sans hover:text-background transition-colors"
+                >
+                  <Phone className="w-4 h-4" strokeWidth={1.5} />
+                  +34 711 267 223
                 </a>
               </li>
-              <li className="flex items-center gap-2 text-xs text-primary-foreground/70">
-                <MapPin className="w-3.5 h-3.5" /> España
+              <li className="flex items-center gap-3 text-sm text-background/60 font-sans">
+                <MapPin className="w-4 h-4" strokeWidth={1.5} />
+                Espana
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-background/10 mt-16 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-[10px] text-primary-foreground/40">© {new Date().getFullYear()} osmosis esp. Todos los derechos reservados.</p>
-          <div className="flex gap-6 text-[10px] text-primary-foreground/40">
-            <Link href="/" className="hover:text-primary-foreground/70 transition-colors">Privacidad</Link>
-            <Link href="/" className="hover:text-primary-foreground/70 transition-colors">Legal</Link>
-            <Link href="/" className="hover:text-primary-foreground/70 transition-colors">Cookies</Link>
+        {/* Bottom Bar */}
+        <div className="border-t border-background/10 mt-16 lg:mt-24 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-[10px] tracking-[0.15em] uppercase text-background/30 font-sans">
+            © {new Date().getFullYear()} OSMOSIS ESP. Todos los derechos reservados.
+          </p>
+          <div className="flex gap-8">
+            <Link href="/" className="text-[10px] tracking-[0.15em] uppercase text-background/30 font-sans hover:text-background/60 transition-colors">
+              Privacidad
+            </Link>
+            <Link href="/" className="text-[10px] tracking-[0.15em] uppercase text-background/30 font-sans hover:text-background/60 transition-colors">
+              Legal
+            </Link>
+            <Link href="/" className="text-[10px] tracking-[0.15em] uppercase text-background/30 font-sans hover:text-background/60 transition-colors">
+              Cookies
+            </Link>
           </div>
         </div>
       </div>

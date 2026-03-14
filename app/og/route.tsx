@@ -11,22 +11,38 @@ export async function GET() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "flex-end",
+          justifyContent: "center",
+          alignItems: "center",
           padding: "80px",
-          backgroundColor: "#1a1a1a",
+          backgroundColor: "#f5f4f0",
           fontFamily: "Georgia, serif",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 72, color: "#faf9f6", fontStyle: "italic", letterSpacing: "-2px" }}>
-            osmosis esp.
+        {/* Decorative lines */}
+        <div style={{ display: "flex", alignItems: "center", gap: "24px", marginBottom: "40px" }}>
+          <div style={{ width: "60px", height: "1px", backgroundColor: "#1a1a1840" }} />
+          <div style={{ fontSize: 12, color: "#1a1a1860", fontFamily: "system-ui, sans-serif", letterSpacing: "4px", textTransform: "uppercase" }}>
+            Sistemas de Purificacion
           </div>
-          <div style={{ fontSize: 32, color: "#faf9f680", marginTop: 16, fontFamily: "system-ui, sans-serif" }}>
-            Ósmosis inversa en España
+          <div style={{ width: "60px", height: "1px", backgroundColor: "#1a1a1840" }} />
+        </div>
+        
+        {/* Main title */}
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <div style={{ fontSize: 14, color: "#1a1a18", letterSpacing: "8px", textTransform: "uppercase", fontFamily: "system-ui, sans-serif", fontWeight: 500 }}>
+            OSMOSIS ESP
           </div>
-          <div style={{ fontSize: 18, color: "#faf9f640", marginTop: 24, fontFamily: "system-ui, sans-serif" }}>
-            Agua pura del grifo · Instaladores certificados · Presupuesto gratis
+          <div style={{ fontSize: 80, color: "#1a1a18", fontStyle: "italic", letterSpacing: "-2px", marginTop: "24px", lineHeight: 0.9, textAlign: "center" }}>
+            Agua pura,
           </div>
+          <div style={{ fontSize: 80, color: "#1a1a1860", fontStyle: "italic", fontWeight: 300, letterSpacing: "-2px", lineHeight: 0.9, textAlign: "center" }}>
+            diseno impecable
+          </div>
+        </div>
+        
+        {/* Bottom text */}
+        <div style={{ fontSize: 16, color: "#1a1a1850", marginTop: "60px", fontFamily: "system-ui, sans-serif" }}>
+          Osmosis inversa premium · Envio gratuito · Garantia 2 anos
         </div>
       </div>
     ),

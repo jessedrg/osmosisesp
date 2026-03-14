@@ -1,70 +1,9 @@
 // =============================================================================
-// SITEMAP DATA - INSTALACIÓN ÓSMOSIS INVERSA
+// SITEMAP DATA - OSMOSIS ESP
+// Solo "Instalacion de osmosis en [ciudad]" - sin canibalizacion
 // =============================================================================
-// Instalación de sistemas de ósmosis inversa en España - 8118 municipios
-// =============================================================================
 
-export const VALID_SERVICES = [
-  "osmosis-inversa",
-  "osmosis-domestica",
-  "filtro-agua",
-  "descalcificador",
-  "mantenimiento-osmosis",
-  "reparacion-osmosis",
-] as const;
-
-export type Service = typeof VALID_SERVICES[number];
-
-export const VALID_PROFESSIONS = VALID_SERVICES;
-export type Profession = Service;
-
-// =============================================================================
-// HIGH-INTENT KEYWORD MODIFIERS - ELIMINADOS PARA EVITAR CANIBALIZACIÓN
-// =============================================================================
-// Ahora optimizamos la página principal de cada ciudad para rankear por todas
-// las keywords de alta intención en lugar de crear páginas separadas.
-export const MODIFIERS = [""] as const;
-
-export type Modifier = typeof MODIFIERS[number];
-
-// Keywords de alta intención para incluir en el SEO de cada página
-export const HIGH_INTENT_KEYWORDS = [
-  "precios", "barata", "económica", "cuánto cuesta", "presupuesto",
-  "urgente", "rápida", "hoy", "24 horas",
-  "mejor", "calidad-precio", "profesional", "de confianza", "recomendada",
-  "instalación", "mantenimiento", "reparación", "cambio filtros",
-  "cerca de mí", "a domicilio",
-] as const;
-
-// =============================================================================
-// NECESIDADES / PROBLEMAS POR SERVICIO
-// =============================================================================
-export const PROBLEMS: Record<Service, readonly string[]> = {
-  "osmosis-inversa": [
-    "agua-con-cal", "agua-mal-sabor", "agua-turbia",
-    "mejorar-calidad-agua", "agua-dura",
-  ],
-  "osmosis-domestica": [
-    "agua-grifo-mala", "instalar-osmosis-casa", "agua-pura-cocina",
-    "filtrar-agua-hogar",
-  ],
-  "filtro-agua": [
-    "cambiar-filtro", "filtro-caducado", "agua-sucia",
-    "sedimentos-agua",
-  ],
-  "descalcificador": [
-    "cal-tuberias", "cal-electrodomesticos", "agua-muy-dura",
-    "manchas-cal",
-  ],
-  "mantenimiento-osmosis": [
-    "revision-osmosis", "cambio-filtros-osmosis", "limpieza-osmosis",
-    "mantenimiento-anual",
-  ],
-  "reparacion-osmosis": [
-    "osmosis-no-funciona", "fuga-osmosis", "osmosis-ruidosa",
-    "poca-presion-osmosis",
-  ],
-} as const;
+// Ciudades principales de Espana (80+ ciudades)
 export const CITIES: readonly string[] = [
   "ababuj",
   "abades",
@@ -8186,20 +8125,76 @@ export const CITIES: readonly string[] = [
   "zurgena",
 ] as const;
 
-// =============================================================================
-// UTILITY FUNCTIONS
-// =============================================================================
-export function getCityDisplayName(slug: string): string {
+export type CitySlug = (typeof CITIES)[number]
+
+// URLs estaticas principales
+export const STATIC_URLS = [
+  "/",
+  "/productos",
+  "/productos/compacto",
+  "/productos/5-etapas",
+  "/productos/acuarios",
+] as const
+
+// Helper para convertir slug a nombre legible
+function slugToName(slug: string): string {
   return slug
-    .split('-')
+    .split("-")
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+    .join(" ")
 }
 
-export function isValidCity(slug: string): boolean {
-  return CITIES.includes(slug);
+// Generar todas las URLs dinamicas (instalacion + ciudad)
+export function generateAllUrls(): string[] {
+  const urls: string[] = [...STATIC_URLS]
+
+  for (const city of CITIES) {
+    urls.push(`/instalacion/${city}`)
+  }
+
+  return urls
 }
 
-export function isValidProfession(id: string): boolean {
-  return VALID_PROFESSIONS.includes(id as Profession);
+// Helper para obtener metadata SEO de una pagina de instalacion
+export function getInstallationCityMeta(citySlug: string) {
+  const cityExists = CITIES.includes(citySlug as CitySlug)
+
+  if (!cityExists) return null
+
+  const cityName = slugToName(citySlug)
+
+  return {
+    slug: citySlug,
+    name: cityName,
+    title: `Instalacion de Osmosis Inversa en ${cityName} | OSMOSIS ESP`,
+    description: `Servicio profesional de instalacion de sistemas de osmosis inversa en ${cityName}. Instaladores certificados, 2 anos de garantia. Solicita tu cita.`,
+    h1: `Instalacion de Osmosis en ${cityName}`,
+    keywords: [
+      `instalacion osmosis ${cityName}`,
+      `osmosis inversa ${cityName}`,
+      `purificador agua ${cityName}`,
+      `instalador osmosis ${cityName}`,
+      `osmosis domestica ${cityName}`,
+    ],
+  }
+}
+
+// Verificar si una ciudad existe
+export function isCityValid(slug: string): boolean {
+  return CITIES.includes(slug as CitySlug)
+}
+
+// Obtener nombre de ciudad por slug
+export function getCityName(slug: string): string | null {
+  if (!isCityValid(slug)) return null
+  return slugToName(slug)
+}
+
+// Obtener ciudad por slug (devuelve objeto con name para compatibilidad)
+export function getCityBySlug(slug: string): { slug: string; name: string } | null {
+  if (!isCityValid(slug)) return null
+  return {
+    slug,
+    name: slugToName(slug),
+  }
 }
