@@ -2,11 +2,41 @@
 
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+
+const products = [
+  {
+    id: "compacto",
+    name: "Sistema Compacto",
+    subtitle: "El mas vendido",
+    description: "Sistema con pantalla LED tactil. Perfecto para espacios reducidos.",
+    price: "508",
+    image: "/He23d99f93a3040acb8720554edb60e11k.jpg",
+    href: "/productos/compacto",
+  },
+  {
+    id: "5-etapas",
+    name: "Sistema 5 Etapas",
+    subtitle: "Maxima purificacion",
+    description: "Sistema profesional con grifo premium. Filtracion avanzada.",
+    price: "429",
+    image: "/osmosis-casa.jpg",
+    href: "/productos/5-etapas",
+  },
+  {
+    id: "acuarios",
+    name: "Acuarios",
+    subtitle: "Agua perfecta para peces",
+    description: "Sistema compacto de 3 etapas. Elimina cloro y metales.",
+    price: "189",
+    image: "/osmosis-acuario.jpg",
+    href: "/productos/acuarios",
+  },
+]
 
 export function ProductSection() {
   return (
     <section id="productos" className="relative">
-      {/* Top decorative line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-border" />
       
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-40">
@@ -22,67 +52,40 @@ export function ProductSection() {
           </h2>
         </div>
 
-        {/* Product Categories */}
-        <div className="grid lg:grid-cols-2 gap-px bg-border">
-          {/* Hogar */}
-          <Link 
-            href="/productos/hogar"
-            className="group bg-background p-8 lg:p-16 flex flex-col items-center text-center hover:bg-secondary transition-colors duration-500"
-          >
-            <div className="aspect-square w-full max-w-md bg-secondary overflow-hidden group-hover:bg-muted transition-colors duration-500">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src="/osmosis-casa.jpg" 
-                alt="Sistema de osmosis inversa para hogar" 
-                className="w-full h-full object-contain p-8 lg:p-12 group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div className="mt-8 lg:mt-12">
-              <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-3">
-                Uso Domestico
-              </span>
-              <h3 className="font-serif text-3xl lg:text-4xl tracking-tight text-foreground">
-                Hogar
-              </h3>
-              <p className="text-sm text-muted-foreground font-sans mt-4 max-w-sm mx-auto leading-relaxed">
-                Sistema completo de 5 etapas con panel LED tactil para toda la familia. Agua pura ilimitada.
-              </p>
-              <div className="flex items-center justify-center gap-4 mt-8">
-                <span className="font-serif text-2xl text-foreground">Desde 508€</span>
-                <ArrowRight className="w-5 h-5 text-foreground group-hover:translate-x-2 transition-transform duration-300" />
+        {/* Product Grid */}
+        <div className="grid md:grid-cols-3 gap-px bg-border">
+          {products.map((product) => (
+            <Link 
+              key={product.id}
+              href={product.href}
+              className="group bg-background p-6 lg:p-10 flex flex-col items-center text-center hover:bg-secondary transition-colors duration-500"
+            >
+              <div className="aspect-square w-full bg-secondary overflow-hidden group-hover:bg-muted transition-colors duration-500">
+                <Image 
+                  src={product.image}
+                  alt={product.name}
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-contain p-6 lg:p-8 group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
-            </div>
-          </Link>
-
-          {/* Acuarios */}
-          <Link 
-            href="/productos/acuarios"
-            className="group bg-background p-8 lg:p-16 flex flex-col items-center text-center hover:bg-secondary transition-colors duration-500"
-          >
-            <div className="aspect-square w-full max-w-md bg-secondary overflow-hidden group-hover:bg-muted transition-colors duration-500">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img 
-                src="/osmosis-acuario.jpg" 
-                alt="Sistema de osmosis inversa para acuarios" 
-                className="w-full h-full object-contain p-8 lg:p-12 group-hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-            <div className="mt-8 lg:mt-12">
-              <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-3">
-                Acuariofilia
-              </span>
-              <h3 className="font-serif text-3xl lg:text-4xl tracking-tight text-foreground">
-                Acuarios
-              </h3>
-              <p className="text-sm text-muted-foreground font-sans mt-4 max-w-sm mx-auto leading-relaxed">
-                Sistema compacto de 3 etapas optimizado para acuarios. Agua sin cloro para peces y plantas.
-              </p>
-              <div className="flex items-center justify-center gap-4 mt-8">
-                <span className="font-serif text-2xl text-foreground">Desde 189€</span>
-                <ArrowRight className="w-5 h-5 text-foreground group-hover:translate-x-2 transition-transform duration-300" />
+              <div className="mt-6 lg:mt-8">
+                <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-2">
+                  {product.subtitle}
+                </span>
+                <h3 className="font-serif text-2xl lg:text-3xl tracking-tight text-foreground">
+                  {product.name}
+                </h3>
+                <p className="text-sm text-muted-foreground font-sans mt-3 leading-relaxed">
+                  {product.description}
+                </p>
+                <div className="flex items-center justify-center gap-3 mt-6">
+                  <span className="font-serif text-xl text-foreground">Desde {product.price}€</span>
+                  <ArrowRight className="w-4 h-4 text-foreground group-hover:translate-x-2 transition-transform duration-300" />
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          ))}
         </div>
 
         {/* Trust badges */}

@@ -2,20 +2,20 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Check, Droplets, Shield, Clock, Wrench, ShoppingBag, ArrowRight, ArrowLeft } from "lucide-react"
+import { Check, Droplets, Shield, Clock, Zap, ShoppingBag, ArrowRight, ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Osmosis Inversa para Hogar | OSMOSIS ESP",
-  description: "Sistema de osmosis inversa de 5 etapas con panel LED tactil. Agua pura para toda la familia. Desde 508€. Envio gratuito. Garantia 2 anos.",
-  keywords: "osmosis inversa casa, sistema osmosis hogar, filtro agua domestico, purificador agua casa, osmosis inversa precio",
+  title: "Sistema Compacto con LED | OSMOSIS ESP",
+  description: "Sistema de osmosis inversa compacto con pantalla LED tactil. El mas vendido. Perfecto para espacios reducidos. Desde 508€. Envio gratuito.",
+  keywords: "osmosis inversa compacta, sistema osmosis LED, filtro agua compacto, purificador agua pequeno, osmosis espacio reducido",
   openGraph: {
-    title: "Osmosis Inversa para Hogar | OSMOSIS ESP",
-    description: "Sistema de 5 etapas con panel LED. Desde 508€. Garantia 2 anos.",
+    title: "Sistema Compacto con LED | OSMOSIS ESP",
+    description: "Sistema compacto con pantalla LED. Desde 508€. El mas vendido.",
     type: "website",
   },
 }
 
-export default function HogarPage() {
+export default function CompactoPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
@@ -37,37 +37,32 @@ export default function HogarPage() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               {/* Product Images */}
               <div className="order-2 lg:order-1 space-y-4">
-                <div className="aspect-square bg-secondary overflow-hidden">
+                <div className="aspect-square bg-secondary overflow-hidden relative">
+                  <span className="absolute top-4 left-4 z-10 text-[10px] tracking-[0.2em] uppercase bg-foreground text-background px-3 py-1.5">
+                    Popular
+                  </span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
-                    src="/osmosis-casa.jpg" 
-                    alt="Sistema de osmosis inversa para hogar" 
+                    src="/He23d99f93a3040acb8720554edb60e11k.jpg" 
+                    alt="Sistema compacto de osmosis inversa" 
                     className="w-full h-full object-contain p-8 lg:p-16"
                   />
                 </div>
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="aspect-square bg-secondary overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                      src="/He23d99f93a3040acb8720554edb60e11k.jpg" 
-                      alt="Kit completo" 
-                      className="w-full h-full object-contain p-2"
-                    />
-                  </div>
+                <div className="grid grid-cols-2 gap-4">
                   <div className="aspect-square bg-secondary overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
                       src="/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg" 
-                      alt="Panel LED" 
-                      className="w-full h-full object-contain p-2"
+                      alt="Panel LED tactil" 
+                      className="w-full h-full object-contain p-4"
                     />
                   </div>
                   <div className="aspect-square bg-secondary overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img 
                       src="/He931e67f2b5b4d5999ed74d013fdd560w.jpg" 
-                      alt="Filtros" 
-                      className="w-full h-full object-contain p-2"
+                      alt="Filtros de cambio rapido" 
+                      className="w-full h-full object-contain p-4"
                     />
                   </div>
                 </div>
@@ -76,15 +71,15 @@ export default function HogarPage() {
               {/* Product Info */}
               <div className="order-1 lg:order-2 lg:sticky lg:top-32">
                 <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
-                  Sistema Domestico Premium
+                  El Mas Vendido
                 </span>
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight text-foreground leading-[0.95]">
-                  Osmosis Inversa
+                  Sistema
                   <br />
-                  <span className="italic font-light text-muted-foreground">Hogar</span>
+                  <span className="italic font-light text-muted-foreground">Compacto</span>
                 </h1>
                 <p className="text-sm text-muted-foreground font-sans leading-relaxed mt-6 max-w-md">
-                  Sistema de 5 etapas con panel LED tactil y filtros de cambio rapido. Agua cristalina para toda la familia, directamente del grifo.
+                  Sistema de osmosis inversa con pantalla LED tactil que indica el estado de cada filtro. Diseno compacto perfecto para instalar debajo del fregadero.
                 </p>
 
                 {/* Price */}
@@ -121,7 +116,7 @@ export default function HogarPage() {
                         <div className="w-4 h-4 border border-muted-foreground" />
                         <div>
                           <span className="text-sm font-sans text-foreground">Con instalacion profesional</span>
-                          <span className="text-[10px] text-muted-foreground block">Tecnico certificado, 2-3h, toda Espana</span>
+                          <span className="text-[10px] text-muted-foreground block">Tecnico certificado en toda Espana</span>
                         </div>
                       </div>
                       <span className="font-serif text-lg text-foreground">587€</span>
@@ -146,10 +141,10 @@ export default function HogarPage() {
                 {/* Key Benefits */}
                 <div className="mt-10 pt-8 border-t border-border grid grid-cols-2 gap-4">
                   {[
-                    { icon: Droplets, text: "5 etapas filtracion" },
+                    { icon: Zap, text: "Pantalla LED tactil" },
                     { icon: Shield, text: "2 anos garantia" },
                     { icon: Clock, text: "Filtros click & twist" },
-                    { icon: Wrench, text: "Panel LED tactil" },
+                    { icon: Droplets, text: "99.9% pureza" },
                   ].map(({ icon: Icon, text }) => (
                     <div key={text} className="flex items-center gap-2 text-xs text-muted-foreground">
                       <Icon className="w-4 h-4" strokeWidth={1.5} />
@@ -170,15 +165,15 @@ export default function HogarPage() {
                 Caracteristicas
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-foreground">
-                Tecnologia de ultima generacion
+                Compacto pero potente
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
               {[
-                { icon: Droplets, title: "5 etapas de filtracion", desc: "Elimina el 99.9% de contaminantes, cal, cloro y metales pesados" },
-                { icon: Shield, title: "Garantia 2 anos", desc: "Cobertura completa del equipo y servicio tecnico sin coste adicional" },
+                { icon: Zap, title: "Pantalla LED tactil", desc: "Muestra el estado de cada filtro y calidad del agua en tiempo real" },
+                { icon: Shield, title: "Garantia 2 anos", desc: "Cobertura completa y servicio tecnico sin coste adicional" },
                 { icon: Clock, title: "Filtros click & twist", desc: "Cambio en segundos sin herramientas ni necesidad de tecnico" },
-                { icon: Wrench, title: "Panel LED tactil", desc: "Indica el estado de cada filtro y la calidad del agua en tiempo real" },
+                { icon: Droplets, title: "99.9% pureza", desc: "Elimina cal, cloro, metales pesados y microplasticos" },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="bg-background p-8 lg:p-12 text-center">
                   <div className="w-14 h-14 mx-auto border border-border flex items-center justify-center">
@@ -207,14 +202,14 @@ export default function HogarPage() {
                 </h2>
                 <ul className="mt-10 space-y-4">
                   {[
-                    "Equipo de osmosis inversa 5 etapas con bomba",
-                    "Panel LED tactil indicador de filtros",
-                    "Grifo de diseno cromado premium",
-                    "3 filtros de repuesto (sedimentos, carbon, post-filtro)",
-                    "Kit completo de instalacion con tubos y conexiones",
-                    "Manual de uso y mantenimiento en espanol",
-                    "Garantia de 2 anos completa",
-                    "Soporte tecnico prioritario por WhatsApp",
+                    "Equipo de osmosis compacto con bomba integrada",
+                    "Pantalla LED tactil indicador de filtros",
+                    "Grifo de diseno cromado",
+                    "Juego de filtros de repuesto",
+                    "Kit completo de instalacion",
+                    "Manual de uso en espanol",
+                    "Garantia de 2 anos",
+                    "Soporte tecnico por WhatsApp",
                   ].map(item => (
                     <li key={item} className="flex items-start gap-3 text-sm font-sans text-foreground">
                       <Check className="w-4 h-4 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
@@ -226,8 +221,8 @@ export default function HogarPage() {
               <div className="aspect-square bg-muted overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
-                  src="/He23d99f93a3040acb8720554edb60e11k.jpg" 
-                  alt="Contenido del pack de osmosis para hogar" 
+                  src="/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg" 
+                  alt="Contenido del pack compacto" 
                   className="w-full h-full object-contain p-8"
                 />
               </div>
@@ -248,10 +243,10 @@ export default function HogarPage() {
                     Mantenimiento anual
                   </h2>
                   <p className="text-sm text-muted-foreground font-sans mt-4 leading-relaxed">
-                    Suscripcion anual que incluye cambio de todos los filtros, revision completa y visita de tecnico certificado.
+                    Suscripcion que incluye cambio de filtros, revision completa y visita de tecnico.
                   </p>
                   <ul className="mt-6 space-y-2">
-                    {["Cambio de 3 filtros incluido", "Revision completa del equipo", "Desinfeccion del deposito", "Visita de tecnico a domicilio"].map(item => (
+                    {["Cambio de filtros incluido", "Revision completa del equipo", "Desinfeccion del sistema", "Visita de tecnico a domicilio"].map(item => (
                       <li key={item} className="flex items-center gap-2 text-xs font-sans text-foreground">
                         <Check className="w-3 h-3 text-foreground" strokeWidth={1.5} />
                         {item}
@@ -272,12 +267,12 @@ export default function HogarPage() {
         <section className="bg-foreground text-background">
           <div className="max-w-3xl mx-auto px-6 lg:px-12 py-24 lg:py-32 text-center">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-background leading-[0.95]">
-              Agua pura para
+              El favorito de
               <br />
-              <span className="italic font-light text-background/60">toda la familia</span>
+              <span className="italic font-light text-background/60">nuestros clientes</span>
             </h2>
             <p className="text-sm text-background/50 font-sans mt-6 max-w-md mx-auto">
-              Mas de 1,200 hogares ya disfrutan de agua cristalina. Unete a ellos.
+              El sistema mas vendido por su relacion calidad-precio y facilidad de uso.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <Link 
@@ -288,10 +283,10 @@ export default function HogarPage() {
                 Comprar Ahora
               </Link>
               <Link 
-                href="/productos/acuarios"
+                href="/productos/5-etapas"
                 className="inline-flex items-center justify-center gap-3 border border-background/30 text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:border-background transition-all duration-300"
               >
-                Ver Acuarios
+                Ver 5 Etapas
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

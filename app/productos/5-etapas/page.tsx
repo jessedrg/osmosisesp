@@ -2,20 +2,20 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Check, Droplets, Shield, Fish, Leaf, ShoppingBag, ArrowRight, ArrowLeft } from "lucide-react"
+import { Check, Droplets, Shield, Wrench, Sparkles, ShoppingBag, ArrowRight, ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Osmosis Inversa para Acuarios | OSMOSIS ESP",
-  description: "Sistema de osmosis inversa compacto de 3 etapas para acuarios. Agua sin cloro ni metales para peces y plantas. Desde 189€. Envio gratuito.",
-  keywords: "osmosis acuarios, filtro agua acuario, osmosis inversa peces, agua pura acuario, osmosis acuariofilia",
+  title: "Sistema 5 Etapas Premium | OSMOSIS ESP",
+  description: "Sistema profesional de osmosis inversa de 5 etapas con grifo premium. Maxima purificacion para hogares exigentes. Desde 429€. Envio gratuito.",
+  keywords: "osmosis inversa 5 etapas, sistema osmosis profesional, purificador agua premium, osmosis maxima filtracion, agua ultrapura",
   openGraph: {
-    title: "Osmosis Inversa para Acuarios | OSMOSIS ESP",
-    description: "Sistema compacto de 3 etapas para acuarios. Desde 189€. Envio gratuito.",
+    title: "Sistema 5 Etapas Premium | OSMOSIS ESP",
+    description: "Sistema profesional de 5 etapas. Desde 429€. Maxima purificacion.",
     type: "website",
   },
 }
 
-export default function AcuariosPage() {
+export default function CincoEtapasPage() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
@@ -37,50 +37,39 @@ export default function AcuariosPage() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               {/* Product Images */}
               <div className="order-2 lg:order-1 space-y-4">
-                <div className="aspect-square bg-secondary overflow-hidden">
+                <div className="aspect-square bg-secondary overflow-hidden relative">
+                  <span className="absolute top-4 left-4 z-10 text-[10px] tracking-[0.2em] uppercase bg-foreground text-background px-3 py-1.5">
+                    Premium
+                  </span>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
-                    src="/osmosis-acuario.jpg" 
-                    alt="Sistema de osmosis inversa para acuarios" 
-                    className="w-full h-full object-contain p-8 lg:p-16"
+                    src="/osmosis-casa.jpg" 
+                    alt="Sistema de osmosis inversa 5 etapas" 
+                    className="w-full h-full object-contain p-8 lg:p-12"
                   />
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="aspect-video bg-secondary overflow-hidden flex items-center justify-center">
-                    <div className="text-center p-4">
-                      <Fish className="w-8 h-8 text-foreground mx-auto mb-2" strokeWidth={1} />
-                      <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">Ideal para peces</span>
-                    </div>
-                  </div>
-                  <div className="aspect-video bg-secondary overflow-hidden flex items-center justify-center">
-                    <div className="text-center p-4">
-                      <Leaf className="w-8 h-8 text-foreground mx-auto mb-2" strokeWidth={1} />
-                      <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">Plantas sanas</span>
-                    </div>
-                  </div>
                 </div>
               </div>
 
               {/* Product Info */}
               <div className="order-1 lg:order-2 lg:sticky lg:top-32">
                 <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
-                  Sistema Compacto
+                  Maxima Purificacion
                 </span>
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight text-foreground leading-[0.95]">
-                  Osmosis Inversa
+                  Sistema
                   <br />
-                  <span className="italic font-light text-muted-foreground">Acuarios</span>
+                  <span className="italic font-light text-muted-foreground">5 Etapas</span>
                 </h1>
                 <p className="text-sm text-muted-foreground font-sans leading-relaxed mt-6 max-w-md">
-                  Sistema de 3 etapas disenado especificamente para acuariofilia. Elimina cloro, cloraminas, metales pesados y contaminantes que afectan la salud de tus peces y plantas.
+                  Sistema profesional de 5 etapas de filtracion con grifo premium incluido. La solucion definitiva para hogares que exigen la maxima pureza del agua.
                 </p>
 
                 {/* Price */}
                 <div className="mt-10 pb-8 border-b border-border">
                   <div className="flex items-baseline gap-4">
-                    <span className="font-serif text-5xl sm:text-6xl text-foreground">189€</span>
+                    <span className="font-serif text-5xl sm:text-6xl text-foreground">429€</span>
                     <div className="flex flex-col">
-                      <span className="text-lg text-muted-foreground/50 line-through font-sans">269€</span>
+                      <span className="text-lg text-muted-foreground/50 line-through font-sans">599€</span>
                       <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground">IVA incluido</span>
                     </div>
                   </div>
@@ -99,20 +88,20 @@ export default function AcuariosPage() {
                         </div>
                         <div>
                           <span className="text-sm font-sans text-foreground">Solo equipo</span>
-                          <span className="text-[10px] text-muted-foreground block">Instalacion sencilla, tu lo conectas</span>
+                          <span className="text-[10px] text-muted-foreground block">Incluye grifo premium cromado</span>
                         </div>
                       </div>
-                      <span className="font-serif text-lg text-foreground">189€</span>
+                      <span className="font-serif text-lg text-foreground">429€</span>
                     </label>
                     <label className="flex items-center justify-between p-4 border border-border hover:border-foreground transition-colors cursor-pointer">
                       <div className="flex items-center gap-3">
                         <div className="w-4 h-4 border border-muted-foreground" />
                         <div>
                           <span className="text-sm font-sans text-foreground">Con instalacion profesional</span>
-                          <span className="text-[10px] text-muted-foreground block">Tecnico especializado en acuarios</span>
+                          <span className="text-[10px] text-muted-foreground block">Tecnico certificado en toda Espana</span>
                         </div>
                       </div>
-                      <span className="font-serif text-lg text-foreground">268€</span>
+                      <span className="font-serif text-lg text-foreground">508€</span>
                     </label>
                   </div>
                 </div>
@@ -134,10 +123,10 @@ export default function AcuariosPage() {
                 {/* Key Benefits */}
                 <div className="mt-10 pt-8 border-t border-border grid grid-cols-2 gap-4">
                   {[
-                    { icon: Droplets, text: "3 etapas filtracion" },
+                    { icon: Droplets, text: "5 etapas filtracion" },
                     { icon: Shield, text: "2 anos garantia" },
-                    { icon: Fish, text: "Para agua dulce y salada" },
-                    { icon: Leaf, text: "Plantas mas sanas" },
+                    { icon: Sparkles, text: "Grifo premium" },
+                    { icon: Wrench, text: "Facil instalacion" },
                   ].map(({ icon: Icon, text }) => (
                     <div key={text} className="flex items-center gap-2 text-xs text-muted-foreground">
                       <Icon className="w-4 h-4" strokeWidth={1.5} />
@@ -150,76 +139,59 @@ export default function AcuariosPage() {
           </div>
         </section>
 
-        {/* Why for aquariums */}
-        <section className="border-t border-border">
+        {/* 5 Stages Explanation */}
+        <section className="border-t border-border bg-secondary">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-              <div>
-                <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
-                  Por que osmosis
-                </span>
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-foreground leading-[0.95]">
-                  Agua perfecta para
-                  <br />
-                  <span className="italic font-light text-muted-foreground">la vida acuatica</span>
-                </h2>
-                <p className="text-sm text-muted-foreground font-sans leading-relaxed mt-6 max-w-md">
-                  El agua del grifo contiene cloro, cloraminas, metales pesados y minerales que pueden ser daninos para peces y plantas. La osmosis inversa elimina hasta el 99% de estos contaminantes.
-                </p>
-              </div>
-              <div className="grid gap-6">
-                {[
-                  {
-                    title: "Elimina cloro y cloraminas",
-                    desc: "El cloro es toxico para los peces incluso en pequenas cantidades. Nuestro sistema lo elimina completamente.",
-                  },
-                  {
-                    title: "Sin metales pesados",
-                    desc: "Cobre, plomo y zinc pueden acumularse en tus peces. El agua RO los elimina por completo.",
-                  },
-                  {
-                    title: "Control total del GH/KH",
-                    desc: "Parte de agua pura para remineralizar segun las necesidades de tus especies.",
-                  },
-                  {
-                    title: "Plantas mas saludables",
-                    desc: "Sin contaminantes, tus plantas absorben mejor los nutrientes y crecen mas fuertes.",
-                  },
-                ].map(({ title, desc }) => (
-                  <div key={title} className="border-l-2 border-foreground pl-6">
-                    <h3 className="text-sm font-sans font-medium text-foreground">{title}</h3>
-                    <p className="text-xs text-muted-foreground font-sans mt-2 leading-relaxed">{desc}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="text-center mb-16 lg:mb-20">
+              <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
+                Proceso de Filtracion
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-foreground">
+                Las 5 etapas
+              </h2>
+            </div>
+            <div className="grid sm:grid-cols-5 gap-8">
+              {[
+                { num: "01", title: "Sedimentos", desc: "Elimina particulas, arena, oxido y suciedad hasta 5 micras" },
+                { num: "02", title: "Carbon GAC", desc: "Absorbe cloro, quimicos organicos y mejora el sabor" },
+                { num: "03", title: "Carbon Block", desc: "Filtracion fina de cloro residual y compuestos volatiles" },
+                { num: "04", title: "Membrana RO", desc: "Osmosis inversa que elimina el 99.9% de contaminantes" },
+                { num: "05", title: "Post-Carbon", desc: "Pulido final del agua para sabor cristalino perfecto" },
+              ].map(({ num, title, desc }) => (
+                <div key={num} className="text-center">
+                  <span className="font-serif text-4xl lg:text-5xl text-foreground/20">{num}</span>
+                  <h3 className="text-sm font-sans font-medium text-foreground mt-4">{title}</h3>
+                  <p className="text-xs text-muted-foreground font-sans mt-2 leading-relaxed">{desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Features Grid */}
-        <section className="border-t border-border bg-secondary">
+        <section className="border-t border-border">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
             <div className="text-center mb-16 lg:mb-24">
               <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
-                Especificaciones
+                Caracteristicas
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-foreground">
-                Caracteristicas tecnicas
+                Calidad profesional
               </h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
               {[
-                { title: "Capacidad", value: "75-100 GPD", desc: "Litros por dia suficientes para cualquier acuario" },
-                { title: "Etapas", value: "3", desc: "Sedimentos, carbon activo, membrana RO" },
-                { title: "Eliminacion", value: "99%", desc: "Cloro, cloraminas, metales, nitratos" },
-                { title: "TDS resultante", value: "0-10 ppm", desc: "Agua practicamente pura para remineralizar" },
-                { title: "Conexion", value: "Universal", desc: "Compatible con cualquier grifo estandar" },
-                { title: "Tamano", value: "Compacto", desc: "Ideal para espacios reducidos" },
-              ].map(({ title, value, desc }) => (
-                <div key={title} className="bg-background p-8 lg:p-10">
-                  <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans">{title}</span>
-                  <p className="font-serif text-3xl text-foreground mt-2">{value}</p>
-                  <p className="text-xs text-muted-foreground font-sans mt-2">{desc}</p>
+                { icon: Droplets, title: "5 etapas completas", desc: "Sistema de filtracion profesional para agua ultrapura" },
+                { icon: Sparkles, title: "Grifo premium", desc: "Grifo de diseno cromado de alta calidad incluido" },
+                { icon: Shield, title: "Garantia 2 anos", desc: "Cobertura completa y servicio tecnico gratuito" },
+                { icon: Wrench, title: "Facil instalacion", desc: "Kit completo con instrucciones paso a paso" },
+              ].map(({ icon: Icon, title, desc }) => (
+                <div key={title} className="bg-background p-8 lg:p-12 text-center">
+                  <div className="w-14 h-14 mx-auto border border-border flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-foreground" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-sm font-sans font-medium text-foreground mt-6">{title}</h3>
+                  <p className="text-xs text-muted-foreground font-sans mt-3 leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>
@@ -227,38 +199,28 @@ export default function AcuariosPage() {
         </section>
 
         {/* What's included */}
-        <section className="border-t border-border">
+        <section className="bg-secondary">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <div className="aspect-square bg-secondary overflow-hidden order-2 lg:order-1">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/osmosis-acuario.jpg" 
-                  alt="Contenido del pack de osmosis para acuarios" 
-                  className="w-full h-full object-contain p-8"
-                />
-              </div>
-              <div className="order-1 lg:order-2">
+              <div>
                 <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
                   El Pack Incluye
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-foreground leading-[0.95]">
-                  Listo para
+                  Todo lo que
                   <br />
-                  <span className="italic font-light text-muted-foreground">usar</span>
+                  <span className="italic font-light text-muted-foreground">necesitas</span>
                 </h2>
                 <ul className="mt-10 space-y-4">
                   {[
-                    "Equipo de osmosis inversa 3 etapas compacto",
-                    "Filtro de sedimentos (PP 5 micras)",
-                    "Filtro de carbon activo (CTO)",
-                    "Membrana de osmosis inversa 75 GPD",
-                    "Llave de paso y conexiones universales",
-                    "Tubos de silicona de grado alimentario",
-                    "Herramienta para cambio de filtros",
-                    "Manual de instalacion ilustrado",
-                    "Garantia de 2 anos",
-                    "Soporte tecnico por WhatsApp",
+                    "Sistema de osmosis inversa 5 etapas completo",
+                    "Membrana RO de alta capacidad 75 GPD",
+                    "Grifo cromado premium de diseno",
+                    "Deposito presurizado de 12 litros",
+                    "5 filtros iniciales instalados",
+                    "Kit completo de instalacion con tubos y conexiones",
+                    "Manual de uso y mantenimiento",
+                    "Garantia de 2 anos completa",
                   ].map(item => (
                     <li key={item} className="flex items-start gap-3 text-sm font-sans text-foreground">
                       <Check className="w-4 h-4 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
@@ -267,27 +229,35 @@ export default function AcuariosPage() {
                   ))}
                 </ul>
               </div>
+              <div className="aspect-square bg-muted overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img 
+                  src="/osmosis-casa.jpg" 
+                  alt="Sistema 5 etapas completo" 
+                  className="w-full h-full object-contain p-8"
+                />
+              </div>
             </div>
           </div>
         </section>
 
         {/* Maintenance */}
-        <section className="border-t border-border bg-secondary">
+        <section className="border-t border-border">
           <div className="max-w-3xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
-            <div className="border border-border bg-background p-10 lg:p-16">
+            <div className="border border-border p-10 lg:p-16">
               <div className="grid sm:grid-cols-2 gap-10 items-center">
                 <div>
                   <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
                     Opcional
                   </span>
                   <h2 className="font-serif text-2xl sm:text-3xl tracking-tight text-foreground">
-                    Kit de filtros anuales
+                    Mantenimiento anual
                   </h2>
                   <p className="text-sm text-muted-foreground font-sans mt-4 leading-relaxed">
-                    Pack con todos los filtros de repuesto para un ano completo de uso. Incluye instrucciones de cambio.
+                    Suscripcion que incluye cambio de los 5 filtros, revision completa y visita tecnica.
                   </p>
                   <ul className="mt-6 space-y-2">
-                    {["2 filtros de sedimentos PP", "2 filtros carbon CTO", "1 membrana RO 75GPD"].map(item => (
+                    {["Kit de 5 filtros incluido", "Revision completa del sistema", "Comprobacion de presion y caudal", "Visita de tecnico a domicilio"].map(item => (
                       <li key={item} className="flex items-center gap-2 text-xs font-sans text-foreground">
                         <Check className="w-3 h-3 text-foreground" strokeWidth={1.5} />
                         {item}
@@ -296,7 +266,7 @@ export default function AcuariosPage() {
                   </ul>
                 </div>
                 <div className="text-center sm:text-right">
-                  <p className="font-serif text-5xl lg:text-6xl text-foreground">49€</p>
+                  <p className="font-serif text-5xl lg:text-6xl text-foreground">89€</p>
                   <p className="text-sm text-muted-foreground font-sans mt-1">/ano</p>
                 </div>
               </div>
@@ -308,12 +278,12 @@ export default function AcuariosPage() {
         <section className="bg-foreground text-background">
           <div className="max-w-3xl mx-auto px-6 lg:px-12 py-24 lg:py-32 text-center">
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-background leading-[0.95]">
-              Agua pura para
+              Maxima pureza
               <br />
-              <span className="italic font-light text-background/60">tus peces y plantas</span>
+              <span className="italic font-light text-background/60">para tu hogar</span>
             </h2>
             <p className="text-sm text-background/50 font-sans mt-6 max-w-md mx-auto">
-              Cientos de acuaristas ya confian en nosotros para mantener sus acuarios saludables.
+              El sistema mas completo para hogares que no hacen concesiones en calidad.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
               <Link 
@@ -324,10 +294,10 @@ export default function AcuariosPage() {
                 Comprar Ahora
               </Link>
               <Link 
-                href="/productos/compacto"
+                href="/productos/acuarios"
                 className="inline-flex items-center justify-center gap-3 border border-background/30 text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:border-background transition-all duration-300"
               >
-                Ver Compacto
+                Ver Acuarios
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

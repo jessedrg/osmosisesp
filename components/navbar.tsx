@@ -39,20 +39,27 @@ export function Navbar() {
             </button>
             {productsOpen && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4">
-                <div className="bg-background border border-border shadow-lg min-w-[200px]">
+                <div className="bg-background border border-border shadow-lg min-w-[220px]">
                   <Link 
-                    href="/productos/hogar" 
+                    href="/productos/compacto" 
                     className="block px-6 py-4 text-[11px] tracking-[0.15em] uppercase text-foreground hover:bg-secondary transition-colors border-b border-border"
                   >
-                    Hogar
-                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">Sistema domestico 5 etapas</span>
+                    Sistema Compacto
+                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">El mas vendido · Desde 508€</span>
+                  </Link>
+                  <Link 
+                    href="/productos/5-etapas" 
+                    className="block px-6 py-4 text-[11px] tracking-[0.15em] uppercase text-foreground hover:bg-secondary transition-colors border-b border-border"
+                  >
+                    Sistema 5 Etapas
+                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">Maxima purificacion · Desde 429€</span>
                   </Link>
                   <Link 
                     href="/productos/acuarios" 
                     className="block px-6 py-4 text-[11px] tracking-[0.15em] uppercase text-foreground hover:bg-secondary transition-colors"
                   >
                     Acuarios
-                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">Sistema compacto 3 etapas</span>
+                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">Agua perfecta para peces · Desde 189€</span>
                   </Link>
                 </div>
               </div>
@@ -72,7 +79,7 @@ export function Navbar() {
         {/* Right - CTA */}
         <div className="hidden lg:flex items-center">
           <Link 
-            href="/productos/hogar" 
+            href="/productos" 
             className="text-[11px] tracking-[0.15em] uppercase text-foreground border border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-all duration-300"
           >
             Comprar
@@ -91,8 +98,11 @@ export function Navbar() {
           <nav className="flex flex-col items-center gap-8">
             <div className="text-center">
               <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground block mb-4">Productos</span>
-              <Link href="/productos/hogar" onClick={() => setOpen(false)} className="block text-2xl font-serif text-foreground mb-2">
-                Hogar
+              <Link href="/productos/compacto" onClick={() => setOpen(false)} className="block text-2xl font-serif text-foreground mb-2">
+                Sistema Compacto
+              </Link>
+              <Link href="/productos/5-etapas" onClick={() => setOpen(false)} className="block text-2xl font-serif text-foreground mb-2">
+                Sistema 5 Etapas
               </Link>
               <Link href="/productos/acuarios" onClick={() => setOpen(false)} className="block text-2xl font-serif text-foreground">
                 Acuarios
@@ -110,11 +120,11 @@ export function Navbar() {
             </Link>
             <div className="h-px w-12 bg-border my-4" />
             <Link 
-              href="/productos/hogar" 
+              href="/productos" 
               onClick={() => setOpen(false)}
               className="text-sm tracking-[0.15em] uppercase text-foreground border border-foreground px-8 py-4"
             >
-              Comprar Ahora
+              Ver Productos
             </Link>
           </nav>
         </div>

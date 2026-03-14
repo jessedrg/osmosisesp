@@ -1,124 +1,147 @@
-import type { Metadata } from "next"
+"use client"
+
 import Link from "next/link"
+import Image from "next/image"
+import { motion } from "framer-motion"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ArrowRight } from "lucide-react"
 
-export const metadata: Metadata = {
-  title: "Productos | OSMOSIS ESP",
-  description: "Sistemas de osmosis inversa premium para hogar y acuarios. Tecnologia de purificacion avanzada. Envio gratuito en toda Espana.",
-  keywords: "osmosis inversa, purificacion agua, filtro agua casa, osmosis acuarios, agua pura",
-  openGraph: {
-    title: "Productos | OSMOSIS ESP",
-    description: "Sistemas de osmosis inversa premium para hogar y acuarios.",
-    type: "website",
+const products = [
+  {
+    id: "compacto",
+    name: "Sistema Compacto",
+    subtitle: "El mas vendido",
+    description: "Sistema de osmosis inversa compacto con pantalla LED tactil. Perfecto para espacios reducidos.",
+    price: "508",
+    image: "/He23d99f93a3040acb8720554edb60e11k.jpg",
+    href: "/productos/compacto",
+    badge: "Popular"
   },
-}
+  {
+    id: "5-etapas",
+    name: "Sistema 5 Etapas",
+    subtitle: "Maxima purificacion",
+    description: "Sistema profesional de 5 etapas con grifo premium. Filtracion avanzada para agua perfecta.",
+    price: "429",
+    image: "/osmosis-casa.jpg",
+    href: "/productos/5-etapas",
+    badge: "Premium"
+  },
+  {
+    id: "acuarios",
+    name: "Sistema Acuarios",
+    subtitle: "Agua perfecta para peces",
+    description: "Sistema compacto de 3 etapas disenado para acuarios. Elimina cloro, metales y sedimentos.",
+    price: "189",
+    image: "/osmosis-acuario.jpg",
+    href: "/productos/acuarios",
+    badge: null
+  },
+]
 
 export default function ProductosPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <>
       <Navbar />
-      <main className="flex-1">
+      <main className="min-h-screen bg-background">
         {/* Hero */}
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-            <div className="text-center mb-16 lg:mb-24">
-              <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-6">
-                Nuestros Sistemas
+        <section className="pt-32 pb-20 px-6">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-3xl"
+            >
+              <span className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground font-sans">
+                Catalogo
               </span>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl tracking-tight text-foreground leading-[0.95]">
-                Elige tu
-                <br />
-                <span className="italic font-light text-muted-foreground">solucion</span>
+              <h1 className="font-serif text-5xl md:text-7xl font-light mt-4 mb-6 text-balance">
+                Nuestros Sistemas
               </h1>
-            </div>
+              <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+                Cada sistema esta disenado para ofrecer agua de la maxima pureza. 
+                Elige el que mejor se adapte a tus necesidades.
+              </p>
+            </motion.div>
+          </div>
+        </section>
 
-            {/* Product Categories */}
-            <div className="grid lg:grid-cols-2 gap-px bg-border">
-              {/* Hogar */}
-              <Link 
-                href="/productos/hogar"
-                className="group bg-background p-8 lg:p-16 flex flex-col items-center text-center hover:bg-secondary transition-colors duration-500"
-              >
-                <div className="aspect-square w-full max-w-md bg-secondary overflow-hidden group-hover:bg-muted transition-colors duration-500">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="/osmosis-casa.jpg" 
-                    alt="Sistema de osmosis inversa para hogar" 
-                    className="w-full h-full object-contain p-8 lg:p-12 group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="mt-8 lg:mt-12">
-                  <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-3">
-                    Uso Domestico
-                  </span>
-                  <h2 className="font-serif text-3xl lg:text-4xl tracking-tight text-foreground">
-                    Hogar
-                  </h2>
-                  <p className="text-sm text-muted-foreground font-sans mt-4 max-w-sm mx-auto leading-relaxed">
-                    Sistema completo de 5 etapas con panel LED tactil para toda la familia. Agua pura ilimitada desde el grifo.
-                  </p>
-                  <div className="flex items-center justify-center gap-4 mt-8">
-                    <span className="font-serif text-2xl text-foreground">Desde 508€</span>
-                    <ArrowRight className="w-5 h-5 text-foreground group-hover:translate-x-2 transition-transform duration-300" />
-                  </div>
-                </div>
-              </Link>
-
-              {/* Acuarios */}
-              <Link 
-                href="/productos/acuarios"
-                className="group bg-background p-8 lg:p-16 flex flex-col items-center text-center hover:bg-secondary transition-colors duration-500"
-              >
-                <div className="aspect-square w-full max-w-md bg-secondary overflow-hidden group-hover:bg-muted transition-colors duration-500">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="/osmosis-acuario.jpg" 
-                    alt="Sistema de osmosis inversa para acuarios" 
-                    className="w-full h-full object-contain p-8 lg:p-12 group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="mt-8 lg:mt-12">
-                  <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-3">
-                    Acuariofilia
-                  </span>
-                  <h2 className="font-serif text-3xl lg:text-4xl tracking-tight text-foreground">
-                    Acuarios
-                  </h2>
-                  <p className="text-sm text-muted-foreground font-sans mt-4 max-w-sm mx-auto leading-relaxed">
-                    Sistema compacto de 3 etapas optimizado para acuarios. Agua sin cloro ni metales para tus peces y plantas.
-                  </p>
-                  <div className="flex items-center justify-center gap-4 mt-8">
-                    <span className="font-serif text-2xl text-foreground">Desde 189€</span>
-                    <ArrowRight className="w-5 h-5 text-foreground group-hover:translate-x-2 transition-transform duration-300" />
-                  </div>
-                </div>
-              </Link>
+        {/* Products Grid */}
+        <section className="pb-32 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6">
+              {products.map((product, index) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Link href={product.href} className="group block">
+                    <div className="relative aspect-square bg-secondary overflow-hidden mb-6">
+                      {product.badge && (
+                        <span className="absolute top-4 left-4 z-10 text-[10px] tracking-[0.2em] uppercase bg-foreground text-background px-3 py-1.5">
+                          {product.badge}
+                        </span>
+                      )}
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-contain p-8 group-hover:scale-105 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="space-y-3">
+                      <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
+                        {product.subtitle}
+                      </span>
+                      <h2 className="font-serif text-2xl">{product.name}</h2>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {product.description}
+                      </p>
+                      <div className="flex items-center justify-between pt-4 border-t border-border">
+                        <span className="text-lg">
+                          Desde <span className="font-medium">{product.price}€</span>
+                        </span>
+                        <span className="flex items-center gap-2 text-sm group-hover:gap-3 transition-all">
+                          Ver producto <ArrowRight className="w-4 h-4" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits */}
-        <section className="border-t border-border bg-foreground text-background">
-          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center">
-              {[
-                { value: "99.9%", label: "Pureza" },
-                { value: "2", label: "Anos garantia" },
-                { value: "1,200+", label: "Clientes satisfechos" },
-                { value: "0€", label: "Envio" },
-              ].map(({ value, label }) => (
-                <div key={label}>
-                  <span className="font-serif text-3xl lg:text-5xl text-background">{value}</span>
-                  <span className="block text-[10px] tracking-[0.2em] uppercase text-background/50 font-sans mt-2">{label}</span>
-                </div>
-              ))}
+        {/* Trust Banner */}
+        <section className="py-20 bg-foreground text-background">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <div className="font-serif text-4xl mb-2">2</div>
+                <div className="text-sm text-background/60">Anos de garantia</div>
+              </div>
+              <div>
+                <div className="font-serif text-4xl mb-2">1,200+</div>
+                <div className="text-sm text-background/60">Instalaciones</div>
+              </div>
+              <div>
+                <div className="font-serif text-4xl mb-2">48h</div>
+                <div className="text-sm text-background/60">Envio express</div>
+              </div>
+              <div>
+                <div className="font-serif text-4xl mb-2">99.9%</div>
+                <div className="text-sm text-background/60">Pureza garantizada</div>
+              </div>
             </div>
           </div>
         </section>
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
