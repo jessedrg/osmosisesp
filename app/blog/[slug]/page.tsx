@@ -3,6 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { BlogProductBanner } from "@/components/blog-product-banner"
 import { BLOG_POSTS, getBlogPostBySlug, getAllBlogSlugs } from "@/lib/blog-data"
 import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react"
 
@@ -122,6 +123,20 @@ export default async function BlogPostPage({ params }: PageProps) {
                   <p className="text-sm text-muted-foreground font-sans leading-[1.8] mt-4">
                     {section.content}
                   </p>
+                  {/* Product banner after 2nd section */}
+                  {i === 1 && (
+                    <BlogProductBanner 
+                      variant={post.category === "Acuarios" ? "acuarios" : "compacto"} 
+                      style="mini" 
+                    />
+                  )}
+                  {/* Full product banner after 4th section */}
+                  {i === 3 && post.sections.length > 4 && (
+                    <BlogProductBanner 
+                      variant={post.category === "Acuarios" ? "acuarios" : post.slug.includes("5-etapas") ? "5etapas" : "compacto"} 
+                      style="full" 
+                    />
+                  )}
                 </div>
               ))}
             </div>
