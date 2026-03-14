@@ -155,7 +155,7 @@ export default function ProductPurchaseCard({
             </div>
             <div className="flex items-center gap-1.5">
               <Truck className="w-3.5 h-3.5" />
-              <span>Envio 24-48h</span>
+              <span>Entrega ~1 semana</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Award className="w-3.5 h-3.5" />
@@ -249,9 +249,9 @@ export default function ProductPurchaseCard({
         <div className="flex items-center justify-center gap-6 text-xs text-muted-foreground">
           <span>Pago seguro</span>
           <span>•</span>
-          <span>Envío 24-48h</span>
+          <span>Entrega ~1 semana</span>
           <span>•</span>
-          <span>2 años garantía</span>
+          <span>2 anos garantia</span>
         </div>
       </div>
     </div>
