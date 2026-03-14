@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navbar"
 import { HomeHero } from "@/components/home-hero"
 import { ProductSection } from "@/components/product-section"
+import { SavingsCalculator } from "@/components/savings-calculator"
 import { HowItWorks } from "@/components/how-it-works"
 import { ReviewsSection } from "@/components/reviews-section"
 import { FaqSection } from "@/components/faq-section"
@@ -76,6 +77,7 @@ export default function HomePage() {
       <main>
         <HomeHero />
         <ProductSection />
+        <SavingsCalculator />
         <HowItWorks />
         <ReviewsSection />
         <FaqSection />
