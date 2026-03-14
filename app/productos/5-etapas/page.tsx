@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import ProductSelector from "@/components/product-selector"
+import ProductPurchaseCard from "@/components/product-purchase-card"
 import { Check, Droplets, Shield, Wrench, Sparkles, ArrowRight, ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -67,19 +67,11 @@ export default function CincoEtapasPage() {
 
                 {/* Product Selector with Switch */}
                 <div className="mt-10">
-                  <ProductSelector
-                    soloEquipo={{
-                      id: "5etapas-solo",
-                      label: "Sistema 5 Etapas - Solo Equipo",
-                      price: 429,
-                      originalPrice: 599,
-                    }}
-                    conInstalacion={{
-                      id: "5etapas-instalacion",
-                      label: "Sistema 5 Etapas - Con Instalacion",
-                      price: 508,
-                      originalPrice: 699,
-                    }}
+                  <ProductPurchaseCard
+                    category="5etapas"
+                    soloPrice={429}
+                    instalacionPrice={508}
+                    originalPrice={599}
                     features={[
                       "5 etapas de filtracion profesional",
                       "Grifo premium cromado incluido",
@@ -87,17 +79,7 @@ export default function CincoEtapasPage() {
                       "Maxima pureza 99.9%",
                       "2 anos de garantia completa",
                     ]}
-                    included={[
-                      "Sistema completo 5 etapas",
-                      "Grifo cromado premium",
-                      "Deposito 12 litros",
-                      "Kit instalacion completo",
-                      "5 filtros de primera carga",
-                    ]}
                   />
-                  <p className="text-[10px] text-muted-foreground font-sans text-center mt-4">
-                    Envio gratuito · Garantia 2 anos · 14 dias devolucion
-                  </p>
                 </div>
 
                 {/* Key Benefits */}

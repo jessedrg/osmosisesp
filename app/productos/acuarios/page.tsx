@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import ProductSelector from "@/components/product-selector"
+import ProductPurchaseCard from "@/components/product-purchase-card"
 import { Check, Droplets, Shield, Fish, Leaf, ArrowRight, ArrowLeft } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -78,19 +78,11 @@ export default function AcuariosPage() {
 
                 {/* Product Selector with Switch */}
                 <div className="mt-10">
-                  <ProductSelector
-                    soloEquipo={{
-                      id: "acuarios-solo",
-                      label: "Sistema Acuarios - Solo Equipo",
-                      price: 189,
-                      originalPrice: 269,
-                    }}
-                    conInstalacion={{
-                      id: "acuarios-instalacion",
-                      label: "Sistema Acuarios - Con Instalacion",
-                      price: 268,
-                      originalPrice: 349,
-                    }}
+                  <ProductPurchaseCard
+                    category="acuarios"
+                    soloPrice={189}
+                    instalacionPrice={268}
+                    originalPrice={269}
                     features={[
                       "3 etapas de filtracion",
                       "Elimina cloro y cloraminas al 100%",
@@ -98,17 +90,7 @@ export default function AcuariosPage() {
                       "Para agua dulce y salada",
                       "2 anos de garantia completa",
                     ]}
-                    included={[
-                      "Equipo osmosis 3 etapas",
-                      "Filtro sedimentos PP",
-                      "Filtro carbon CTO",
-                      "Membrana RO 75GPD",
-                      "Kit conexiones universal",
-                    ]}
                   />
-                  <p className="text-[10px] text-muted-foreground font-sans text-center mt-4">
-                    Envio gratuito · Garantia 2 anos · 14 dias devolucion
-                  </p>
                 </div>
 
                 {/* Key Benefits */}
