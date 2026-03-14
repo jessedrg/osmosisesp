@@ -108,13 +108,15 @@ export default function CincoEtapasPage() {
 
                 {/* CTA */}
                 <div className="pt-8">
-                  <Link
-                    href="#checkout"
+                  <a
+                    href="https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20el%20Sistema%205%20Etapas%20Premium"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="group w-full inline-flex items-center justify-center gap-3 bg-foreground text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-foreground/90 transition-all duration-300"
                   >
                     <ShoppingBag className="w-4 h-4" />
                     Comprar Ahora
-                  </Link>
+                  </a>
                   <p className="text-[10px] text-muted-foreground font-sans text-center mt-4">
                     Envio gratuito · Garantia 2 anos · 14 dias devolucion
                   </p>
@@ -286,13 +288,15 @@ export default function CincoEtapasPage() {
               El sistema mas completo para hogares que no hacen concesiones en calidad.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-              <Link 
-                href="#checkout"
+              <a 
+                href="https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20el%20Sistema%205%20Etapas%20Premium"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-background text-foreground px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-background/90 transition-all duration-300"
               >
                 <ShoppingBag className="w-4 h-4" />
                 Comprar Ahora
-              </Link>
+              </a>
               <Link 
                 href="/productos/acuarios"
                 className="inline-flex items-center justify-center gap-3 border border-background/30 text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:border-background transition-all duration-300"
