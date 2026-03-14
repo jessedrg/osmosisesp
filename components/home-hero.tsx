@@ -55,7 +55,7 @@ export function HomeHero() {
           <h1 className="font-serif text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-tight text-foreground text-balance">
             Agua pura,
             <br />
-            <span className="italic font-light text-muted-foreground">diseño impecable</span>
+            <span className="italic font-light text-muted-foreground">vida mejor</span>
           </h1>
 
           {/* Subtitle */}

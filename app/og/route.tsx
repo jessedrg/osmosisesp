@@ -36,7 +36,7 @@ export async function GET() {
             Agua pura,
           </div>
           <div style={{ fontSize: 80, color: "#1a1a1860", fontStyle: "italic", fontWeight: 300, letterSpacing: "-2px", lineHeight: 0.9, textAlign: "center" }}>
-            diseño impecable
+            vida mejor
           </div>
         </div>
         
