@@ -34,6 +34,10 @@ export async function startCheckoutSession(productId: string) {
     payment_method_types: ['card', 'link'],
     // Billing address collection for better fraud prevention
     billing_address_collection: 'auto',
+    // Shipping address collection - only Spain
+    shipping_address_collection: {
+      allowed_countries: ['ES'],
+    },
     // Phone number for shipping updates
     phone_number_collection: {
       enabled: true,
