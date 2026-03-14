@@ -22,6 +22,7 @@ export async function startCheckoutSession(productId: string) {
           product_data: {
             name: product.name,
             description: product.description,
+            images: product.images || [],
           },
           unit_amount: product.priceInCents,
         },
@@ -29,6 +30,14 @@ export async function startCheckoutSession(productId: string) {
       },
     ],
     mode: 'payment',
+    // Enable all available payment methods including Apple Pay and Google Pay
+    payment_method_types: ['card', 'link'],
+    // Billing address collection for better fraud prevention
+    billing_address_collection: 'auto',
+    // Phone number for shipping updates
+    phone_number_collection: {
+      enabled: true,
+    },
   })
 
   return session.client_secret
