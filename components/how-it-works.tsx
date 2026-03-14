@@ -58,7 +58,7 @@ export function HowItWorks() {
               key={step.num} 
               className="bg-foreground p-8 lg:p-10 group hover:bg-background/5 transition-colors duration-500"
             >
-              <span className="font-serif text-6xl lg:text-7xl text-background/10 block mb-8 group-hover:text-background/20 transition-colors duration-500">
+              <span className="font-serif text-6xl lg:text-7xl text-accent/30 block mb-8 group-hover:text-accent/50 transition-colors duration-500">
                 {step.num}
               </span>
               <h3 className="text-lg font-serif text-background mb-3">
@@ -78,7 +78,7 @@ export function HowItWorks() {
           </p>
           <Link 
             href="#productos"
-            className="inline-flex items-center gap-3 bg-background text-foreground px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-background/90 transition-all duration-300"
+            className="inline-flex items-center gap-3 bg-accent text-accent-foreground px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-accent/90 transition-all duration-300"
           >
             Ver Producto
           </Link>

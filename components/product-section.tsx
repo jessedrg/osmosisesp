@@ -42,13 +42,13 @@ export function ProductSection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-40">
         {/* Section Header */}
         <div className="text-center mb-16 lg:mb-24">
-          <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-6">
+          <span className="text-[10px] tracking-[0.4em] uppercase text-accent font-sans block mb-6">
             Nuestros Sistemas
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-7xl tracking-tight text-foreground leading-[0.95]">
             Elige tu
             <br />
-            <span className="italic font-light text-muted-foreground">solucion</span>
+            <span className="italic font-light text-gradient-water">solucion</span>
           </h2>
         </div>
 
@@ -80,8 +80,8 @@ export function ProductSection() {
                   {product.description}
                 </p>
                 <div className="flex items-center justify-center gap-3 mt-6">
-                  <span className="font-serif text-xl text-foreground">Desde {product.price}€</span>
-                  <ArrowRight className="w-4 h-4 text-foreground group-hover:translate-x-2 transition-transform duration-300" />
+                  <span className="font-serif text-xl text-accent">Desde {product.price}€</span>
+                  <ArrowRight className="w-4 h-4 text-accent group-hover:translate-x-2 transition-transform duration-300" />
                 </div>
               </div>
             </Link>

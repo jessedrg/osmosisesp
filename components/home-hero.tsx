@@ -55,7 +55,7 @@ export function HomeHero() {
           <h1 className="font-serif text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-tight text-foreground text-balance">
             Agua pura,
             <br />
-            <span className="italic font-light text-muted-foreground">vida mejor</span>
+            <span className="italic font-light text-gradient-water">vida mejor</span>
           </h1>
 
           {/* Subtitle */}
@@ -67,14 +67,17 @@ export function HomeHero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
             <Link 
               href="#productos"
-              className="group inline-flex items-center gap-3 bg-foreground text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-foreground/90 transition-all duration-300"
+              className="group relative inline-flex items-center gap-3 bg-accent text-accent-foreground px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-accent/90 transition-all duration-300 overflow-hidden"
             >
-              Descubrir Productos
-              <ArrowDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
+              <span className="relative z-10 flex items-center gap-3">
+                Descubrir Productos
+                <ArrowDown className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform" />
+              </span>
+              <span className="absolute inset-0 water-shimmer" />
             </Link>
             <Link 
               href="#proceso"
-              className="inline-flex items-center gap-3 border border-foreground/20 text-foreground px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:border-foreground transition-all duration-300"
+              className="inline-flex items-center gap-3 border border-accent/30 text-foreground px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:border-accent hover:text-accent transition-all duration-300"
             >
               Como Funciona
             </Link>
@@ -83,15 +86,15 @@ export function HomeHero() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-8 mt-20 lg:mt-32 max-w-2xl mx-auto">
             <div className="text-center">
-              <p className="font-serif text-3xl sm:text-4xl text-foreground">99.9%</p>
+              <p className="font-serif text-3xl sm:text-4xl text-gradient-water">99.9%</p>
               <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-2">Pureza</p>
             </div>
-            <div className="text-center border-x border-border">
-              <p className="font-serif text-3xl sm:text-4xl text-foreground">1,200+</p>
+            <div className="text-center border-x border-accent/20">
+              <p className="font-serif text-3xl sm:text-4xl text-gradient-water">1,200+</p>
               <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-2">Instalaciones</p>
             </div>
             <div className="text-center">
-              <p className="font-serif text-3xl sm:text-4xl text-foreground">2</p>
+              <p className="font-serif text-3xl sm:text-4xl text-gradient-water">2</p>
               <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-2">Años Garantia</p>
             </div>
           </div>

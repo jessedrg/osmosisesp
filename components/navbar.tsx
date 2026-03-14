@@ -19,9 +19,10 @@ export function Navbar() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md" : "bg-transparent"}`}>
       <nav className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
-        <Link href="/" className="relative z-10">
+        <Link href="/" className="relative z-10 flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-accent" />
           <span className="text-xs tracking-[0.3em] uppercase font-sans font-medium text-foreground">
-            OSMOSIS<span className="text-muted-foreground">ESP</span>
+            OSMOSIS<span className="text-accent">ESP</span>
           </span>
         </Link>
 
@@ -83,7 +84,7 @@ export function Navbar() {
         <div className="hidden lg:flex items-center">
           <Link 
             href="/productos" 
-            className="text-[11px] tracking-[0.15em] uppercase text-foreground border border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-all duration-300"
+            className="text-[11px] tracking-[0.15em] uppercase text-accent-foreground bg-accent px-6 py-3 hover:bg-accent/90 transition-all duration-300"
           >
             Comprar
           </Link>
