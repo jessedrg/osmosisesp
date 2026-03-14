@@ -137,7 +137,7 @@ export default function ProductPurchaseCard({
             <EmbeddedCheckoutProvider
               stripe={stripePromise}
               options={{ 
-                clientSecret: fetchClientSecret,
+                fetchClientSecret,
                 onComplete: handleCheckoutComplete
               }}
             >
