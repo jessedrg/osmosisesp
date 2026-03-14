@@ -7,11 +7,11 @@ import { Check, Droplets, Shield, Clock, Zap, ArrowRight, ArrowLeft, Gauge, Rule
 
 export const metadata: Metadata = {
   title: "Sistema Compacto 500GPD con Pantalla LED | OSMOSIS ESP",
-  description: "Sistema de osmosis inversa compacto de 500GPD con pantalla LED tactil. Sin tanque, autolimpieza, 3 etapas de filtracion. El mas vendido. Desde 508€.",
+  description: "Sistema de osmosis inversa compacto de 500GPD con pantalla LED tactil. Sin tanque, autolimpieza, 3 etapas de filtracion. El mas vendido. Solo 300€ con envio gratis.",
   keywords: "osmosis inversa compacta, sistema osmosis LED, filtro agua 500GPD, purificador agua sin tanque, osmosis autolimpieza",
   openGraph: {
     title: "Sistema Compacto 500GPD | OSMOSIS ESP",
-    description: "Sistema compacto con pantalla LED y autolimpieza. Desde 508€.",
+    description: "Sistema compacto con pantalla LED y autolimpieza. Solo 300€ con envio gratis.",
     type: "website",
   },
 }
@@ -88,7 +88,7 @@ export default function CompactoPage() {
                   ))}
                 </div>
                 <div className="mt-10">
-                  <ProductPurchaseCard category="compacto" soloPrice={508} instalacionPrice={587} originalPrice={725} features={features} />
+                  <ProductPurchaseCard category="compacto" soloPrice={300} instalacionPrice={379} originalPrice={508} productName="Sistema Compacto 500GPD" tag="Mas Vendido" features={features} />
                 </div>
               </div>
             </div>

@@ -13,14 +13,14 @@ export const PRODUCTS: Product[] = [
   {
     id: 'compacto-solo',
     name: 'Sistema Compacto 500GPD - Solo Equipo',
-    description: 'Sistema de ósmosis inversa compacto con pantalla LED táctil, 3 etapas de filtración y tecnología sin tanque.',
-    priceInCents: 50800, // 508€
+    description: 'Sistema de ósmosis inversa compacto con pantalla LED táctil, 3 etapas de filtración y tecnología sin tanque. Envio gratis.',
+    priceInCents: 30000, // 300€
   },
   {
     id: 'compacto-instalacion',
     name: 'Sistema Compacto 500GPD - Con Instalación',
     description: 'Sistema de ósmosis inversa compacto con pantalla LED táctil, 3 etapas de filtración, tecnología sin tanque e instalación profesional incluida.',
-    priceInCents: 58700, // 587€
+    priceInCents: 37900, // 379€
   },
   // Sistema 5 Etapas
   {
