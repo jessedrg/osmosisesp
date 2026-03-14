@@ -338,7 +338,7 @@ export default function ProductPurchaseCard({
           </div>
           <div className="flex flex-col items-center gap-1">
             <Truck className="w-5 h-5 text-accent" />
-            <span className="text-[10px] text-muted-foreground">Envio gratis</span>
+            <span className="text-[10px] text-muted-foreground">Envio 7-14 dias</span>
           </div>
           <div className="flex flex-col items-center gap-1">
             <Award className="w-5 h-5 text-accent" />
