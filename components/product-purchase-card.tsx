@@ -190,7 +190,7 @@ export default function ProductPurchaseCard({
             </div>
             <div className="flex items-center gap-1.5">
               <Truck className="w-3.5 h-3.5" />
-              <span>Entrega ~1 semana</span>
+              <span>Entrega 7-14 dias</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Award className="w-3.5 h-3.5" />
