@@ -3,8 +3,8 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { CITIES, getInstallationCityMeta, isCityValid, getCityName } from "@/lib/sitemap-data"
-import { Check, MapPin, Clock, Shield, Phone, ArrowRight, Droplets, Star } from "lucide-react"
+import { CITIES, getInstallationCityMeta, getCityBySlug } from "@/lib/sitemap-data"
+import { MapPin, Clock, Shield, Phone, ArrowRight, Droplets } from "lucide-react"
 
 type Props = {
   params: Promise<{ city: string }>
@@ -38,12 +38,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function InstallationCityPage({ params }: Props) {
   const { city: citySlug } = await params
+  const city = getCityBySlug(citySlug)
   const meta = getInstallationCityMeta(citySlug)
-  const cityName = getCityName(citySlug)
   
-  if (!meta || !cityName) {
+  if (!city || !meta) {
     notFound()
   }
+
+  const cityName = city.name
 
   const benefits = [
     { icon: Clock, title: "Instalacion en 2h", desc: "Nuestros tecnicos completan la instalacion en menos de 2 horas" },
