@@ -46,21 +46,21 @@ export function Navbar() {
                     className="block px-6 py-4 text-[11px] tracking-[0.15em] uppercase text-foreground hover:bg-secondary transition-colors border-b border-border"
                   >
                     Sistema Compacto
-                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">El mas vendido · Desde 508€</span>
+                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">El mas vendido · <span className="text-accent font-medium">300€</span> <span className="line-through">508€</span></span>
                   </Link>
                   <Link 
                     href="/productos/5-etapas" 
                     className="block px-6 py-4 text-[11px] tracking-[0.15em] uppercase text-foreground hover:bg-secondary transition-colors border-b border-border"
                   >
                     Sistema 5 Etapas
-                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">Maxima purificacion · Desde 429€</span>
+                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">Oferta especial · <span className="text-accent font-medium">270€</span> <span className="line-through">429€</span></span>
                   </Link>
                   <Link 
                     href="/productos/acuarios" 
                     className="block px-6 py-4 text-[11px] tracking-[0.15em] uppercase text-foreground hover:bg-secondary transition-colors"
                   >
                     Acuarios
-                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">Agua perfecta para peces · Desde 189€</span>
+                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">Agua perfecta para peces · <span className="text-accent font-medium">189€</span></span>
                   </Link>
                 </div>
               </div>
