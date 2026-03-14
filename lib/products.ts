@@ -26,14 +26,14 @@ export const PRODUCTS: Product[] = [
   {
     id: '5etapas-solo',
     name: 'Sistema 5 Etapas Premium - Solo Equipo',
-    description: 'Sistema de ósmosis inversa de 5 etapas con grifo cromado premium incluido. Máxima purificación.',
-    priceInCents: 42900, // 429€
+    description: 'Sistema de ósmosis inversa de 5 etapas con grifo cromado premium incluido. Máxima purificación. Envio gratis.',
+    priceInCents: 27000, // 270€
   },
   {
     id: '5etapas-instalacion',
     name: 'Sistema 5 Etapas Premium - Con Instalación',
     description: 'Sistema de ósmosis inversa de 5 etapas con grifo cromado premium e instalación profesional incluida.',
-    priceInCents: 50800, // 508€
+    priceInCents: 34900, // 349€
   },
   // Sistema Acuarios
   {
