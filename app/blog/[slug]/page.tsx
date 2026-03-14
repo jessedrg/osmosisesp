@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     publisher: {
       "@type": "Organization",
       name: "OSMOSIS ESP",
-      url: "https://osmosisesp.com",
+      url: "https://xn--osmosisespaa-khb.com",
     },
   }
 

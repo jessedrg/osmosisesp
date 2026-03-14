@@ -13,9 +13,9 @@ const productSchema = {
   description: "Sistema de osmosis inversa de alta gama con panel LED tactil, filtros de cambio rapido y diseño minimalista. Tecnologia de 5 etapas con bomba integrada. Garantia 2 años.",
   brand: { "@type": "Brand", name: "OSMOSIS ESP" },
   image: [
-    "https://osmosisesp.com/He23d99f93a3040acb8720554edb60e11k.jpg",
-    "https://osmosisesp.com/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg",
-    "https://osmosisesp.com/He931e67f2b5b4d5999ed74d013fdd560w.jpg"
+    "https://xn--osmosisespaa-khb.com/He23d99f93a3040acb8720554edb60e11k.jpg",
+    "https://xn--osmosisespaa-khb.com/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg",
+    "https://xn--osmosisespaa-khb.com/He931e67f2b5b4d5999ed74d013fdd560w.jpg"
   ],
   offers: {
     "@type": "Offer",
@@ -55,8 +55,8 @@ const organizationSchema = {
   "@type": "Organization",
   name: "OSMOSIS ESP",
   description: "Sistemas de purificacion de agua premium. Osmosis inversa de alta gama para hogares exigentes.",
-  url: "https://osmosisesp.com",
-  logo: "https://osmosisesp.com/icon.svg",
+  url: "https://xn--osmosisespaa-khb.com",
+  logo: "https://xn--osmosisespaa-khb.com/icon.svg",
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+34711267223",

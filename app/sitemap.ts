@@ -3,7 +3,7 @@ import { CITIES, STATIC_URLS } from "@/lib/sitemap-data"
 import { BLOG_POSTS } from "@/lib/blog-data"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://osmosisesp.com"
+  const baseUrl = "https://xn--osmosisespaa-khb.com"
   
   // URLs estaticas
   const staticUrls = STATIC_URLS.map((url) => ({

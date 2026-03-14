@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: [
-      "https://osmosisesp.com/sitemap.xml",
+      "https://xn--osmosisespaa-khb.com/sitemap.xml",
     ],
   }
 }
