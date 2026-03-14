@@ -5,7 +5,7 @@ import Link from "next/link"
 import type { Service } from "@/lib/sitemap-data"
 import { MessageCircle, Star, Shield, Clock, Droplets, Users, CheckCircle, ChevronDown, ArrowRight, ArrowUpRight } from "lucide-react"
 
-const WA_URL = "https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20instalar%20un%20sistema%20de%20%C3%B3smosis%20inversa."
+const WA_URL = "https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20un%20sistema%20de%20osmosis%20inversa."
 
 const SERVICE_IMAGES: Record<string, string> = {
   "osmosis-inversa": "/osmosis_inversa.png",
@@ -189,29 +189,29 @@ export function ServiceCityContent({
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Product Images */}
           <div>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="col-span-2 bg-neutral-100">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="col-span-2 aspect-square bg-secondary overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src="/He23d99f93a3040acb8720554edb60e11k.jpg" 
-                  alt="Sistema de ósmosis inversa completo con filtros, grifo y accesorios" 
-                  className="w-full h-auto object-contain"
+                  alt="Sistema de osmosis inversa completo" 
+                  className="w-full h-full object-contain p-8"
                 />
               </div>
-              <div className="bg-neutral-100">
+              <div className="aspect-square bg-secondary overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src="/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg" 
-                  alt="Equipo de ósmosis inversa con panel LED táctil" 
-                  className="w-full h-auto object-contain"
+                  alt="Panel LED tactil" 
+                  className="w-full h-full object-contain p-4"
                 />
               </div>
-              <div className="bg-neutral-100">
+              <div className="aspect-square bg-secondary overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src="/He931e67f2b5b4d5999ed74d013fdd560w.jpg" 
-                  alt="Interior del equipo con filtros de cambio rápido" 
-                  className="w-full h-auto object-contain"
+                  alt="Filtros de cambio rapido" 
+                  className="w-full h-full object-contain p-4"
                 />
               </div>
             </div>
@@ -219,11 +219,7 @@ export function ServiceCityContent({
 
           {/* Product Info + Price */}
           <div>
-            {/* Discount badge */}
-            <div className="inline-flex items-center gap-2 bg-red-500 text-white px-4 py-2 text-xs font-sans font-bold mb-4">
-              🔥 OFERTA LIMITADA -30%
-            </div>
-            <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Nuestro equipo</p>
+            <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-4 font-sans block">Sistema Premium</span>
             <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground leading-[1.1]">
               Sistema de Ósmosis Inversa Compacto
             </h2>

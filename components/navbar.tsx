@@ -1,58 +1,86 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { MessageCircle, Menu, X } from "lucide-react"
-
-const WA_URL = "https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20instalar%20un%20sistema%20de%20%C3%B3smosis%20inversa."
+import { Menu, X } from "lucide-react"
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border/40">
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-14 lg:h-16">
-        <Link href="/" className="flex items-center gap-1">
-          <span className="text-xl lg:text-2xl font-serif italic text-foreground tracking-tight">osmosis<span className="text-primary">esp</span></span>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md" : "bg-transparent"}`}>
+      <nav className="max-w-[1400px] mx-auto px-6 lg:px-12 flex items-center justify-between h-20 lg:h-24">
+        {/* Logo */}
+        <Link href="/" className="relative z-10">
+          <span className="text-xs tracking-[0.3em] uppercase font-sans font-medium text-foreground">
+            OSMOSIS<span className="text-muted-foreground">ESP</span>
+          </span>
         </Link>
 
-        <div className="hidden lg:flex items-center gap-10 text-[13px] tracking-wide font-sans">
-          <Link href="/productos" className="text-muted-foreground hover:text-foreground transition-colors">Producto</Link>
-          <Link href="/#proceso" className="text-muted-foreground hover:text-foreground transition-colors">Cómo funciona</Link>
-          <Link href="/#opiniones" className="text-muted-foreground hover:text-foreground transition-colors">Opiniones</Link>
-          <Link href="/#faq" className="text-muted-foreground hover:text-foreground transition-colors">FAQ</Link>
+        {/* Center Navigation */}
+        <div className="hidden lg:flex items-center gap-12 absolute left-1/2 -translate-x-1/2">
+          <Link href="#productos" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
+            Productos
+          </Link>
+          <Link href="#proceso" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
+            Proceso
+          </Link>
+          <Link href="#opiniones" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
+            Opiniones
+          </Link>
+          <Link href="#faq" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
+            FAQ
+          </Link>
         </div>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <a
-            href={WA_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-primary text-primary-foreground text-[13px] px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
+        {/* Right - Cart */}
+        <div className="hidden lg:flex items-center">
+          <Link 
+            href="#productos" 
+            className="text-[11px] tracking-[0.15em] uppercase text-foreground border border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-all duration-300"
           >
-            <MessageCircle className="w-3.5 h-3.5" />
-            Pedir presupuesto
-          </a>
+            Comprar
+          </Link>
         </div>
 
-        <button onClick={() => setOpen(!open)} className="lg:hidden p-2 -mr-2">
+        {/* Mobile Menu Button */}
+        <button onClick={() => setOpen(!open)} className="lg:hidden p-2 -mr-2 relative z-10">
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </nav>
 
+      {/* Mobile Menu */}
       {open && (
-        <div className="lg:hidden border-t border-border bg-background px-6 py-6 space-y-4">
-          <Link href="/productos" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">Producto</Link>
-          <Link href="/#proceso" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">Cómo funciona</Link>
-          <Link href="/#opiniones" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">Opiniones</Link>
-          <Link href="/#faq" onClick={() => setOpen(false)} className="block text-sm text-muted-foreground">FAQ</Link>
-          <hr className="border-border" />
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm">
-            <MessageCircle className="w-4 h-4" /> WhatsApp
-          </a>
-          <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="block text-center bg-primary text-primary-foreground text-sm px-6 py-3 rounded-lg">
-            Pedir presupuesto
-          </a>
+        <div className="lg:hidden fixed inset-0 bg-background z-40 flex flex-col justify-center items-center">
+          <nav className="flex flex-col items-center gap-8">
+            <Link href="#productos" onClick={() => setOpen(false)} className="text-2xl font-serif text-foreground">
+              Productos
+            </Link>
+            <Link href="#proceso" onClick={() => setOpen(false)} className="text-2xl font-serif text-foreground">
+              Proceso
+            </Link>
+            <Link href="#opiniones" onClick={() => setOpen(false)} className="text-2xl font-serif text-foreground">
+              Opiniones
+            </Link>
+            <Link href="#faq" onClick={() => setOpen(false)} className="text-2xl font-serif text-foreground">
+              FAQ
+            </Link>
+            <div className="h-px w-12 bg-border my-4" />
+            <Link 
+              href="#productos" 
+              onClick={() => setOpen(false)}
+              className="text-sm tracking-[0.15em] uppercase text-foreground border border-foreground px-8 py-4"
+            >
+              Comprar Ahora
+            </Link>
+          </nav>
         </div>
       )}
     </header>

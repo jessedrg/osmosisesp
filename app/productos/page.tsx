@@ -2,17 +2,15 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { MessageCircle, CheckCircle, Droplets, Shield, Clock, Wrench } from "lucide-react"
-
-const WA_URL = "https://wa.me/34711267223?text=Hola%2C%20me%20interesa%20instalar%20un%20sistema%20de%20%C3%B3smosis%20inversa."
+import { Check, Droplets, Shield, Clock, Wrench, ShoppingBag, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Sistema de Ósmosis Inversa Compacto | 499€ Todo Incluido | osmosis esp",
-  description: "Sistema de ósmosis inversa 5 etapas con panel LED, filtros click & twist, grifo incluido. 499€ con instalación profesional. Garantía 2 años. Mantenimiento 79€/año.",
-  keywords: "osmosis inversa, sistema osmosis, equipo osmosis, comprar osmosis inversa, osmosis inversa precio, osmosis inversa casa, filtro agua osmosis",
+  title: "Sistema de Osmosis Inversa Premium | OSMOSIS ESP",
+  description: "Sistema de osmosis inversa de alta gama con panel LED tactil, filtros de cambio rapido y diseno minimalista. Desde 508€. Garantia 2 anos. Envio gratuito.",
+  keywords: "osmosis inversa premium, sistema osmosis, equipo osmosis, comprar osmosis inversa, osmosis inversa precio, osmosis inversa casa",
   openGraph: {
-    title: "Sistema de Ósmosis Inversa Compacto | 499€",
-    description: "Equipo de ósmosis inversa de última generación. 499€ todo incluido. Garantía 2 años.",
+    title: "Sistema de Osmosis Inversa Premium | OSMOSIS ESP",
+    description: "Equipo de osmosis inversa de alta gama. Desde 508€. Garantia 2 anos.",
     type: "website",
   },
 }
@@ -23,55 +21,104 @@ export default function ProductosPage() {
       <Navbar />
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-foreground text-background">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              <div>
-                {/* Discount badge */}
-                <div className="inline-flex items-center gap-2 bg-red-500 text-white px-4 py-2 text-xs font-sans font-bold mb-6">
-                  🔥 OFERTA LIMITADA -30%
-                </div>
-                <p className="text-[10px] tracking-[0.4em] uppercase text-background/40 mb-4 font-sans">Nuestro equipo</p>
-                <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl tracking-tight text-background leading-[0.95]">
-                  Sistema de Ósmosis Inversa Compacto
-                </h1>
-                <p className="text-sm sm:text-base text-background/60 mt-6 max-w-lg font-sans leading-relaxed">
-                  Equipo de última generación con panel táctil LED, filtros de cambio rápido y diseño minimalista que cabe bajo cualquier fregadero.
-                </p>
-                <div className="mt-8 flex items-end gap-4">
-                  <span className="font-serif text-5xl sm:text-6xl text-background">508€</span>
-                  <span className="text-xl text-background/40 line-through font-sans mb-2">725€</span>
-                  <span className="text-sm text-background/50 font-sans mb-2">IVA incl.</span>
-                </div>
-                <p className="text-xs text-background/40 font-sans mt-2">Instalación 79€ aparte · Garantía 2 años</p>
-                <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
-                  <MessageCircle className="w-4 h-4" /> Pedir presupuesto gratis
-                </a>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="col-span-2 bg-neutral-800">
+        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-32">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+              {/* Product Images */}
+              <div className="order-2 lg:order-1 space-y-4">
+                <div className="aspect-square bg-secondary overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src="/He23d99f93a3040acb8720554edb60e11k.jpg" 
-                    alt="Sistema de ósmosis inversa completo con filtros, grifo y accesorios" 
-                    className="w-full h-auto object-contain"
+                    alt="Sistema de osmosis inversa completo" 
+                    className="w-full h-full object-contain p-8 lg:p-16"
                   />
                 </div>
-                <div className="bg-neutral-800">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg" 
-                    alt="Equipo de ósmosis inversa con panel LED táctil" 
-                    className="w-full h-auto object-contain"
-                  />
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="aspect-square bg-secondary overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src="/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg" 
+                      alt="Panel LED tactil" 
+                      className="w-full h-full object-contain p-4"
+                    />
+                  </div>
+                  <div className="aspect-square bg-secondary overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src="/He931e67f2b5b4d5999ed74d013fdd560w.jpg" 
+                      alt="Filtros de cambio rapido" 
+                      className="w-full h-full object-contain p-4"
+                    />
+                  </div>
                 </div>
-                <div className="bg-neutral-800">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="/He931e67f2b5b4d5999ed74d013fdd560w.jpg" 
-                    alt="Interior del equipo con filtros de cambio rápido" 
-                    className="w-full h-auto object-contain"
-                  />
+              </div>
+
+              {/* Product Info */}
+              <div className="order-1 lg:order-2 lg:sticky lg:top-32">
+                <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
+                  Sistema Premium
+                </span>
+                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl tracking-tight text-foreground leading-[0.95]">
+                  Osmosis Inversa
+                  <br />
+                  <span className="italic font-light text-muted-foreground">Compacto</span>
+                </h1>
+                <p className="text-sm text-muted-foreground font-sans leading-relaxed mt-6 max-w-md">
+                  Tecnologia de purificacion avanzada en un diseno que se integra perfectamente bajo cualquier fregadero.
+                </p>
+
+                {/* Price */}
+                <div className="mt-10 pb-8 border-b border-border">
+                  <div className="flex items-baseline gap-4">
+                    <span className="font-serif text-5xl sm:text-6xl text-foreground">508€</span>
+                    <div className="flex flex-col">
+                      <span className="text-lg text-muted-foreground/50 line-through font-sans">725€</span>
+                      <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground">IVA incluido</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Options */}
+                <div className="py-8 border-b border-border">
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans block mb-4">
+                    Opciones
+                  </span>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between p-4 border border-foreground">
+                      <div className="flex items-center gap-3">
+                        <div className="w-4 h-4 border-2 border-foreground flex items-center justify-center">
+                          <div className="w-2 h-2 bg-foreground" />
+                        </div>
+                        <span className="text-sm font-sans text-foreground">Solo equipo</span>
+                      </div>
+                      <span className="font-serif text-lg text-foreground">508€</span>
+                    </div>
+                    <div className="flex items-center justify-between p-4 border border-border hover:border-foreground transition-colors">
+                      <div className="flex items-center gap-3">
+                        <div className="w-4 h-4 border border-muted-foreground" />
+                        <div>
+                          <span className="text-sm font-sans text-foreground">Con instalacion profesional</span>
+                          <span className="text-[10px] text-muted-foreground block">Tecnico certificado, 2-3h</span>
+                        </div>
+                      </div>
+                      <span className="font-serif text-lg text-foreground">587€</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div className="pt-8">
+                  <Link
+                    href="#checkout"
+                    className="group w-full inline-flex items-center justify-center gap-3 bg-foreground text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-foreground/90 transition-all duration-300"
+                  >
+                    <ShoppingBag className="w-4 h-4" />
+                    Comprar Ahora
+                  </Link>
+                  <p className="text-[10px] text-muted-foreground font-sans text-center mt-4">
+                    Envio gratuito · Garantia 2 anos · 14 dias devolucion
+                  </p>
                 </div>
               </div>
             </div>
@@ -79,64 +126,72 @@ export default function ProductosPage() {
         </section>
 
         {/* Features */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-          <div className="text-center mb-16">
-            <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Características</p>
-            <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground">
-              Tecnología de última generación
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: Droplets, title: "5 etapas de filtración", desc: "Elimina el 99% de contaminantes, cal, cloro y metales pesados" },
-              { icon: Shield, title: "Garantía 2 años", desc: "Cobertura completa del equipo y la instalación" },
-              { icon: Clock, title: "Filtros click & twist", desc: "Cambio en segundos sin herramientas ni técnico" },
-              { icon: Wrench, title: "Panel LED inteligente", desc: "Indica el estado de cada filtro en tiempo real" },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="text-center">
-                <div className="w-12 h-12 mx-auto border border-border flex items-center justify-center">
-                  <Icon className="w-5 h-5 text-foreground" />
+        <section className="border-t border-border">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
+            <div className="text-center mb-16 lg:mb-24">
+              <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
+                Caracteristicas
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-foreground">
+                Tecnologia de ultima generacion
+              </h2>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
+              {[
+                { icon: Droplets, title: "5 etapas de filtracion", desc: "Elimina el 99.9% de contaminantes, cal, cloro y metales pesados" },
+                { icon: Shield, title: "Garantia 2 anos", desc: "Cobertura completa del equipo y servicio tecnico sin coste adicional" },
+                { icon: Clock, title: "Filtros click & twist", desc: "Cambio en segundos sin herramientas ni necesidad de tecnico" },
+                { icon: Wrench, title: "Panel LED tactil", desc: "Indica el estado de cada filtro y la calidad del agua en tiempo real" },
+              ].map(({ icon: Icon, title, desc }) => (
+                <div key={title} className="bg-background p-8 lg:p-12 text-center">
+                  <div className="w-14 h-14 mx-auto border border-border flex items-center justify-center">
+                    <Icon className="w-6 h-6 text-foreground" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-sm font-sans font-medium text-foreground mt-6">{title}</h3>
+                  <p className="text-xs text-muted-foreground font-sans mt-3 leading-relaxed">{desc}</p>
                 </div>
-                <h3 className="text-sm font-sans font-medium text-foreground mt-4">{title}</h3>
-                <p className="text-xs text-muted-foreground font-sans mt-2 leading-relaxed">{desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
         {/* What's included */}
         <section className="bg-secondary">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               <div>
-                <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Qué incluye</p>
-                <h2 className="font-serif text-2xl sm:text-4xl tracking-tight text-foreground">
-                  Todo lo que incluye el equipo
+                <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
+                  Incluido
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-foreground leading-[0.95]">
+                  Todo lo que
+                  <br />
+                  <span className="italic font-light text-muted-foreground">necesitas</span>
                 </h2>
-                <ul className="mt-8 space-y-4">
+                <ul className="mt-10 space-y-4">
                   {[
-                    "Equipo de ósmosis inversa 5 etapas con bomba",
-                    "Panel LED táctil indicador de filtros",
-                    "Grifo de diseño cromado incluido",
-                    "3 filtros de repuesto (sedimentos, carbón, post-filtro)",
-                    "Kit completo de instalación (tubos, conexiones, válvulas)",
+                    "Equipo de osmosis inversa 5 etapas con bomba",
+                    "Panel LED tactil indicador de filtros",
+                    "Grifo de diseno cromado incluido",
+                    "3 filtros de repuesto (sedimentos, carbon, post-filtro)",
+                    "Kit completo de instalacion",
                     "Manual de uso y mantenimiento",
-                    "Garantía de 2 años",
-                    "Soporte técnico por WhatsApp",
+                    "Garantia de 2 anos",
+                    "Soporte tecnico prioritario",
                   ].map(item => (
                     <li key={item} className="flex items-start gap-3 text-sm font-sans text-foreground">
-                      <CheckCircle className="w-4 h-4 text-foreground flex-shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div>
+              <div className="aspect-square bg-muted overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
-                  src="/Hcf00d47e29d248aea5b93fb38aeef5a4J.jpg" 
-                  alt="Interior del equipo mostrando los filtros" 
-                  className="w-full h-full object-cover min-h-[400px]"
+                  src="/He23d99f93a3040acb8720554edb60e11k.jpg" 
+                  alt="Contenido del equipo de osmosis" 
+                  className="w-full h-full object-contain p-8"
                 />
               </div>
             </div>
@@ -144,87 +199,67 @@ export default function ProductosPage() {
         </section>
 
         {/* Maintenance Plan */}
-        <section className="max-w-4xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-          <div className="border border-border p-8 sm:p-12">
-            <div className="grid sm:grid-cols-2 gap-8 items-center">
-              <div>
-                <p className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground mb-3 font-sans">Mantenimiento</p>
-                <h2 className="font-serif text-2xl sm:text-3xl tracking-tight text-foreground">
-                  Plan anual de filtros
-                </h2>
-                <p className="text-sm text-muted-foreground font-sans mt-4 leading-relaxed">
-                  Suscripción anual que incluye cambio de todos los filtros, revisión completa del equipo, 
-                  desinfección del depósito y verificación de la membrana. Visita de técnico incluida.
-                </p>
-                <ul className="mt-6 space-y-2">
-                  {["Cambio de 3 filtros", "Revisión completa", "Desinfección depósito", "Visita técnico incluida"].map(item => (
-                    <li key={item} className="flex items-center gap-2 text-xs font-sans text-foreground">
-                      <CheckCircle className="w-3 h-3 text-foreground" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="text-center sm:text-right">
-                <p className="font-serif text-5xl text-foreground">79€</p>
-                <p className="text-sm text-muted-foreground font-sans mt-1">/año</p>
-                <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 text-xs font-sans font-medium hover:opacity-90 transition-opacity">
-                  Contratar plan
-                </a>
+        <section className="border-t border-border">
+          <div className="max-w-3xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
+            <div className="border border-border p-10 lg:p-16">
+              <div className="grid sm:grid-cols-2 gap-10 items-center">
+                <div>
+                  <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">
+                    Opcional
+                  </span>
+                  <h2 className="font-serif text-2xl sm:text-3xl tracking-tight text-foreground">
+                    Mantenimiento anual
+                  </h2>
+                  <p className="text-sm text-muted-foreground font-sans mt-4 leading-relaxed">
+                    Suscripcion anual que incluye cambio de todos los filtros, revision completa del equipo y visita de tecnico certificado.
+                  </p>
+                  <ul className="mt-6 space-y-2">
+                    {["Cambio de 3 filtros", "Revision completa", "Desinfeccion deposito", "Visita tecnico incluida"].map(item => (
+                      <li key={item} className="flex items-center gap-2 text-xs font-sans text-foreground">
+                        <Check className="w-3 h-3 text-foreground" strokeWidth={1.5} />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="text-center sm:text-right">
+                  <p className="font-serif text-5xl lg:text-6xl text-foreground">79€</p>
+                  <p className="text-sm text-muted-foreground font-sans mt-1">/ano</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="bg-foreground">
-          <div className="max-w-4xl mx-auto px-6 lg:px-8 py-16 lg:py-24 text-center">
-            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl tracking-tight text-background">
-              Agua pura en tu casa,
+        <section className="bg-foreground text-background">
+          <div className="max-w-3xl mx-auto px-6 lg:px-12 py-24 lg:py-32 text-center">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-background leading-[0.95]">
+              Agua pura desde
               <br />
-              <span className="italic font-light">desde hoy.</span>
+              <span className="italic font-light text-background/60">el primer dia</span>
             </h2>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
-              <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-8 py-4 text-sm font-sans font-medium hover:opacity-90 transition-opacity">
-                <MessageCircle className="w-4 h-4" /> Pedir presupuesto
-              </a>
-              <Link href="/" className="inline-flex items-center justify-center gap-2 border border-background/20 text-background px-8 py-4 text-sm font-sans hover:border-background/50 transition-colors">
-                Ver ciudades
+            <p className="text-sm text-background/50 font-sans mt-6 max-w-md mx-auto">
+              Mas de 1,200 hogares ya disfrutan de agua cristalina. Unete a ellos.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+              <Link 
+                href="#checkout"
+                className="inline-flex items-center justify-center gap-3 bg-background text-foreground px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:bg-background/90 transition-all duration-300"
+              >
+                <ShoppingBag className="w-4 h-4" />
+                Comprar Ahora
+              </Link>
+              <Link 
+                href="/"
+                className="inline-flex items-center justify-center gap-3 border border-background/30 text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:border-background transition-all duration-300"
+              >
+                Volver al inicio
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </section>
-
-        {/* Schema.org */}
-        <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org", "@type": "Product",
-          name: "Sistema de Ósmosis Inversa Compacto",
-          description: "Sistema de ósmosis inversa 5 etapas con panel LED, filtros click & twist, grifo incluido. Instalación profesional incluida. Garantía 2 años.",
-          brand: { "@type": "Brand", name: "osmosis esp" },
-          image: ["https://osmosisesp.com/He23d99f93a3040acb8720554edb60e11k.jpg", "https://osmosisesp.com/H47aa1cc1901e4e8cb35c7a857893eb64H.jpg", "https://osmosisesp.com/He931e67f2b5b4d5999ed74d013fdd560w.jpg"],
-          offers: {
-            "@type": "Offer",
-            price: "508",
-            priceCurrency: "EUR",
-            availability: "https://schema.org/InStock",
-            priceValidUntil: "2026-12-31",
-            itemCondition: "https://schema.org/NewCondition",
-            shippingDetails: {
-              "@type": "OfferShippingDetails",
-              shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "EUR" },
-              shippingDestination: { "@type": "DefinedRegion", addressCountry: "ES" },
-              deliveryTime: { "@type": "ShippingDeliveryTime", handlingTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 3, unitCode: "DAY" }, transitTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 5, unitCode: "DAY" } }
-            },
-            hasMerchantReturnPolicy: {
-              "@type": "MerchantReturnPolicy",
-              applicableCountry: "ES",
-              returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-              merchantReturnDays: 14,
-              returnMethod: "https://schema.org/ReturnByMail",
-              returnFees: "https://schema.org/FreeReturn"
-            }
-          },
-        })}} />
       </main>
       <Footer />
     </div>
