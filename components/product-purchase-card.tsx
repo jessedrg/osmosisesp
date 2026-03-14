@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
-import { ShoppingBag, Check, X } from 'lucide-react'
+import { ShoppingBag, Check, X, ArrowLeft, Shield, Truck, Award, CreditCard, Smartphone } from 'lucide-react'
 import {
   EmbeddedCheckout,
   EmbeddedCheckoutProvider,
@@ -18,6 +18,7 @@ interface ProductPurchaseCardProps {
   originalPrice?: number
   features: string[]
   tag?: string
+  productName?: string
 }
 
 export default function ProductPurchaseCard({
@@ -27,9 +28,11 @@ export default function ProductPurchaseCard({
   originalPrice,
   features,
   tag,
+  productName = 'Producto',
 }: ProductPurchaseCardProps) {
   const [withInstallation, setWithInstallation] = useState(false)
   const [showCheckout, setShowCheckout] = useState(false)
+  const [checkoutComplete, setCheckoutComplete] = useState(false)
   
   const currentPrice = withInstallation ? instalacionPrice : soloPrice
   const productId = withInstallation ? `${category}-instalacion` : `${category}-solo`
@@ -39,25 +42,126 @@ export default function ProductPurchaseCard({
     [productId]
   )
 
-  if (showCheckout) {
+  const handleCheckoutComplete = useCallback(() => {
+    setCheckoutComplete(true)
+  }, [])
+
+  // Success state after payment
+  if (checkoutComplete) {
     return (
       <div className="bg-card p-8 border border-border">
-        <div className="flex items-center justify-between mb-6">
-          <h3 className="font-serif text-xl">Finalizar Compra</h3>
+        <div className="text-center py-8">
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Check className="w-8 h-8 text-green-600" />
+          </div>
+          <h3 className="font-serif text-2xl mb-3">Pedido Confirmado</h3>
+          <p className="text-muted-foreground mb-6">
+            Gracias por tu compra. Recibiras un email con los detalles de tu pedido.
+          </p>
+          <div className="bg-secondary p-4 mb-6">
+            <p className="text-sm font-medium">{productName}</p>
+            <p className="text-xs text-muted-foreground mt-1">
+              {withInstallation ? 'Con instalacion profesional' : 'Solo equipo'}
+            </p>
+            <p className="font-serif text-2xl mt-2">{currentPrice}€</p>
+          </div>
           <button
-            onClick={() => setShowCheckout(false)}
-            className="p-2 hover:bg-secondary transition-colors"
+            onClick={() => {
+              setShowCheckout(false)
+              setCheckoutComplete(false)
+            }}
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            <X className="w-5 h-5" />
+            Volver a la tienda
           </button>
         </div>
-        <div id="checkout" className="min-h-[400px]">
-          <EmbeddedCheckoutProvider
-            stripe={stripePromise}
-            options={{ clientSecret: fetchClientSecret }}
-          >
-            <EmbeddedCheckout />
-          </EmbeddedCheckoutProvider>
+      </div>
+    )
+  }
+
+  // Checkout view
+  if (showCheckout) {
+    return (
+      <div className="bg-card border border-border overflow-hidden">
+        {/* Header */}
+        <div className="bg-secondary px-6 py-4 border-b border-border">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={() => setShowCheckout(false)}
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Volver
+            </button>
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-muted-foreground" />
+              <span className="text-xs text-muted-foreground">Pago 100% seguro</span>
+            </div>
+          </div>
+        </div>
+        
+        {/* Order Summary */}
+        <div className="px-6 py-4 border-b border-border bg-background">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm font-medium">{productName}</p>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {withInstallation ? 'Con instalacion profesional' : 'Solo equipo'}
+              </p>
+            </div>
+            <p className="font-serif text-xl">{currentPrice}€</p>
+          </div>
+        </div>
+
+        {/* Payment Methods Info */}
+        <div className="px-6 py-3 border-b border-border bg-secondary/50">
+          <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <CreditCard className="w-3.5 h-3.5" />
+              <span>Tarjeta</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Smartphone className="w-3.5 h-3.5" />
+              <span>Apple Pay</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Smartphone className="w-3.5 h-3.5" />
+              <span>Google Pay</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Embedded Checkout */}
+        <div className="p-6">
+          <div id="checkout" className="min-h-[400px]">
+            <EmbeddedCheckoutProvider
+              stripe={stripePromise}
+              options={{ 
+                clientSecret: fetchClientSecret,
+                onComplete: handleCheckoutComplete
+              }}
+            >
+              <EmbeddedCheckout />
+            </EmbeddedCheckoutProvider>
+          </div>
+        </div>
+
+        {/* Trust Footer */}
+        <div className="px-6 py-4 border-t border-border bg-secondary/30">
+          <div className="flex items-center justify-center gap-6 text-xs text-muted-foreground">
+            <div className="flex items-center gap-1.5">
+              <Shield className="w-3.5 h-3.5" />
+              <span>SSL Seguro</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Truck className="w-3.5 h-3.5" />
+              <span>Envio 24-48h</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <Award className="w-3.5 h-3.5" />
+              <span>2 anos garantia</span>
+            </div>
+          </div>
         </div>
       </div>
     )
