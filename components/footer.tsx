@@ -11,16 +11,17 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-accent" />
               <span className="text-xs tracking-[0.3em] uppercase font-sans font-medium text-background">
-                OSMOSIS<span className="text-background/50">ESP</span>
+                OSMOSIS<span className="text-accent">ESP</span>
               </span>
             </Link>
             <p className="text-sm text-background/50 font-sans leading-relaxed mt-6 max-w-xs">
               Sistemas de osmosis inversa premium para hogares que valoran la pureza. Diseño minimalista, tecnologia avanzada.
             </p>
             {/* Large decorative text */}
-            <p className="font-serif text-[clamp(3rem,8vw,6rem)] leading-[0.85] text-background/5 mt-12 tracking-tight">
+            <p className="font-serif text-[clamp(3rem,8vw,6rem)] leading-[0.85] text-accent/20 mt-12 tracking-tight italic">
               Agua
               <br />
               Pura

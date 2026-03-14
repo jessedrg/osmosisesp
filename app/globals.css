@@ -4,32 +4,32 @@
 @custom-variant dark (&:is(.dark *));
 
 /* =============================================================================
-   OSMOSIS ESP — Award-Winning Premium Design
-   Warm cream & charcoal. Editorial. Boutique Architecture.
+   OSMOSIS ESP — Premium Water Purification
+   Elegant cream base with deep ocean blue accent. Editorial luxury.
    ============================================================================= */
 
 @theme inline {
-  --color-background: oklch(0.97 0.008 85);
-  --color-foreground: oklch(0.18 0.01 60);
+  --color-background: oklch(0.975 0.006 90);
+  --color-foreground: oklch(0.15 0.02 240);
 
   --color-card: oklch(1 0 0);
-  --color-card-foreground: oklch(0.18 0.01 60);
+  --color-card-foreground: oklch(0.15 0.02 240);
 
-  --color-primary: oklch(0.18 0.01 60);
-  --color-primary-foreground: oklch(0.97 0.008 85);
+  --color-primary: oklch(0.15 0.02 240);
+  --color-primary-foreground: oklch(0.975 0.006 90);
 
-  --color-secondary: oklch(0.94 0.012 80);
-  --color-secondary-foreground: oklch(0.18 0.01 60);
+  --color-secondary: oklch(0.95 0.015 220);
+  --color-secondary-foreground: oklch(0.15 0.02 240);
 
-  --color-muted: oklch(0.92 0.008 80);
-  --color-muted-foreground: oklch(0.50 0.02 60);
+  --color-muted: oklch(0.93 0.008 90);
+  --color-muted-foreground: oklch(0.45 0.02 240);
 
-  --color-accent: oklch(0.55 0.08 25);
-  --color-accent-foreground: oklch(0.97 0.008 85);
+  --color-accent: oklch(0.55 0.14 220);
+  --color-accent-foreground: oklch(0.98 0.006 90);
 
-  --color-border: oklch(0.88 0.008 80);
-  --color-input: oklch(0.92 0.008 80);
-  --color-ring: oklch(0.18 0.01 60);
+  --color-border: oklch(0.90 0.01 220);
+  --color-input: oklch(0.93 0.008 90);
+  --color-ring: oklch(0.55 0.14 220);
 
   --radius: 0rem;
 
@@ -54,5 +54,46 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Brand water effect - subtle shimmer */
+  .water-shimmer {
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      oklch(0.55 0.14 220 / 0.08) 50%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  /* Brand gradient text */
+  .text-gradient-water {
+    background: linear-gradient(135deg, oklch(0.55 0.14 220) 0%, oklch(0.45 0.12 200) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Decorative water drop */
+  .water-drop {
+    position: relative;
+  }
+  .water-drop::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: oklch(0.55 0.14 220);
+    border-radius: 50%;
+    top: 50%;
+    left: -16px;
+    transform: translateY(-50%);
   }
 }
