@@ -17,7 +17,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-background/50 font-sans leading-relaxed mt-6 max-w-xs">
-              Sistemas de osmosis inversa premium para hogares que valoran la pureza. Diseno minimalista, tecnologia avanzada.
+              Sistemas de osmosis inversa premium para hogares que valoran la pureza. Diseño minimalista, tecnologia avanzada.
             </p>
             {/* Large decorative text */}
             <p className="font-serif text-[clamp(3rem,8vw,6rem)] leading-[0.85] text-background/5 mt-12 tracking-tight">
@@ -96,7 +96,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm text-background/60 font-sans">
                 <MapPin className="w-4 h-4" strokeWidth={1.5} />
-                Espana
+                España
               </li>
             </ul>
           </div>

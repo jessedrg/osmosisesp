@@ -74,6 +74,9 @@ export function Navbar() {
           <Link href="/#faq" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
             FAQ
           </Link>
+          <Link href="/blog" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
+            Blog
+          </Link>
         </div>
 
         {/* Right - CTA */}
@@ -117,6 +120,9 @@ export function Navbar() {
             </Link>
             <Link href="/#faq" onClick={() => setOpen(false)} className="text-xl font-serif text-muted-foreground">
               FAQ
+            </Link>
+            <Link href="/blog" onClick={() => setOpen(false)} className="text-xl font-serif text-muted-foreground">
+              Blog
             </Link>
             <div className="h-px w-12 bg-border my-4" />
             <Link 

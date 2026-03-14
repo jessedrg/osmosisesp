@@ -24,7 +24,7 @@ const specs = [
   { label: "Presion de entrada", value: "0.1-0.4 MPa", sublabel: "Funciona sin bomba" },
   { label: "Tipo de instalacion", value: "Bajo fregadero", sublabel: "Oculto y discreto" },
   { label: "Dimensiones", value: "449x152x350mm", sublabel: "Ultra compacto" },
-  { label: "Garantia", value: "2 anos", sublabel: "Cobertura total" },
+  { label: "Garantia", value: "2 años", sublabel: "Cobertura total" },
 ]
 
 const howItWorks = [
@@ -38,7 +38,7 @@ const features = [
   "Tecnologia sin tanque (agua fresca siempre)",
   "Filtros de cambio rapido Click & Twist",
   "Funcion de autolimpieza automatica",
-  "2 anos de garantia completa",
+  "2 años de garantia completa",
 ]
 
 export default function CompactoPage() {
@@ -162,7 +162,7 @@ export default function CompactoPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
               {[
                 { icon: Zap, title: "Pantalla LED tactil", desc: "Muestra el estado de cada filtro, TDS del agua y alertas de mantenimiento" },
-                { icon: Shield, title: "Garantia 2 anos", desc: "Cobertura completa del equipo y servicio tecnico sin coste adicional" },
+                { icon: Shield, title: "Garantia 2 años", desc: "Cobertura completa del equipo y servicio tecnico sin coste adicional" },
                 { icon: Clock, title: "Filtros click & twist", desc: "Sistema de cambio rapido. Sin herramientas, sin tecnico" },
                 { icon: Droplets, title: "99.9% pureza", desc: "Elimina cal, cloro, metales pesados, bacterias, virus y microplasticos" },
               ].map(({ icon: Icon, title, desc }) => (
@@ -183,7 +183,7 @@ export default function CompactoPage() {
                 <span className="text-[10px] tracking-[0.4em] uppercase text-muted-foreground font-sans block mb-4">El Pack Incluye</span>
                 <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight text-foreground leading-[0.95]">Todo lo que<br /><span className="italic font-light text-muted-foreground">necesitas</span></h2>
                 <ul className="mt-10 space-y-4">
-                  {["Equipo de osmosis compacto 500GPD sin tanque", "Pantalla LED tactil con indicadores", "Membrana RO de alto rendimiento (24 meses)", "Filtros de sedimentos y carbon activo", "Grifo de diseno cromado de alta calidad", "Kit completo de instalacion", "Manual de uso en espanol", "Garantia de 2 anos"].map(item => (
+                  {["Equipo de osmosis compacto 500GPD sin tanque", "Pantalla LED tactil con indicadores", "Membrana RO de alto rendimiento (24 meses)", "Filtros de sedimentos y carbon activo", "Grifo de diseño cromado de alta calidad", "Kit completo de instalacion", "Manual de uso en español", "Garantia de 2 años"].map(item => (
                     <li key={item} className="flex items-start gap-3 text-sm font-sans text-foreground"><Check className="w-4 h-4 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />{item}</li>
                   ))}
                 </ul>
@@ -200,7 +200,7 @@ export default function CompactoPage() {
           <div className="max-w-[1400px] mx-auto px-6 lg:px-12 py-24 lg:py-32">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl tracking-tight">Agua pura en tu hogar</h2>
-              <p className="text-sm text-background/60 font-sans mt-6 max-w-xl mx-auto leading-relaxed">Unete a mas de 1.200 hogares espanoles que ya disfrutan de agua pura con OSMOSIS ESP.</p>
+              <p className="text-sm text-background/60 font-sans mt-6 max-w-xl mx-auto leading-relaxed">Unete a mas de 1.200 hogares españoles que ya disfrutan de agua pura con OSMOSIS ESP.</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
                 <Link href="/productos/5-etapas" className="inline-flex items-center justify-center gap-3 border border-background/30 text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:border-background transition-all duration-300">Ver 5 Etapas<ArrowRight className="w-4 h-4" /></Link>
                 <Link href="/productos/acuarios" className="inline-flex items-center justify-center gap-3 border border-background/30 text-background px-10 py-5 text-[11px] tracking-[0.2em] uppercase font-sans hover:border-background transition-all duration-300">Ver Acuarios<ArrowRight className="w-4 h-4" /></Link>

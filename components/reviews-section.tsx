@@ -6,7 +6,7 @@ const reviews = [
   {
     name: "Marta L.",
     city: "Barcelona",
-    text: "Llevabamos anos comprando garrafas de agua. Desde que instalamos la osmosis el ahorro es brutal y el agua sabe mucho mejor. La instalacion fue rapidisima.",
+    text: "Llevabamos años comprando garrafas de agua. Desde que instalamos la osmosis el ahorro es brutal y el agua sabe mucho mejor. La instalacion fue rapidisima.",
     rating: 5,
     date: "Enero 2026"
   },

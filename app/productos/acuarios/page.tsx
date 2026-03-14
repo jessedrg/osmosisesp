@@ -73,7 +73,7 @@ export default function AcuariosPage() {
                   <span className="italic font-light text-muted-foreground">Acuarios</span>
                 </h1>
                 <p className="text-sm text-muted-foreground font-sans leading-relaxed mt-6 max-w-md">
-                  Sistema de 3 etapas disenado especificamente para acuariofilia. Elimina cloro, cloraminas, metales pesados y contaminantes que afectan la salud de tus peces y plantas.
+                  Sistema de 3 etapas diseñado especificamente para acuariofilia. Elimina cloro, cloraminas, metales pesados y contaminantes que afectan la salud de tus peces y plantas.
                 </p>
 
                 {/* Product Selector with Switch */}
@@ -88,7 +88,7 @@ export default function AcuariosPage() {
                       "Elimina cloro y cloraminas al 100%",
                       "TDS resultante 0-10 ppm",
                       "Para agua dulce y salada",
-                      "2 anos de garantia completa",
+                      "2 años de garantia completa",
                     ]}
                   />
                 </div>
@@ -97,7 +97,7 @@ export default function AcuariosPage() {
                 <div className="mt-10 pt-8 border-t border-border grid grid-cols-2 gap-4">
                   {[
                     { icon: Droplets, text: "3 etapas filtracion" },
-                    { icon: Shield, text: "2 anos garantia" },
+                    { icon: Shield, text: "2 años garantia" },
                     { icon: Fish, text: "Para agua dulce y salada" },
                     { icon: Leaf, text: "Plantas mas sanas" },
                   ].map(({ icon: Icon, text }) => (
@@ -126,14 +126,14 @@ export default function AcuariosPage() {
                   <span className="italic font-light text-muted-foreground">la vida acuatica</span>
                 </h2>
                 <p className="text-sm text-muted-foreground font-sans leading-relaxed mt-6 max-w-md">
-                  El agua del grifo contiene cloro, cloraminas, metales pesados y minerales que pueden ser daninos para peces y plantas. La osmosis inversa elimina hasta el 99% de estos contaminantes.
+                  El agua del grifo contiene cloro, cloraminas, metales pesados y minerales que pueden ser dañinos para peces y plantas. La osmosis inversa elimina hasta el 99% de estos contaminantes.
                 </p>
               </div>
               <div className="grid gap-6">
                 {[
                   {
                     title: "Elimina cloro y cloraminas",
-                    desc: "El cloro es toxico para los peces incluso en pequenas cantidades. Nuestro sistema lo elimina completamente.",
+                    desc: "El cloro es toxico para los peces incluso en pequeñas cantidades. Nuestro sistema lo elimina completamente.",
                   },
                   {
                     title: "Sin metales pesados",
@@ -176,7 +176,7 @@ export default function AcuariosPage() {
                 { title: "Eliminacion", value: "99%", desc: "Cloro, cloraminas, metales, nitratos" },
                 { title: "TDS resultante", value: "0-10 ppm", desc: "Agua practicamente pura para remineralizar" },
                 { title: "Conexion", value: "Universal", desc: "Compatible con cualquier grifo estandar" },
-                { title: "Tamano", value: "Compacto", desc: "Ideal para espacios reducidos" },
+                { title: "Tamaño", value: "Compacto", desc: "Ideal para espacios reducidos" },
               ].map(({ title, value, desc }) => (
                 <div key={title} className="bg-background p-8 lg:p-10">
                   <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground font-sans">{title}</span>
@@ -219,7 +219,7 @@ export default function AcuariosPage() {
                     "Tubos de silicona de grado alimentario",
                     "Herramienta para cambio de filtros",
                     "Manual de instalacion ilustrado",
-                    "Garantia de 2 anos",
+                    "Garantia de 2 años",
                     "Soporte tecnico por WhatsApp",
                   ].map(item => (
                     <li key={item} className="flex items-start gap-3 text-sm font-sans text-foreground">
@@ -246,7 +246,7 @@ export default function AcuariosPage() {
                     Kit de filtros anuales
                   </h2>
                   <p className="text-sm text-muted-foreground font-sans mt-4 leading-relaxed">
-                    Pack con todos los filtros de repuesto para un ano completo de uso. Incluye instrucciones de cambio.
+                    Pack con todos los filtros de repuesto para un año completo de uso. Incluye instrucciones de cambio.
                   </p>
                   <ul className="mt-6 space-y-2">
                     {["2 filtros de sedimentos PP", "2 filtros carbon CTO", "1 membrana RO 75GPD"].map(item => (
@@ -259,7 +259,7 @@ export default function AcuariosPage() {
                 </div>
                 <div className="text-center sm:text-right">
                   <p className="font-serif text-5xl lg:text-6xl text-foreground">49€</p>
-                  <p className="text-sm text-muted-foreground font-sans mt-1">/ano</p>
+                  <p className="text-sm text-muted-foreground font-sans mt-1">/año</p>
                 </div>
               </div>
             </div>

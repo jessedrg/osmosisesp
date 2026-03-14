@@ -105,7 +105,7 @@ export default function ProductSelector({
               {withInstallation && <Check className="w-3 h-3 text-background" />}
             </div>
             <div className="text-left">
-              <span className="text-sm font-sans">Con Instalacion Profesional</span>
+              <span className="text-sm font-sans">Con Instalación Profesional</span>
               <span className="block text-xs text-muted-foreground">Tecnico certificado en tu hogar</span>
             </div>
           </div>

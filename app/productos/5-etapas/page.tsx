@@ -77,7 +77,7 @@ export default function CincoEtapasPage() {
                       "Grifo premium cromado incluido",
                       "Deposito presurizado de 12L",
                       "Maxima pureza 99.9%",
-                      "2 anos de garantia completa",
+                      "2 años de garantia completa",
                     ]}
                   />
                 </div>
@@ -86,7 +86,7 @@ export default function CincoEtapasPage() {
                 <div className="mt-10 pt-8 border-t border-border grid grid-cols-2 gap-4">
                   {[
                     { icon: Droplets, text: "5 etapas filtracion" },
-                    { icon: Shield, text: "2 anos garantia" },
+                    { icon: Shield, text: "2 años garantia" },
                     { icon: Sparkles, text: "Grifo premium" },
                     { icon: Wrench, text: "Facil instalacion" },
                   ].map(({ icon: Icon, text }) => (
@@ -144,8 +144,8 @@ export default function CincoEtapasPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">
               {[
                 { icon: Droplets, title: "5 etapas completas", desc: "Sistema de filtracion profesional para agua ultrapura" },
-                { icon: Sparkles, title: "Grifo premium", desc: "Grifo de diseno cromado de alta calidad incluido" },
-                { icon: Shield, title: "Garantia 2 anos", desc: "Cobertura completa y servicio tecnico gratuito" },
+                { icon: Sparkles, title: "Grifo premium", desc: "Grifo de diseño cromado de alta calidad incluido" },
+                { icon: Shield, title: "Garantia 2 años", desc: "Cobertura completa y servicio tecnico gratuito" },
                 { icon: Wrench, title: "Facil instalacion", desc: "Kit completo con instrucciones paso a paso" },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="bg-background p-8 lg:p-12 text-center">
@@ -177,12 +177,12 @@ export default function CincoEtapasPage() {
                   {[
                     "Sistema de osmosis inversa 5 etapas completo",
                     "Membrana RO de alta capacidad 75 GPD",
-                    "Grifo cromado premium de diseno",
+                    "Grifo cromado premium de diseño",
                     "Deposito presurizado de 12 litros",
                     "5 filtros iniciales instalados",
                     "Kit completo de instalacion con tubos y conexiones",
                     "Manual de uso y mantenimiento",
-                    "Garantia de 2 anos completa",
+                    "Garantia de 2 años completa",
                   ].map(item => (
                     <li key={item} className="flex items-start gap-3 text-sm font-sans text-foreground">
                       <Check className="w-4 h-4 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
@@ -229,7 +229,7 @@ export default function CincoEtapasPage() {
                 </div>
                 <div className="text-center sm:text-right">
                   <p className="font-serif text-5xl lg:text-6xl text-foreground">89€</p>
-                  <p className="text-sm text-muted-foreground font-sans mt-1">/ano</p>
+                  <p className="text-sm text-muted-foreground font-sans mt-1">/año</p>
                 </div>
               </div>
             </div>

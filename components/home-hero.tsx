@@ -55,7 +55,7 @@ export function HomeHero() {
           <h1 className="font-serif text-[clamp(2.5rem,8vw,8rem)] leading-[0.9] tracking-tight text-foreground text-balance">
             Agua pura,
             <br />
-            <span className="italic font-light text-muted-foreground">diseno impecable</span>
+            <span className="italic font-light text-muted-foreground">diseño impecable</span>
           </h1>
 
           {/* Subtitle */}
@@ -92,7 +92,7 @@ export function HomeHero() {
             </div>
             <div className="text-center">
               <p className="font-serif text-3xl sm:text-4xl text-foreground">2</p>
-              <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-2">Anos Garantia</p>
+              <p className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground mt-2">Años Garantia</p>
             </div>
           </div>
         </div>

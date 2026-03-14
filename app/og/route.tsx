@@ -36,13 +36,13 @@ export async function GET() {
             Agua pura,
           </div>
           <div style={{ fontSize: 80, color: "#1a1a1860", fontStyle: "italic", fontWeight: 300, letterSpacing: "-2px", lineHeight: 0.9, textAlign: "center" }}>
-            diseno impecable
+            diseño impecable
           </div>
         </div>
         
         {/* Bottom text */}
         <div style={{ fontSize: 16, color: "#1a1a1850", marginTop: "60px", fontFamily: "system-ui, sans-serif" }}>
-          Osmosis inversa premium · Envio gratuito · Garantia 2 anos
+          Osmosis inversa premium · Envio gratuito · Garantia 2 años
         </div>
       </div>
     ),

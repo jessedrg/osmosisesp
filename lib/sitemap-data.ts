@@ -8134,6 +8134,7 @@ export const STATIC_URLS = [
   "/productos/compacto",
   "/productos/5-etapas",
   "/productos/acuarios",
+  "/blog",
 ] as const
 
 // Helper para convertir slug a nombre legible
@@ -8167,7 +8168,7 @@ export function getInstallationCityMeta(citySlug: string) {
     slug: citySlug,
     name: cityName,
     title: `Instalacion de Osmosis Inversa en ${cityName} | OSMOSIS ESP`,
-    description: `Servicio profesional de instalacion de sistemas de osmosis inversa en ${cityName}. Instaladores certificados, 2 anos de garantia. Solicita tu cita.`,
+    description: `Servicio profesional de instalacion de sistemas de osmosis inversa en ${cityName}. Instaladores certificados, 2 años de garantia. Solicita tu cita.`,
     h1: `Instalacion de Osmosis en ${cityName}`,
     keywords: [
       `instalacion osmosis ${cityName}`,

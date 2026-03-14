@@ -91,7 +91,7 @@ export function ProductSection() {
         {/* Trust badges */}
         <div className="flex flex-wrap items-center justify-center gap-8 mt-16 pt-8 border-t border-border">
           <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-sans">Envio gratis</span>
-          <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-sans">2 anos garantia</span>
+          <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-sans">2 años garantia</span>
           <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-sans">14 dias devolucion</span>
           <span className="text-[10px] tracking-[0.15em] uppercase text-muted-foreground font-sans">Instalacion opcional</span>
         </div>

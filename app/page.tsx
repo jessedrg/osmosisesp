@@ -10,7 +10,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Sistema de Osmosis Inversa Premium",
-  description: "Sistema de osmosis inversa de alta gama con panel LED tactil, filtros de cambio rapido y diseno minimalista. Tecnologia de 5 etapas con bomba integrada. Garantia 2 anos.",
+  description: "Sistema de osmosis inversa de alta gama con panel LED tactil, filtros de cambio rapido y diseño minimalista. Tecnologia de 5 etapas con bomba integrada. Garantia 2 años.",
   brand: { "@type": "Brand", name: "OSMOSIS ESP" },
   image: [
     "https://osmosisesp.com/He23d99f93a3040acb8720554edb60e11k.jpg",

@@ -6,11 +6,11 @@ import { Plus, Minus } from "lucide-react"
 const faqs = [
   {
     q: "Cual es el precio del sistema de osmosis inversa?",
-    a: "El equipo cuesta 508€ IVA incluido (antes 725€). Si prefieres instalacion profesional incluida, el precio es 587€. Envio gratuito a toda Espana y garantia de 2 anos.",
+    a: "El equipo cuesta 508€ IVA incluido (antes 725€). Si prefieres instalacion profesional incluida, el precio es 587€. Envio gratuito a toda España y garantia de 2 años.",
   },
   {
     q: "Cuanto tiempo tarda la instalacion?",
-    a: "La instalacion profesional tarda entre 2-3 horas. Un tecnico certificado instala el equipo bajo tu fregadero, conecta el grifo de diseno y te explica el funcionamiento. Sin obras ni complicaciones.",
+    a: "La instalacion profesional tarda entre 2-3 horas. Un tecnico certificado instala el equipo bajo tu fregadero, conecta el grifo de diseño y te explica el funcionamiento. Sin obras ni complicaciones.",
   },
   {
     q: "Puedo instalarlo yo mismo?",
@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Cada cuanto hay que cambiar los filtros?",
-    a: "Los filtros se cambian una vez al ano. Ofrecemos un servicio de mantenimiento anual por 79€ que incluye cambio de todos los filtros, revision completa del equipo y visita del tecnico.",
+    a: "Los filtros se cambian una vez al año. Ofrecemos un servicio de mantenimiento anual por 79€ que incluye cambio de todos los filtros, revision completa del equipo y visita del tecnico.",
   },
   {
     q: "El agua de osmosis es segura?",
@@ -26,11 +26,11 @@ const faqs = [
   },
   {
     q: "Que garantia tiene el equipo?",
-    a: "El equipo tiene 2 anos de garantia completa. Durante este periodo, si hay cualquier problema tecnico, un tecnico te visitara sin coste adicional para solucionarlo.",
+    a: "El equipo tiene 2 años de garantia completa. Durante este periodo, si hay cualquier problema tecnico, un tecnico te visitara sin coste adicional para solucionarlo.",
   },
   {
-    q: "Haceis envios a toda Espana?",
-    a: "Si, enviamos a toda Espana peninsula y Baleares con envio gratuito. El equipo llega en 24-48 horas perfectamente embalado y protegido.",
+    q: "Haceis envios a toda España?",
+    a: "Si, enviamos a toda España peninsula y Baleares con envio gratuito. El equipo llega en 24-48 horas perfectamente embalado y protegido.",
   },
   {
     q: "Cual es la politica de devolucion?",

@@ -123,7 +123,7 @@ export default function ProductosPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
                 <div className="font-serif text-4xl mb-2">2</div>
-                <div className="text-sm text-background/60">Anos de garantia</div>
+                <div className="text-sm text-background/60">Años de garantia</div>
               </div>
               <div>
                 <div className="font-serif text-4xl mb-2">1,200+</div>

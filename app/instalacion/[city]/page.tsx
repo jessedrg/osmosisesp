@@ -49,7 +49,7 @@ export default async function InstallationCityPage({ params }: Props) {
 
   const benefits = [
     { icon: Clock, title: "Instalacion en 2h", desc: "Nuestros tecnicos completan la instalacion en menos de 2 horas" },
-    { icon: Shield, title: "2 Anos Garantia", desc: "Garantia completa en equipo e instalacion" },
+    { icon: Shield, title: "2 Años Garantia", desc: "Garantia completa en equipo e instalacion" },
     { icon: MapPin, title: `Servicio en ${cityName}`, desc: `Cobertura total en ${cityName} y alrededores` },
   ]
 
@@ -63,7 +63,7 @@ export default async function InstallationCityPage({ params }: Props) {
   const faqs = [
     {
       q: `Cuanto cuesta la instalacion de osmosis en ${cityName}?`,
-      a: `El precio de instalacion profesional en ${cityName} es de 79€, incluido en nuestros packs con instalacion. Si compras solo el equipo, puedes anadir la instalacion posteriormente.`,
+      a: `El precio de instalacion profesional en ${cityName} es de 79€, incluido en nuestros packs con instalacion. Si compras solo el equipo, puedes añadir la instalacion posteriormente.`,
     },
     {
       q: "Cuanto tiempo tarda la instalacion?",
@@ -95,7 +95,7 @@ export default async function InstallationCityPage({ params }: Props) {
                 {meta.h1}
               </h1>
               <p className="text-lg text-muted-foreground font-light leading-relaxed mb-8 max-w-lg">
-                Instaladores certificados en {cityName}. Servicio rapido, limpio y con garantia de 2 anos.
+                Instaladores certificados en {cityName}. Servicio rapido, limpio y con garantia de 2 años.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -262,7 +262,7 @@ export default async function InstallationCityPage({ params }: Props) {
             Instalacion de Osmosis en {cityName}
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Contactanos hoy y disfruta de agua pura en tu hogar. Servicio profesional con garantia de 2 anos.
+            Contactanos hoy y disfruta de agua pura en tu hogar. Servicio profesional con garantia de 2 años.
           </p>
           <a
             href={`https://wa.me/34711267223?text=Hola%2C%20quiero%20instalar%20un%20sistema%20de%20osmosis%20en%20${encodeURIComponent(cityName)}`}
