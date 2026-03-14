@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [productsOpen, setProductsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -26,24 +27,52 @@ export function Navbar() {
 
         {/* Center Navigation */}
         <div className="hidden lg:flex items-center gap-12 absolute left-1/2 -translate-x-1/2">
-          <Link href="#productos" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
-            Productos
-          </Link>
-          <Link href="#proceso" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
+          {/* Products Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setProductsOpen(true)}
+            onMouseLeave={() => setProductsOpen(false)}
+          >
+            <button className="flex items-center gap-1 text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
+              Productos
+              <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${productsOpen ? "rotate-180" : ""}`} />
+            </button>
+            {productsOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4">
+                <div className="bg-background border border-border shadow-lg min-w-[200px]">
+                  <Link 
+                    href="/productos/hogar" 
+                    className="block px-6 py-4 text-[11px] tracking-[0.15em] uppercase text-foreground hover:bg-secondary transition-colors border-b border-border"
+                  >
+                    Hogar
+                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">Sistema domestico 5 etapas</span>
+                  </Link>
+                  <Link 
+                    href="/productos/acuarios" 
+                    className="block px-6 py-4 text-[11px] tracking-[0.15em] uppercase text-foreground hover:bg-secondary transition-colors"
+                  >
+                    Acuarios
+                    <span className="block text-[9px] text-muted-foreground tracking-normal normal-case mt-1">Sistema compacto 3 etapas</span>
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+          <Link href="/#proceso" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
             Proceso
           </Link>
-          <Link href="#opiniones" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
+          <Link href="/#opiniones" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
             Opiniones
           </Link>
-          <Link href="#faq" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
+          <Link href="/#faq" className="text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-300">
             FAQ
           </Link>
         </div>
 
-        {/* Right - Cart */}
+        {/* Right - CTA */}
         <div className="hidden lg:flex items-center">
           <Link 
-            href="#productos" 
+            href="/productos/hogar" 
             className="text-[11px] tracking-[0.15em] uppercase text-foreground border border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-all duration-300"
           >
             Comprar
@@ -60,21 +89,28 @@ export function Navbar() {
       {open && (
         <div className="lg:hidden fixed inset-0 bg-background z-40 flex flex-col justify-center items-center">
           <nav className="flex flex-col items-center gap-8">
-            <Link href="#productos" onClick={() => setOpen(false)} className="text-2xl font-serif text-foreground">
-              Productos
-            </Link>
-            <Link href="#proceso" onClick={() => setOpen(false)} className="text-2xl font-serif text-foreground">
+            <div className="text-center">
+              <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground block mb-4">Productos</span>
+              <Link href="/productos/hogar" onClick={() => setOpen(false)} className="block text-2xl font-serif text-foreground mb-2">
+                Hogar
+              </Link>
+              <Link href="/productos/acuarios" onClick={() => setOpen(false)} className="block text-2xl font-serif text-foreground">
+                Acuarios
+              </Link>
+            </div>
+            <div className="h-px w-12 bg-border" />
+            <Link href="/#proceso" onClick={() => setOpen(false)} className="text-xl font-serif text-muted-foreground">
               Proceso
             </Link>
-            <Link href="#opiniones" onClick={() => setOpen(false)} className="text-2xl font-serif text-foreground">
+            <Link href="/#opiniones" onClick={() => setOpen(false)} className="text-xl font-serif text-muted-foreground">
               Opiniones
             </Link>
-            <Link href="#faq" onClick={() => setOpen(false)} className="text-2xl font-serif text-foreground">
+            <Link href="/#faq" onClick={() => setOpen(false)} className="text-xl font-serif text-muted-foreground">
               FAQ
             </Link>
             <div className="h-px w-12 bg-border my-4" />
             <Link 
-              href="#productos" 
+              href="/productos/hogar" 
               onClick={() => setOpen(false)}
               className="text-sm tracking-[0.15em] uppercase text-foreground border border-foreground px-8 py-4"
             >
