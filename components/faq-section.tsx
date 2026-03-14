@@ -6,7 +6,7 @@ import { Plus, Minus } from "lucide-react"
 const faqs = [
   {
     q: "Cual es el precio del sistema de osmosis inversa?",
-    a: "El equipo cuesta 508€ IVA incluido (antes 725€). Si prefieres instalacion profesional incluida, el precio es 587€. Envio gratuito a toda España y garantia de 2 años.",
+    a: "Tenemos varios modelos: Sistema Compacto desde 300€, Sistema 5 Etapas desde 270€, y Osmosis para Acuarios desde 189€. Todos con IVA incluido, envio gratuito y 2 años de garantia.",
   },
   {
     q: "Cuanto tiempo tarda la instalacion?",
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     q: "Haceis envios a toda España?",
-    a: "Si, enviamos a toda España peninsula y Baleares con envio gratuito. El equipo llega en 24-48 horas perfectamente embalado y protegido.",
+    a: "Si, enviamos a toda España peninsula y Baleares con envio gratuito. El equipo llega en 7-14 dias laborables perfectamente embalado y protegido.",
   },
   {
     q: "Cual es la politica de devolucion?",

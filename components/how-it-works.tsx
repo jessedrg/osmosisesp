@@ -10,7 +10,7 @@ const steps = [
   {
     num: "02",
     title: "Recibe tu equipo",
-    desc: "Envio gratuito a toda España. Tu sistema llega en 24-48 horas perfectamente embalado.",
+    desc: "Envio gratuito a toda España. Tu sistema llega en 7-14 dias laborables perfectamente embalado.",
   },
   {
     num: "03",
