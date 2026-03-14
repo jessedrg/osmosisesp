@@ -1,0 +1,100 @@
+{
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/inicio",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tienda",
+      "destination": "/productos",
+      "permanent": true
+    },
+    {
+      "source": "/shop",
+      "destination": "/productos",
+      "permanent": true
+    },
+    {
+      "source": "/catalogo",
+      "destination": "/productos",
+      "permanent": true
+    },
+    {
+      "source": "/producto/:path*",
+      "destination": "/productos/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/articulo/:path*",
+      "destination": "/blog/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/post/:path*",
+      "destination": "/blog/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/:path*",
+      "destination": "/blog/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/contacto",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/contact",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/about",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/nosotros",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/servicios",
+      "destination": "/productos",
+      "permanent": false
+    },
+    {
+      "source": "/instalacion-osmosis-inversa-:city",
+      "destination": "/instalacion/:city",
+      "permanent": true
+    },
+    {
+      "source": "/osmosis-inversa-:city",
+      "destination": "/instalacion/:city",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ]
+}
