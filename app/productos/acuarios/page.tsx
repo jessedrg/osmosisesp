@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import ProductPurchaseCard from "@/components/product-purchase-card"
-import { Check, Droplets, Shield, Fish, Leaf, ArrowRight, ArrowLeft } from "lucide-react"
+import { Check, Droplets, Shield, Fish, Leaf, ArrowRight, ArrowLeft, ShoppingBag } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Osmosis Inversa para Acuarios | OSMOSIS ESP",
