@@ -1,42 +1,7 @@
 // =============================================================================
 // SITEMAP DATA - OSMOSIS ESP
-// Productos reales + Ciudades principales de Espana
+// Solo "Instalacion de osmosis en [ciudad]" - sin canibalizacion
 // =============================================================================
-
-export const PRODUCTS = [
-  {
-    id: "compacto",
-    name: "Sistema Compacto 500GPD",
-    slug: "osmosis-compacta",
-    description: "Sistema de osmosis inversa compacto con pantalla LED tactil. Sin tanque, autolimpieza, 3 etapas.",
-    priceBase: 508,
-    priceInstall: 587,
-    category: "hogar",
-    keywords: ["osmosis compacta", "osmosis sin tanque", "osmosis LED", "osmosis 500GPD"],
-  },
-  {
-    id: "5etapas",
-    name: "Sistema 5 Etapas Premium",
-    slug: "osmosis-5-etapas",
-    description: "Sistema de osmosis inversa de 5 etapas con deposito de 12L. Maxima purificacion.",
-    priceBase: 429,
-    priceInstall: 508,
-    category: "hogar",
-    keywords: ["osmosis 5 etapas", "osmosis premium", "osmosis profesional", "osmosis con deposito"],
-  },
-  {
-    id: "acuarios",
-    name: "Sistema para Acuarios",
-    slug: "osmosis-acuarios",
-    description: "Sistema compacto de 3 etapas especial para acuarios de agua dulce y salada.",
-    priceBase: 189,
-    priceInstall: 268,
-    category: "acuarios",
-    keywords: ["osmosis acuarios", "osmosis peces", "osmosis acuario marino", "agua destilada acuario"],
-  },
-] as const
-
-export type Product = (typeof PRODUCTS)[number]
 
 // Ciudades principales de Espana (80+ ciudades)
 export const CITIES = [
@@ -150,44 +115,36 @@ export const STATIC_URLS = [
   "/productos/acuarios",
 ] as const
 
-// Generar todas las URLs dinamicas (producto + ciudad)
+// Generar todas las URLs dinamicas (instalacion + ciudad)
 export function generateAllUrls(): string[] {
   const urls: string[] = [...STATIC_URLS]
   
-  for (const product of PRODUCTS) {
-    for (const city of CITIES) {
-      urls.push(`/${product.slug}/${city.slug}`)
-    }
+  for (const city of CITIES) {
+    urls.push(`/instalacion/${city.slug}`)
   }
   
   return urls
 }
 
-// Helper para obtener metadata SEO de una pagina dinamica
-export function getProductCityMeta(productSlug: string, citySlug: string) {
-  const product = PRODUCTS.find(p => p.slug === productSlug)
+// Helper para obtener metadata SEO de una pagina de instalacion
+export function getInstallationCityMeta(citySlug: string) {
   const city = CITIES.find(c => c.slug === citySlug)
   
-  if (!product || !city) return null
+  if (!city) return null
   
   return {
-    product,
     city,
-    title: `${product.name} en ${city.name} | Instalacion Profesional | OSMOSIS ESP`,
-    description: `Instalacion de ${product.name.toLowerCase()} en ${city.name}, ${city.province}. ${product.description} Envio gratis y 2 anos de garantia.`,
-    h1: `${product.name} en ${city.name}`,
+    title: `Instalacion de Osmosis Inversa en ${city.name} | OSMOSIS ESP`,
+    description: `Servicio profesional de instalacion de sistemas de osmosis inversa en ${city.name}, ${city.province}. Instaladores certificados, 2 anos de garantia. Solicita tu cita.`,
+    h1: `Instalacion de Osmosis en ${city.name}`,
     keywords: [
-      ...product.keywords,
-      `osmosis inversa ${city.name}`,
       `instalacion osmosis ${city.name}`,
-      `purificador agua ${city.province}`,
+      `osmosis inversa ${city.name}`,
+      `purificador agua ${city.name}`,
+      `instalador osmosis ${city.province}`,
+      `osmosis domestica ${city.name}`,
     ],
   }
-}
-
-// Obtener producto por slug
-export function getProductBySlug(slug: string) {
-  return PRODUCTS.find(p => p.slug === slug) || null
 }
 
 // Obtener ciudad por slug
