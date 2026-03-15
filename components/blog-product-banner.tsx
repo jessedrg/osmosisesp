@@ -12,8 +12,8 @@ interface BlogProductBannerProps {
 const PRODUCT_DATA = {
   compacto: {
     name: 'Sistema Compacto 500GPD',
-    price: 508,
-    originalPrice: 649,
+    price: 300,
+    originalPrice: 508,
     href: '/productos/compacto',
     image: '/He23d99f93a3040acb8720554edb60e11k.jpg',
     features: ['Flujo directo sin depósito', 'Pantalla LED táctil', 'Autolimpieza automática'],
@@ -21,8 +21,8 @@ const PRODUCT_DATA = {
   },
   '5etapas': {
     name: 'Sistema 5 Etapas Premium',
-    price: 429,
-    originalPrice: 549,
+    price: 270,
+    originalPrice: 429,
     href: '/productos/5-etapas',
     image: '/osmosis-casa.jpg',
     features: ['5 etapas de filtración', 'Grifo premium incluido', 'Depósito 12L'],
@@ -31,7 +31,7 @@ const PRODUCT_DATA = {
   acuarios: {
     name: 'Sistema Acuarios 3 Etapas',
     price: 189,
-    originalPrice: 249,
+    originalPrice: 269,
     href: '/productos/acuarios',
     image: '/osmosis-acuario.jpg',
     features: ['Especial acuariofilia', 'Compacto y portátil', 'Fácil instalación'],

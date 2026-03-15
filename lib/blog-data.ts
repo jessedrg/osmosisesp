@@ -127,7 +127,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Coste: ahorro de hasta 600€ al año",
         content:
-          "Una familia de 4 personas consume aproximadamente 3 litros de agua al día para beber, o unos 1.100 litros al año. A un precio medio de 0,50€/litro de agua embotellada, eso son 550€ anuales. Un sistema de osmosis inversa cuesta entre 429€ y 587€ (con instalación) y produce agua pura por menos de 0,03€/litro. El coste de mantenimiento anual es de unos 79€ en filtros. A partir del segundo año, el ahorro es de más de 450€ cada año.",
+          "Una familia de 4 personas consume aproximadamente 3 litros de agua al día para beber, o unos 1.100 litros al año. A un precio medio de 0,50€/litro de agua embotellada, eso son 550€ anuales. Un sistema de osmosis inversa cuesta entre 270€ y 379€ (con instalación) y produce agua pura por menos de 0,03€/litro. El coste de mantenimiento anual es de unos 79€ en filtros. A partir del segundo año, el ahorro es de más de 450€ cada año.",
       },
       {
         heading: "Calidad del agua",
@@ -200,7 +200,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Precios de osmosis inversa en 2026",
         content:
-          "Los precios varían según el tipo y calidad del sistema. Los sistemas básicos de 3 etapas con depósito se encuentran desde 150-250€. Los sistemas de flujo directo de calidad media rondan los 300-500€. Los sistemas premium de flujo directo con pantalla LED y autolimpieza están entre 450-600€. En OSMOSIS ESP, nuestro sistema compacto de flujo directo cuesta 508€ (solo equipo) o 587€ con instalación profesional incluida. El sistema de 5 etapas parte desde 429€.",
+          "Los precios varían según el tipo y calidad del sistema. Los sistemas básicos de 3 etapas con depósito se encuentran desde 150-250€. Los sistemas de flujo directo de calidad media rondan los 300-500€. Los sistemas premium de flujo directo con pantalla LED y autolimpieza están entre 450-600€. En OSMOSIS ESP, nuestro sistema compacto de flujo directo cuesta 300€ (solo equipo) o 379€ con instalación profesional incluida. El sistema de 5 etapas parte desde 270€.",
       },
       {
         heading: "Nuestra selección: los 3 mejores sistemas",
@@ -656,7 +656,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Precios de osmosis inversa en España 2026",
         content:
-          "Los precios varian segun el tipo de sistema. Sistemas basicos con deposito: 150-300€. Sistemas de flujo directo de calidad media: 350-500€. Sistemas premium de flujo directo con extras: 450-650€. Instalacion profesional: 70-100€ adicionales. En OSMOSIS ESP ofrecemos el sistema compacto de flujo directo desde 508€ (solo equipo) o 587€ con instalacion profesional incluida.",
+          "Los precios varian segun el tipo de sistema. Sistemas basicos con deposito: 150-300€. Sistemas de flujo directo de calidad media: 350-500€. Sistemas premium de flujo directo con extras: 450-650€. Instalacion profesional: 70-100€ adicionales. En OSMOSIS ESP ofrecemos el sistema compacto de flujo directo desde 300€ (solo equipo) o 379€ con instalacion profesional incluida.",
       },
       {
         heading: "Ventajas de comprar online",
@@ -771,7 +771,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Precios de osmosis inversa con instalacion 2026",
         content:
-          "En OSMOSIS ESP ofrecemos packs con instalacion incluida: Sistema Compacto 500GPD con instalacion: 587€ (ahorras 30€ vs compra separada). Sistema 5 Etapas Premium con instalacion: 508€. Sistema Acuarios con instalacion: 268€. Todos los precios incluyen IVA, envio gratuito y garantia de 2 años.",
+          "En OSMOSIS ESP ofrecemos packs con instalacion incluida: Sistema Compacto 500GPD con instalacion: 379€. Sistema 5 Etapas Premium con instalacion: 349€. Sistema Acuarios con instalacion: 268€. Todos los precios incluyen IVA, envio gratuito y garantia de 2 años.",
       },
       {
         heading: "Zonas de instalacion disponibles",
@@ -827,7 +827,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Precio y donde comprar",
         content:
-          "El sistema compacto 500GPD de OSMOSIS ESP cuesta 508€ (solo equipo) o 587€ con instalacion profesional incluida. Incluye grifo de diseño, kit de conexion completo, garantia de 2 años y envio gratuito. Es el sistema mas vendido de nuestra tienda por su excelente relacion calidad-precio.",
+          "El sistema compacto 500GPD de OSMOSIS ESP cuesta 300€ (solo equipo) o 379€ con instalacion profesional incluida. Incluye grifo de diseño, kit de conexion completo, garantia de 2 años y envio gratuito. Es el sistema mas vendido de nuestra tienda por su excelente relacion calidad-precio.",
       },
     ],
     cta: {
@@ -874,7 +874,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Precios de osmosis inversa 5 etapas 2026",
         content:
-          "Los precios varian segun la calidad: sistemas basicos de 5 etapas con deposito: 150-250€. Sistemas de calidad media: 300-450€. Sistemas premium con deposito de acero y grifo de diseño: 400-550€. En OSMOSIS ESP, nuestro sistema de 5 etapas premium cuesta 429€ (solo equipo) o 508€ con instalacion incluida.",
+          "Los precios varian segun la calidad: sistemas basicos de 5 etapas con deposito: 150-250€. Sistemas de calidad media: 300-450€. Sistemas premium con deposito de acero y grifo de diseño: 400-550€. En OSMOSIS ESP, nuestro sistema de 5 etapas premium cuesta 270€ (solo equipo) o 349€ con instalacion incluida.",
       },
       {
         heading: "Nuestro sistema 5 etapas premium",
@@ -1018,12 +1018,12 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Ofertas actuales en osmosis inversa",
         content:
-          "En OSMOSIS ESP tenemos ofertas permanentes en todos nuestros equipos: Sistema Compacto 500GPD: 508€ (antes 649€) - ahorra 141€. Sistema 5 Etapas Premium: 429€ (antes 549€) - ahorra 120€. Sistema Acuarios: 189€ (antes 249€) - ahorra 60€. Todos los precios incluyen IVA y envio gratuito.",
+          "En OSMOSIS ESP tenemos ofertas permanentes en todos nuestros equipos: Sistema Compacto 500GPD: 300€ (antes 508€) - ahorra 208€. Sistema 5 Etapas Premium: 270€ (antes 429€) - ahorra 159€. Sistema Acuarios: 189€ (antes 269€) - ahorra 80€. Todos los precios incluyen IVA y envio gratuito.",
       },
       {
         heading: "Promocion especial: instalacion con descuento",
         content:
-          "Al comprar cualquier equipo con instalacion profesional, la instalacion sale a solo 79€ en lugar de los 100€ habituales. Es un ahorro adicional de 21€ y te garantiza una instalacion perfecta. Sistema Compacto + instalacion: 587€. Sistema 5 Etapas + instalacion: 508€. Sistema Acuarios + instalacion: 268€.",
+          "Al comprar cualquier equipo con instalacion profesional, la instalacion sale a solo 79€ en lugar de los 100€ habituales. Es un ahorro adicional de 21€ y te garantiza una instalacion perfecta. Sistema Compacto + instalacion: 379€. Sistema 5 Etapas + instalacion: 349€. Sistema Acuarios + instalacion: 268€.",
       },
       {
         heading: "¿Cuando hay mejores ofertas?",
@@ -1033,7 +1033,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Comparativa de precios con la competencia",
         content:
-          "Nuestro sistema compacto de 500GPD a 508€ compite con equipos similares que en otras tiendas cuestan 600-750€. El sistema de 5 etapas a 429€ equivale a equipos de 500-600€ en grandes superficies. Ofrecemos precio de importador directo sin intermediarios, con toda la garantia y servicio de una tienda especializada.",
+          "Nuestro sistema compacto de 500GPD a 300€ compite con equipos similares que en otras tiendas cuestan 600-750€. El sistema de 5 etapas a 270€ equivale a equipos de 500-600€ en grandes superficies. Ofrecemos precio de importador directo sin intermediarios, con toda la garantia y servicio de una tienda especializada.",
       },
       {
         heading: "Compra ahora y empieza a ahorrar",

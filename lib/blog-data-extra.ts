@@ -31,7 +31,7 @@ export const BLOG_POSTS_EXTRA: BlogPost[] = [
       {
         heading: "Comparativa real de precios en 2026",
         content:
-          "Hemos analizado los precios de las principales tiendas y fabricantes. Leroy Merlin: equipos desde 180€ a 600€, con instalación a parte. Amazon: desde 99€ pero con calidad muy variable y sin soporte local. Tiendas especializadas online: entre 350€ y 700€ con mejor asesoramiento. OSMOSIS ESP: Sistema Compacto 500GPD a 508€ (solo equipo) o 587€ con instalación profesional incluida. Sistema 5 Etapas desde 429€. La diferencia clave no está solo en el equipo, sino en lo que incluye: grifo, tubos, conectores, manual en español, soporte técnico y garantía real de 2 años.",
+          "Hemos analizado los precios de las principales tiendas y fabricantes. Leroy Merlin: equipos desde 180€ a 600€, con instalación a parte. Amazon: desde 99€ pero con calidad muy variable y sin soporte local. Tiendas especializadas online: entre 350€ y 700€ con mejor asesoramiento. OSMOSIS ESP: Sistema Compacto 500GPD a 300€ (solo equipo) o 379€ con instalación profesional incluida. Sistema 5 Etapas desde 270€. La diferencia clave no está solo en el equipo, sino en lo que incluye: grifo, tubos, conectores, manual en español, soporte técnico y garantía real de 2 años.",
       },
       {
         heading: "5 errores que cometen los compradores primerizos",
@@ -46,7 +46,7 @@ export const BLOG_POSTS_EXTRA: BlogPost[] = [
       {
         heading: "¿Cuándo amortizas la inversión?",
         content:
-          "Si tu familia gasta 40-50€ al mes en agua embotellada, un sistema de osmosis inversa de 500€ se amortiza en 10-12 meses. A partir del segundo año, solo pagas el mantenimiento anual (unos 50-80€ en filtros). Eso supone un ahorro de más de 400€ cada año. En 5 años, habrás ahorrado más de 2.000€ respecto a comprar agua embotellada. Y eso sin contar el ahorro de tiempo en cargar garrafas del supermercado.",
+          "Si tu familia gasta 40-50€ al mes en agua embotellada, un sistema de osmosis inversa de 300€ se amortiza en 6-7 meses. A partir del segundo año, solo pagas el mantenimiento anual (unos 50-80€ en filtros). Eso supone un ahorro de más de 400€ cada año. En 5 años, habrás ahorrado más de 2.000€ respecto a comprar agua embotellada. Y eso sin contar el ahorro de tiempo en cargar garrafas del supermercado.",
       },
     ],
     cta: {
@@ -332,11 +332,11 @@ export const BLOG_POSTS_EXTRA: BlogPost[] = [
       {
         heading: "¿Buscas osmosis para tu hogar?",
         content:
-          "Si has llegado aquí buscando información sobre osmosis inversa para tu casa, estás en el lugar correcto. En OSMOSIS ESP somos especialistas en sistemas domésticos de alta calidad. Nuestros equipos utilizan la misma tecnología de membrana que las plantas industriales, pero adaptada al hogar: compactos, silenciosos y con mantenimiento sencillo. Desde 429€ con envío gratuito y opción de instalación profesional.",
+          "Si has llegado aquí buscando información sobre osmosis inversa para tu casa, estás en el lugar correcto. En OSMOSIS ESP somos especialistas en sistemas domésticos de alta calidad. Nuestros equipos utilizan la misma tecnología de membrana que las plantas industriales, pero adaptada al hogar: compactos, silenciosos y con mantenimiento sencillo. Desde 270€ con envío gratuito y opción de instalación profesional.",
       },
     ],
     cta: {
-      text: "Osmosis inversa para tu hogar desde 429€",
+      text: "Osmosis inversa para tu hogar desde 270€",
       href: "/productos",
       label: "Ver Sistemas Domésticos",
     },
@@ -382,12 +382,12 @@ export const BLOG_POSTS_EXTRA: BlogPost[] = [
       {
         heading: "Precios de equipos en 2026",
         content:
-          "Equipos básicos con depósito (3 etapas): 150-250€. Calidad aceptable para presupuestos ajustados. Equipos con depósito (5 etapas): 250-400€. La opción clásica y probada. Equipos de flujo directo: 400-600€. Tecnología moderna, agua siempre fresca. Dispensadores con osmosis: 500-1.200€. Para quien busca todo en uno. En OSMOSIS ESP: Sistema Compacto flujo directo 508€, Sistema 5 Etapas con depósito 429€, Sistema Acuarios 189€. Todos con envío gratuito y opción de instalación profesional.",
+          "Equipos básicos con depósito (3 etapas): 150-250€. Calidad aceptable para presupuestos ajustados. Equipos con depósito (5 etapas): 250-400€. La opción clásica y probada. Equipos de flujo directo: 400-600€. Tecnología moderna, agua siempre fresca. Dispensadores con osmosis: 500-1.200€. Para quien busca todo en uno. En OSMOSIS ESP: Sistema Compacto flujo directo 300€, Sistema 5 Etapas con depósito 270€, Sistema Acuarios 189€. Todos con envío gratuito y opción de instalación profesional.",
       },
       {
         heading: "Los 3 mejores equipos calidad-precio de 2026",
         content:
-          "1. Sistema Compacto 500GPD de OSMOSIS ESP: flujo directo, pantalla LED táctil, autolimpieza, bomba integrada. El más vendido por su equilibrio perfecto entre rendimiento, tamaño y precio. 508€ solo equipo, 587€ con instalación. 2. Sistema 5 Etapas Premium de OSMOSIS ESP: para quienes prefieren el sistema clásico con depósito. 5 etapas de filtración, grifo premium, depósito 12L. 429€ con envío gratuito. 3. Sistema Acuarios de OSMOSIS ESP: el mejor equipo específico para acuariofilia. Compacto, eficiente y desde solo 189€.",
+          "1. Sistema Compacto 500GPD de OSMOSIS ESP: flujo directo, pantalla LED táctil, autolimpieza, bomba integrada. El más vendido por su equilibrio perfecto entre rendimiento, tamaño y precio. 300€ solo equipo, 379€ con instalación. 2. Sistema 5 Etapas Premium de OSMOSIS ESP: para quienes prefieren el sistema clásico con depósito. 5 etapas de filtración, grifo premium, depósito 12L. 270€ con envío gratuito. 3. Sistema Acuarios de OSMOSIS ESP: el mejor equipo específico para acuariofilia. Compacto, eficiente y desde solo 189€.",
       },
     ],
     cta: {
