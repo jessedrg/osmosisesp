@@ -4,6 +4,7 @@
 // =============================================================================
 
 import { BLOG_POSTS_EXTRA } from "./blog-data-extra"
+import { BLOG_POSTS_COMPARATIVAS } from "./blog-data-comparativas"
 
 export interface BlogPost {
   slug: string
@@ -1676,7 +1677,7 @@ export const BLOG_POSTS: BlogPost[] = [
 ]
 
 // Todos los posts combinados
-export const ALL_BLOG_POSTS: BlogPost[] = [...BLOG_POSTS, ...BLOG_POSTS_EXTRA]
+export const ALL_BLOG_POSTS: BlogPost[] = [...BLOG_POSTS, ...BLOG_POSTS_EXTRA, ...BLOG_POSTS_COMPARATIVAS]
 
 // Helper para obtener todos los slugs de blog
 export function getAllBlogSlugs(): string[] {

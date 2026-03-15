@@ -45,6 +45,8 @@ export default async function BlogPostPage({ params }: PageProps) {
   // Find related posts (same category, excluding current)
   const related = ALL_BLOG_POSTS.filter((p) => p.category === post.category && p.slug !== post.slug).slice(0, 2)
 
+  const baseUrl = "https://xn--osmosisespaa-khb.com"
+
   // Article structured data
   const articleSchema = {
     "@context": "https://schema.org",
@@ -59,8 +61,34 @@ export default async function BlogPostPage({ params }: PageProps) {
     publisher: {
       "@type": "Organization",
       name: "OSMOSIS ESP",
-      url: "https://xn--osmosisespaa-khb.com",
+      url: baseUrl,
     },
+  }
+
+  // FAQ schema — extract sections with question-style headings
+  const faqItems = post.sections.filter((s) => s.heading.includes("?") || s.heading.startsWith("¿"))
+  const faqSchema = faqItems.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((s) => ({
+      "@type": "Question",
+      name: s.heading,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: s.content,
+      },
+    })),
+  } : null
+
+  // Breadcrumbs schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: baseUrl },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${baseUrl}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: `${baseUrl}/blog/${post.slug}` },
+    ],
   }
 
   return (
@@ -70,6 +98,16 @@ export default async function BlogPostPage({ params }: PageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <main className="flex-1">
         {/* Breadcrumb */}
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 pt-28 lg:pt-32">
