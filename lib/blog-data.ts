@@ -3,6 +3,8 @@
 // Keyword-clustered blog posts targeting high-volume search terms
 // =============================================================================
 
+import { BLOG_POSTS_EXTRA } from "./blog-data-extra"
+
 export interface BlogPost {
   slug: string
   title: string
@@ -1673,17 +1675,20 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 ]
 
+// Todos los posts combinados
+export const ALL_BLOG_POSTS: BlogPost[] = [...BLOG_POSTS, ...BLOG_POSTS_EXTRA]
+
 // Helper para obtener todos los slugs de blog
 export function getAllBlogSlugs(): string[] {
-  return BLOG_POSTS.map((post) => post.slug)
+  return ALL_BLOG_POSTS.map((post) => post.slug)
 }
 
 // Helper para obtener un post por slug
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
-  return BLOG_POSTS.find((post) => post.slug === slug)
+  return ALL_BLOG_POSTS.find((post) => post.slug === slug)
 }
 
 // Helper para obtener posts por categoría
 export function getBlogPostsByCategory(category: BlogCategory): BlogPost[] {
-  return BLOG_POSTS.filter((post) => post.category === category)
+  return ALL_BLOG_POSTS.filter((post) => post.category === category)
 }

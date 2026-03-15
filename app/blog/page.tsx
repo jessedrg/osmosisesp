@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { BLOG_POSTS } from "@/lib/blog-data"
+import { ALL_BLOG_POSTS } from "@/lib/blog-data"
 import { ArrowRight, Clock, Calendar } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPage() {
-  const featured = BLOG_POSTS[0]
-  const rest = BLOG_POSTS.slice(1)
+  const featured = ALL_BLOG_POSTS[0]
+  const rest = ALL_BLOG_POSTS.slice(1)
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

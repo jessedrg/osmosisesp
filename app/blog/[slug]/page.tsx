@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { BlogProductBanner } from "@/components/blog-product-banner"
-import { BLOG_POSTS, getBlogPostBySlug, getAllBlogSlugs } from "@/lib/blog-data"
+import { ALL_BLOG_POSTS, getBlogPostBySlug, getAllBlogSlugs } from "@/lib/blog-data"
 import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react"
 
 interface PageProps {
@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   // Find related posts (same category, excluding current)
-  const related = BLOG_POSTS.filter((p) => p.category === post.category && p.slug !== post.slug).slice(0, 2)
+  const related = ALL_BLOG_POSTS.filter((p) => p.category === post.category && p.slug !== post.slug).slice(0, 2)
 
   // Article structured data
   const articleSchema = {

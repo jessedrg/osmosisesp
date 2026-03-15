@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next"
 import { CITIES, STATIC_URLS } from "@/lib/sitemap-data"
-import { BLOG_POSTS } from "@/lib/blog-data"
+import { ALL_BLOG_POSTS } from "@/lib/blog-data"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://xn--osmosisespaa-khb.com"
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // URLs de blog
-  const blogUrls = BLOG_POSTS.map((post) => ({
+  const blogUrls = ALL_BLOG_POSTS.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.date),
     changeFrequency: "monthly" as const,
